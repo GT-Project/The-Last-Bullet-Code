@@ -50,6 +50,7 @@ public:
 	void		SecondaryAttack( void )	{	return;	}
 
 	void		Drop( const Vector &vecVelocity );
+	bool			HasIronsights(void) { return false; }
 
 
 	// Animation event

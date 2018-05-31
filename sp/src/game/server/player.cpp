@@ -164,6 +164,8 @@ int MapTextureTypeStepType(char chTextureType);
 extern void	SpawnBlood(Vector vecSpot, const Vector &vecDir, int bloodColor, float flDamage);
 extern void AddMultiDamage( const CTakeDamageInfo &info, CBaseEntity *pEntity );
 
+
+
 float     m_fRegenRemander;
 
 
@@ -520,6 +522,17 @@ void CBasePlayer::CreateViewModel( int index /*=0*/ )
 	}
 }
 
+void CBasePlayer::PauseMusic( void )
+{
+	if (m_bGamePaused == true)
+	{
+		EmitSound ("Pause.Music");
+	}
+	else
+	{
+		StopSound("Pause.Music");
+	}
+}
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
@@ -3653,14 +3666,6 @@ ConVar xc_crouch_debounce( "xc_crouch_debounce", "0", FCVAR_NONE );
 // Input  : *ucmd - 
 //			*moveHelper - 
 
-void CBasePlayer::PauseMusic;
-{
-	if (paused)
-	{
-		EmitSound("Player.IronSightIn");
-	}
-}
-
 void CBasePlayer::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
 	m_touchedPhysObject = false;
@@ -5122,6 +5127,7 @@ void CBasePlayer::Precache( void )
 	PrecacheScriptSound( "Player.DrownStart" );
 	PrecacheScriptSound( "Player.DrownContinue" );
 	PrecacheScriptSound( "Player.Wade" );
+	PrecacheSound( "Pause.Music");
 	PrecacheScriptSound( "Player.AmbientUnderWater" );
 	enginesound->PrecacheSentenceGroup( "HEV" );
 

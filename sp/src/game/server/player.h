@@ -1105,6 +1105,7 @@ private:
 
 	bool					m_bGamePaused;
 	float					m_fLastPlayerTalkTime;
+    void PauseMusic(void);
 	
 	CNetworkVar( CBaseCombatWeaponHandle, m_hLastWeapon );
 

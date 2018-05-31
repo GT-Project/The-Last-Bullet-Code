@@ -55,7 +55,6 @@ CWeaponCrowbar::CWeaponCrowbar( void )
 {
 }
 
-bool			HasIronsights(void) { return false; }
 //-----------------------------------------------------------------------------
 // Purpose: Get the damage amount for the animation we're doing
 // Input  : hitActivity - currently played activity
@@ -93,6 +92,8 @@ void CWeaponCrowbar::AddViewKick( void )
 // Attempt to lead the target (needed because citizens can't hit manhacks with the crowbar!)
 //-----------------------------------------------------------------------------
 ConVar sk_crowbar_lead_time( "sk_crowbar_lead_time", "0.9" );
+
+bool			HasIronsights(void) { return false; }
 
 int CWeaponCrowbar::WeaponMeleeAttack1Condition( float flDot, float flDist )
 {
@@ -164,6 +165,8 @@ void CWeaponCrowbar::HandleAnimEventMeleeHit( animevent_t *pEvent, CBaseCombatCh
 			vecDirection = vecDelta;
 		}
 	}
+
+	m_flNextPrimaryAttack = gpGlobals->curtime + SequenceDuration();
 
 	Vector vecEnd;
 	VectorMA( pOperator->Weapon_ShootPosition(), 50, vecDirection, vecEnd );
