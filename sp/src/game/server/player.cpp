@@ -3653,13 +3653,13 @@ ConVar xc_crouch_debounce( "xc_crouch_debounce", "0", FCVAR_NONE );
 // Input  : *ucmd - 
 //			*moveHelper - 
 
-void CBasePlayer::PauseMusic;
+/*void CBasePlayer:PausePlayer;
 {
 	if (paused)
 	{
 		EmitSound("Player.IronSightIn");
 	}
-}
+}*/
 
 void CBasePlayer::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
