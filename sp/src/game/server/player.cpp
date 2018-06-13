@@ -3666,6 +3666,17 @@ ConVar xc_crouch_debounce( "xc_crouch_debounce", "0", FCVAR_NONE );
 // Input  : *ucmd - 
 //			*moveHelper - 
 
+<<<<<<< HEAD
+=======
+/*void CBasePlayer:PausePlayer;
+{
+	if (paused)
+	{
+		EmitSound("Player.IronSightIn");
+	}
+}*/
+
+>>>>>>> 6dff732ba2042881ae1c028018d85300237cfb0f
 void CBasePlayer::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
 	m_touchedPhysObject = false;

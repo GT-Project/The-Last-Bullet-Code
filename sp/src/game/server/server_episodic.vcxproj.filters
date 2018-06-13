@@ -31,8 +31,11 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\WeaponWW2">
-      <UniqueIdentifier>{da22218e-bb72-4cb1-a1ca-27b0e0c25d79}</UniqueIdentifier>
+    <Filter Include="WW2">
+      <UniqueIdentifier>{9b8136db-69e7-494e-8537-3f8668e15095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files%282009%29">
+      <UniqueIdentifier>{d565c67f-bd18-49e3-bb9d-8abf7c571dcb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -2887,6 +2890,9 @@
     <ClCompile Include="world.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\shared\episodic\achievements_ep1.cpp">
+      <Filter>Source Files\HL2 DLL</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\shared\episodic\achievements_ep2.cpp">
       <Filter>Source Files\HL2 DLL</Filter>
     </ClCompile>
@@ -3505,20 +3511,20 @@
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
-    <ClCompile Include="weapon_mp40.cpp">
-      <Filter>Source Files\WeaponWW2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\game\shared\episodic\achievements_ep1.cpp">
-      <Filter>Source Files\HL2 DLL\unused</Filter>
+    <ClCompile Include="weapon_k98.cpp">
+      <Filter>WW2</Filter>
     </ClCompile>
     <ClCompile Include="weapon_minigun.cpp">
-      <Filter>Source Files\WeaponWW2</Filter>
+      <Filter>WW2</Filter>
     </ClCompile>
-    <ClCompile Include="weapon_k98.cpp">
-      <Filter>Source Files\WeaponWW2</Filter>
+    <ClCompile Include="weapon_mp40.cpp">
+      <Filter>WW2</Filter>
     </ClCompile>
     <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\WeaponWW2</Filter>
+      <Filter>WW2</Filter>
+    </ClCompile>
+    <ClCompile Include="logic_playmovie.cpp">
+      <Filter>Source Files%282009%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

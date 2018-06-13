@@ -151,4 +151,5 @@ class CSound;
 #include "ndebugoverlay.h"
 #include "recipientfilter.h"
 
+
 #endif // CBASE_H
