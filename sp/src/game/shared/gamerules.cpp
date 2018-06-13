@@ -571,7 +571,7 @@ void CGameRules::FrameUpdatePostEntityThink()
 }
 
 // Hook into the convar from the engine
-ConVar skill( "skill", "1" );
+ConVar skill( "skill", "3", FCVAR_CHEAT );
 
 void CGameRules::Think()
 {

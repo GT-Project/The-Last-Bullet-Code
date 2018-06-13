@@ -188,6 +188,7 @@ public:
 	virtual bool			CanBeSelected( void );
 	virtual bool			VisibleInWeaponSelection( void );
 	virtual bool			HasAmmo( void );
+	bool BaseWeaponFire(float flSpread, float flCycleTime, bool bPrimaryMode);
 
 	// Weapon Pickup For Player
 	virtual void			SetPickupTouch( void );
