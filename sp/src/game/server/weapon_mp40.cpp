@@ -367,7 +367,7 @@ void CWeaponMP40::AddViewKick(void)
 	if (pPlayer == NULL)
 		return;
 
-	DoMachineGunKick(pPlayer, EASY_DAMPEN, MAX_VERTICAL_KICK, m_fFireDuration, SLIDE_LIMIT);
+	DoMachineGunKick(pPlayer, EASY_DAMPEN, MAX_VERTICAL_KICK, 0.05f, SLIDE_LIMIT);
 
 }
 
