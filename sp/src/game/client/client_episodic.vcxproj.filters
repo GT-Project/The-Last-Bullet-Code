@@ -46,8 +46,8 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files%282009%29">
-      <UniqueIdentifier>{c05cc009-6218-47cd-91fc-16e9162b52a2}</UniqueIdentifier>
+    <Filter Include="Source Files\TLB">
+      <UniqueIdentifier>{02f360a5-1813-431d-a8b2-832a42b72820}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -516,9 +516,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_basedoor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c_baseentity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_baseflex.h">
@@ -1893,10 +1890,10 @@
       <Filter>Tool Framework</Filter>
     </ClInclude>
     <ClInclude Include="c_movie_display.h">
-      <Filter>Source Files%282009%29</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClInclude>
-    <ClInclude Include="hud_hitmarker.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\..\..\..\..\..\Users\Роман\Downloads\baseentity.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3422,10 +3419,7 @@
       <Filter>Tool Framework</Filter>
     </ClCompile>
     <ClCompile Include="c_movie_display.cpp">
-      <Filter>Source Files%282009%29</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_hitmarker.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
