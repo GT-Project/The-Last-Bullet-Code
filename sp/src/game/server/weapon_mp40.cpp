@@ -357,8 +357,8 @@ bool CWeaponMP40::Reload(void)
 //-----------------------------------------------------------------------------
 void CWeaponMP40::AddViewKick(void)
 {
-#define	EASY_DAMPEN			1.0f
-#define	MAX_VERTICAL_KICK	3.3f	//Degrees
+#define	EASY_DAMPEN			0.5f
+#define	MAX_VERTICAL_KICK	5.0f	//Degrees
 #define	SLIDE_LIMIT			0.1f	//Seconds
 
 	//Get the view kick
@@ -368,7 +368,6 @@ void CWeaponMP40::AddViewKick(void)
 		return;
 
 	DoMachineGunKick(pPlayer, EASY_DAMPEN, MAX_VERTICAL_KICK, 0.05f, SLIDE_LIMIT);
-
 }
 
 //-----------------------------------------------------------------------------
