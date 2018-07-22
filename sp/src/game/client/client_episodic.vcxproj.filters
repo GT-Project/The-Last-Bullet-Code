@@ -46,8 +46,8 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NewSourceFiles">
-      <UniqueIdentifier>{66d8580e-665d-4582-86f3-dd93c560c647}</UniqueIdentifier>
+    <Filter Include="Source Files\TLB">
+      <UniqueIdentifier>{87da3706-dc34-4a52-8028-f4d40b6075e8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1892,8 +1892,11 @@
     <ClInclude Include="toolframework_client.h">
       <Filter>Tool Framework</Filter>
     </ClInclude>
+    <ClInclude Include="c_movie_display.h">
+      <Filter>Source Files\TLB</Filter>
+    </ClInclude>
     <ClInclude Include="hud_hitmarker.h">
-      <Filter>NewSourceFiles</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3418,8 +3421,11 @@
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
     </ClCompile>
+    <ClCompile Include="c_movie_display.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="hud_hitmarker.cpp">
-      <Filter>NewSourceFiles</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3061,6 +3061,29 @@ bool CHL2_Player::Weapon_Lower(void)
 	return pWeapon->Lower();
 }
 
+//#ifdef CLIENT_DLL
+/*void CC_ToggleIronSights(void)
+{
+	if (m_afButtonPressed & IN_DROP)
+	{
+
+		CBasePlayer* pPlayer = C_BasePlayer::GetLocalPlayer();
+		if (pPlayer == NULL)
+			return;
+
+		CBaseCombatWeapon *pWeapon = pPlayer->GetActiveWeapon();
+		if (pWeapon == NULL)
+			return;
+
+		pWeapon->ToggleIronsights();
+	}
+//	engine->ServerCmd("toggle_ironsight"); //forward to server
+	 
+}
+*/
+//static ConCommand toggle_ironsight("toggle_ironsight", CC_ToggleIronSights);
+//#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: Returns the weapon posture to normal
 // Output : Returns true on success, false on failure.
