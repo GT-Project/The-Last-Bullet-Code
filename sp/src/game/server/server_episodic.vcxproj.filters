@@ -31,8 +31,11 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{725b3ca2-5f19-4cfc-8ce8-0f3f4f75e348}</UniqueIdentifier>
+    <Filter Include="WW2">
+      <UniqueIdentifier>{fea42740-0f21-4bff-9242-3c549e3e535f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files%282009%29">
+      <UniqueIdentifier>{a6454458-5cbe-4dd3-88e6-d8b0a4beb02e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1788,7 +1791,7 @@
       <Filter>Tools Framework</Filter>
     </ClInclude>
     <ClInclude Include="weapon_knife.h">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>WW2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3512,22 +3515,22 @@
       <Filter>Tools Framework</Filter>
     </ClCompile>
     <ClCompile Include="weapon_k98.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_mp40.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_minigun.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="logic_playmovie.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>WW2</Filter>
     </ClCompile>
     <ClCompile Include="weapon_knife.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>WW2</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_minigun.cpp">
+      <Filter>WW2</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_mp40.cpp">
+      <Filter>WW2</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_walter.cpp">
+      <Filter>WW2</Filter>
+    </ClCompile>
+    <ClCompile Include="logic_playmovie.cpp">
+      <Filter>Source Files%282009%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

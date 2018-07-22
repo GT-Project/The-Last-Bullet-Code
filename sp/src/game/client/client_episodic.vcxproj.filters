@@ -46,8 +46,8 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{02f360a5-1813-431d-a8b2-832a42b72820}</UniqueIdentifier>
+    <Filter Include="NewSourceFiles">
+      <UniqueIdentifier>{66d8580e-665d-4582-86f3-dd93c560c647}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -516,6 +516,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_basedoor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_baseentity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c_baseflex.h">
@@ -1889,13 +1892,9 @@
     <ClInclude Include="toolframework_client.h">
       <Filter>Tool Framework</Filter>
     </ClInclude>
-    <ClInclude Include="c_movie_display.h">
-      <Filter>Source Files\TLB</Filter>
+    <ClInclude Include="hud_hitmarker.h">
+      <Filter>NewSourceFiles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Users\Роман\Downloads\baseentity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\public\avi\ibik.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mp3player.cpp">
@@ -3419,8 +3418,8 @@
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
     </ClCompile>
-    <ClCompile Include="c_movie_display.cpp">
-      <Filter>Source Files\TLB</Filter>
+    <ClCompile Include="hud_hitmarker.cpp">
+      <Filter>NewSourceFiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
