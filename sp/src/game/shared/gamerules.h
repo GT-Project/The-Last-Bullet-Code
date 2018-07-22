@@ -240,7 +240,7 @@ public:
 
 		if ( iLevel < 1 )
 		{
-			iLevel = 1;
+			iLevel = 3;
 		}
 		else if ( iLevel > 3 )
 		{

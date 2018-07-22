@@ -576,7 +576,7 @@ ConVar skill( "skill", "3", FCVAR_CHEAT );
 void CGameRules::Think()
 {
 	GetVoiceGameMgr()->Update( gpGlobals->frametime );
-	SetSkillLevel( skill.GetInt() );
+	SetSkillLevel( 3 );
 
 	if ( log_verbose_enable.GetBool() )
 	{

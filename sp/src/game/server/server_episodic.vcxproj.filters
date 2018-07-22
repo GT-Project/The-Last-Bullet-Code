@@ -1787,6 +1787,9 @@
     <ClInclude Include="toolframework_server.h">
       <Filter>Tools Framework</Filter>
     </ClInclude>
+    <ClInclude Include="weapon_knife.h">
+      <Filter>Source Files\TLB</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gamedll_replay.cpp">
@@ -3521,6 +3524,9 @@
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="logic_playmovie.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_knife.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>

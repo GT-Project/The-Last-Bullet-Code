@@ -837,16 +837,11 @@ void CBasePlayer::DeathSound(const CTakeDamageInfo &info)
 	{
 		// They died in the fall. Play a splat sound.
 		EmitSound("Player.FallGib");
+		EmitSound("Player.Death");
 	}
 	else
 	{
 		EmitSound("Player.Death");
-	}
-
-	// play one of the suit death alarms
-	if (IsSuitEquipped())
-	{
-		UTIL_EmitGroupnameSuit(edict(), "HEV_DEAD");
 	}
 }
 
@@ -1018,6 +1013,7 @@ void CBasePlayer::DamageEffect(float flDamage, int fDamageType)
 	else if (fDamageType & DMG_BULLET)
 	{
 		EmitSound("Flesh.BulletImpact");
+		ViewPunch(QAngle(random->RandomInt(-1, 1), random->RandomInt(-1, 1), random->RandomInt(-1, 1)));
 	}
 }
 
@@ -1069,14 +1065,14 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 {
 	// have suit diagnose the problem - ie: report damage type
 	int bitsDamage = inputInfo.GetDamageType();
-	int ffound = true;
+//	int ffound = true;
 	int fmajor;
 	int fcritical;
 	int fTookDamage;
 	int ftrivial;
 	float flRatio;
 	float flBonus;
-	float flHealthPrev = m_iHealth;
+//	float flHealthPrev = m_iHealth;
 
 
 	CTakeDamageInfo info = inputInfo;
@@ -1265,7 +1261,7 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 	m_bitsDamageType |= bitsDamage; // Save this so we can report it to the client
 	m_bitsHUDDamage = -1;  // make sure the damage bits get resent
 
-	while (fTookDamage && (!ftrivial || g_pGameRules->Damage_IsTimeBased(bitsDamage)) && ffound && bitsDamage)
+/*	while (fTookDamage && (!ftrivial || g_pGameRules->Damage_IsTimeBased(bitsDamage)) && ffound && bitsDamage)
 	{
 		ffound = false;
 
@@ -1357,7 +1353,7 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 			ffound = true;
 		}
 	}
-
+*/
 	float flPunch = -2;
 
 	if (hl2_episodic.GetBool() && info.GetAttacker() && !FInViewCone(info.GetAttacker()))
@@ -1368,7 +1364,7 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 			flPunch = RandomFloat(-5, -7);
 	}
 
-	m_Local.m_vecPunchAngle.SetX(flPunch);
+/*	m_Local.m_vecPunchAngle.SetX(flPunch);
 
 	if (fTookDamage && !ftrivial && fmajor && flHealthPrev >= 75)
 	{
@@ -1405,7 +1401,7 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 		else
 			SetSuitUpdate("!HEV_HLTH1", false, SUIT_NEXT_IN_10MIN);	// health dropping
 	}
-
+*/
 	// Do special explosion damage effect
 	if (bitsDamage & DMG_BLAST)
 	{
@@ -2177,7 +2173,7 @@ void CBasePlayer::PlayerDeathThink(void)
 
 	//Msg( "Respawn\n");
 
-	respawn(this, !IsObserver());// don't copy a corpse if we're in deathcam.
+//	respawn(this, !IsObserver());// don't copy a corpse if we're in deathcam.
 	SetNextThink(TICK_NEVER_THINK);
 }
 
@@ -4269,7 +4265,7 @@ void CBasePlayer::SetSuitUpdate(const char *name, int fgroup, int iNoRepeatTime)
 
 
 	// Ignore suit updates if no suit
-	if (!IsSuitEquipped())
+	if (IsSuitEquipped())
 		return;
 
 	if (g_pGameRules->IsMultiplayer())

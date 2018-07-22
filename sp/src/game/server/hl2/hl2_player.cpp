@@ -427,7 +427,7 @@ void CHL2_Player::Precache(void)
 	BaseClass::Precache();
 
 	PrecacheScriptSound("HL2Player.SprintNoPower");
-	PrecacheScriptSound("HL2Player.SprintStart");
+	PrecacheScriptSound("HL2Player.Sprint");
 	PrecacheScriptSound("HL2Player.UseDeny");
 	PrecacheScriptSound("HL2Player.FlashLightOn");
 	PrecacheScriptSound("HL2Player.FlashLightOff");
@@ -1214,7 +1214,7 @@ void CHL2_Player::StartSprinting(void)
 
 	CPASAttenuationFilter filter(this);
 	filter.UsePredictionRules();
-	EmitSound(filter, entindex(), "HL2Player.SprintStart");
+	EmitSound(filter, entindex(), "HL2Player.Sprint");
 
 	SetMaxSpeed(HL2_SPRINT_SPEED);
 	m_fIsSprinting = true;
@@ -1246,6 +1246,8 @@ void CHL2_Player::StopSprinting(void)
 		m_bIsAutoSprinting = false;
 		m_fAutoSprintMinTime = 0.0f;
 	}
+
+	StopSound( entindex(), "HL2Player.Sprint");
 }
 
 
