@@ -22,8 +22,8 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-ConVar    sk_plr_dmg_crowbar("sk_plr_dmg_crowbar", "0");
-ConVar    sk_npc_dmg_crowbar("sk_npc_dmg_crowbar", "0");
+ConVar    sk_plr_dmg_knife("sk_plr_dmg_knife", "0");
+ConVar    sk_npc_dmg_knife("sk_npc_dmg_knife", "0");
 
 
 
@@ -63,9 +63,9 @@ CWeaponKnife::CWeaponKnife(void)
 float CWeaponKnife::GetDamageForActivity(Activity hitActivity)
 {
 	if ((GetOwner() != NULL) && (GetOwner()->IsPlayer()))
-		return sk_plr_dmg_crowbar.GetFloat();
+		return sk_plr_dmg_knife.GetFloat();
 
-	return sk_npc_dmg_crowbar.GetFloat();
+	return sk_npc_dmg_knife.GetFloat();
 }
 
 //-----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ void CWeaponKnife::AddViewKick(void)
 //-----------------------------------------------------------------------------
 // Attempt to lead the target (needed because citizens can't hit manhacks with the crowbar!)
 //-----------------------------------------------------------------------------
-ConVar sk_crowbar_lead_time("sk_crowbar_lead_time", "0.9");
+ConVar sk_knife_lead_time("sk_knife_lead_time", "0.9");
 
 bool			HasIronsights(void) { return false; }
 
@@ -107,7 +107,7 @@ int CWeaponKnife::WeaponMeleeAttack1Condition(float flDot, float flDist)
 	vecVelocity = pEnemy->GetSmoothedVelocity();
 
 	// Project where the enemy will be in a little while
-	float dt = sk_crowbar_lead_time.GetFloat();
+	float dt = sk_knife_lead_time.GetFloat();
 	dt += random->RandomFloat(-0.3f, 0.2f);
 	if (dt < 0.0f)
 		dt = 0.0f;
@@ -171,7 +171,7 @@ void CWeaponKnife::HandleAnimEventMeleeHit(animevent_t *pEvent, CBaseCombatChara
 	Vector vecEnd;
 	VectorMA(pOperator->Weapon_ShootPosition(), 50, vecDirection, vecEnd);
 	CBaseEntity *pHurt = pOperator->CheckTraceHullAttack(pOperator->Weapon_ShootPosition(), vecEnd,
-		Vector(-16, -16, -16), Vector(36, 36, 36), sk_npc_dmg_crowbar.GetFloat(), DMG_CLUB, 0.75);
+		Vector(-16, -16, -16), Vector(36, 36, 36), sk_npc_dmg_knife.GetFloat(), DMG_CLUB, 0.75);
 
 	// did I hit someone?
 	if (pHurt)

@@ -93,8 +93,6 @@ void CWeaponCrowbar::AddViewKick( void )
 //-----------------------------------------------------------------------------
 ConVar sk_crowbar_lead_time( "sk_crowbar_lead_time", "0.9" );
 
-bool			HasIronsights(void) { return false; }
-
 int CWeaponCrowbar::WeaponMeleeAttack1Condition( float flDot, float flDist )
 {
 	// Attempt to lead the target (needed because citizens can't hit manhacks with the crowbar!)
