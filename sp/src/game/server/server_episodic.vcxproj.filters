@@ -3529,6 +3529,9 @@
     <ClCompile Include="logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
+    <ClCompile Include="weapon_c96.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
