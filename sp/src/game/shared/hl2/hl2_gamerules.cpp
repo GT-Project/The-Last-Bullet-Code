@@ -115,6 +115,10 @@ ConVar	sk_plr_dmg_pistol		( "sk_plr_dmg_pistol","0", FCVAR_REPLICATED );
 ConVar	sk_npc_dmg_pistol		( "sk_npc_dmg_pistol","0", FCVAR_REPLICATED);
 ConVar	sk_max_pistol			( "sk_max_pistol","0", FCVAR_REPLICATED);
 
+ConVar	sk_plr_dmg_mauser("sk_plr_dmg_mauser", "0", FCVAR_REPLICATED);
+ConVar	sk_npc_dmg_mauser("sk_npc_dmg_mauser", "0", FCVAR_REPLICATED);
+ConVar	sk_max_mauser("sk_max_mauser", "0", FCVAR_REPLICATED);
+
 ConVar	sk_plr_dmg_smg1			( "sk_plr_dmg_smg1","0", FCVAR_REPLICATED );
 ConVar	sk_npc_dmg_smg1			( "sk_npc_dmg_smg1","0", FCVAR_REPLICATED);
 ConVar	sk_max_smg1				( "sk_max_smg1","0", FCVAR_REPLICATED);
@@ -1805,6 +1809,7 @@ CAmmoDef *GetAmmoDef()
 		def.AddAmmoType("AR2",				DMG_BULLET,					TRACER_LINE_AND_WHIZ,	"sk_plr_dmg_ar2",			"sk_npc_dmg_ar2",			"sk_max_ar2",			BULLET_IMPULSE(200, 1225), 0 );
 		def.AddAmmoType("AlyxGun",			DMG_BULLET,					TRACER_LINE,			"sk_plr_dmg_alyxgun",		"sk_npc_dmg_alyxgun",		"sk_max_alyxgun",		BULLET_IMPULSE(200, 1225), 0 );
 		def.AddAmmoType("Pistol",			DMG_BULLET,					TRACER_LINE_AND_WHIZ,	"sk_plr_dmg_pistol",		"sk_npc_dmg_pistol",		"sk_max_pistol",		BULLET_IMPULSE(200, 1225), 0 );
+		def.AddAmmoType("Mauser",           DMG_BULLET,                 TRACER_LINE_AND_WHIZ,   "sk_plr_dmg_mauser",        "sk_npc_dmg_mauser",        "sk_max_mauser",        BULLET_IMPULSE(200, 1225), 0);
 		def.AddAmmoType("SMG1",				DMG_BULLET,					TRACER_LINE_AND_WHIZ,	"sk_plr_dmg_smg1",			"sk_npc_dmg_smg1",			"sk_max_smg1",			BULLET_IMPULSE(200, 1225), 0 );
 		def.AddAmmoType("357",				DMG_BULLET,					TRACER_LINE_AND_WHIZ,	"sk_plr_dmg_357",			"sk_npc_dmg_357",			"sk_max_357",			BULLET_IMPULSE(800, 5000), 0 );
 		def.AddAmmoType("762",              DMG_BULLET,                 TRACER_LINE_AND_WHIZ,   "sk_plr_dmg_762",           "sk_npc_dmg_762",           "sk_max_762",           BULLET_IMPULSE(800, 5000), 0);

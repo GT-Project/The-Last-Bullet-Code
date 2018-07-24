@@ -70,6 +70,38 @@ public:
 LINK_ENTITY_TO_CLASS(item_box_srounds, CItem_BoxSRounds);
 LINK_ENTITY_TO_CLASS(item_ammo_pistol, CItem_BoxSRounds);
 
+class CItem_BoxMauRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_BoxMauRounds, CItem);
+
+	void Spawn(void)
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+		BaseClass::Spawn();
+	}
+	void Precache(void)
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_PISTOL, "Pistol"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_box_maurounds, CItem_BoxSRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_mauser, CItem_BoxSRounds);
+
 // ========================================================================
 //	>> LargeBoxSRounds
 // ========================================================================
