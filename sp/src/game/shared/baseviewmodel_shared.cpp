@@ -445,13 +445,13 @@ void CBaseViewModel::CalcViewModelView( CBasePlayer *owner, const Vector& eyePos
 		// Add lag
 		CalcViewModelLag( vmorigin, vmangles, vmangoriginal );
  
-#if defined( CLIENT_DLL )
+/*#if defined( CLIENT_DLL )
 			if (!prediction->InPrediction())
 			{
 				// Let the viewmodel shake at about 10% of the amplitude of the player's view
 				vieweffects->ApplyShake(vmorigin, vmangles, 0.001);
 			}
-#endif
+#endif*/
     CalcIronsights( vmorigin, vmangles );
 	SetLocalOrigin( vmorigin );
 	SetLocalAngles( vmangles );	

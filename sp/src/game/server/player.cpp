@@ -186,8 +186,8 @@ ConVar	sk_player_arm("sk_player_arm", "1");
 ConVar	sk_player_leg("sk_player_leg", "1");
 
 ConVar sv_regeneration("sv_regeneration", "1", FCVAR_CHEAT);
-ConVar sv_regeneration_wait_time("sv_regeneration_wait_time", "1.0", FCVAR_CHEAT);
-ConVar sv_regeneration_rate("sv_regeneration_rate", "0.5", FCVAR_CHEAT);
+ConVar sv_regeneration_wait_time("sv_regeneration_wait_time", "5.0", FCVAR_CHEAT);
+ConVar sv_regeneration_rate("sv_regeneration_rate", "5", FCVAR_CHEAT);
 
 ConVar sv_regen_interval("sv_regen_interval", "0", FCVAR_CHEAT, "Set what interval of health to regen to.\n    i.e. if this is set to the default value (20), if you are damaged to 75 health, you'll regenerate to 80 health.\n    Set this to 0 to disable this mechanic.");
 ConVar sv_regen_limit("sv_regen_limit", "20", FCVAR_CHEAT, "Set the limit as to how much health you can regen to.\n    i.e. if this is set at 50, you can only regen to 50 health. If you are hurt and you are above 50 health, you will not regen.\n    Set this to 0 to disable this mechanic.");
