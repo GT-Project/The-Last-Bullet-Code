@@ -44,6 +44,7 @@ STUB_WEAPON_CLASS(weapon_k98, WeaponK98, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_knife, WeaponKnife, C_BaseHLBludgeonWeapon);
 STUB_WEAPON_CLASS(weapon_c96, WeaponC96, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_mp44, WeaponMP44, C_BaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_r870, WeaponRemington, C_BaseHLCombatWeapon)
 
 #ifdef HL2_EPISODIC
 STUB_WEAPON_CLASS( weapon_hopwire, WeaponHopwire, C_BaseHLCombatWeapon );
