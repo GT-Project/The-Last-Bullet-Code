@@ -31,8 +31,8 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{a1cbb7ae-ac75-434f-ba56-48e55f180bbd}</UniqueIdentifier>
+    <Filter Include="TLB">
+      <UniqueIdentifier>{50e8258c-4fcf-4549-b503-e2678288f154}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1788,7 +1788,7 @@
       <Filter>Tools Framework</Filter>
     </ClInclude>
     <ClInclude Include="weapon_knife.h">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>TLB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3511,29 +3511,29 @@
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
-    <ClCompile Include="weapon_k98.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_knife.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_minigun.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_mp40.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
     <ClCompile Include="logic_playmovie.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>TLB</Filter>
     </ClCompile>
     <ClCompile Include="weapon_c96.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_k98.cpp">
+      <Filter>TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_knife.cpp">
+      <Filter>TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_minigun.cpp">
+      <Filter>TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_mp40.cpp">
+      <Filter>TLB</Filter>
     </ClCompile>
     <ClCompile Include="weapon_mp44.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon_walter.cpp">
+      <Filter>TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

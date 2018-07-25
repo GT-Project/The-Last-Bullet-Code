@@ -215,6 +215,7 @@ public:
 	void					EnableIronsights(void);
 	void					DisableIronsights(void);
 	void					SetIronsightTime(void);
+	void                  IronSightsWhileSprint(void);
 
 	// Weapon client handling
 	virtual void			SetViewModelIndex( int index = 0 );
