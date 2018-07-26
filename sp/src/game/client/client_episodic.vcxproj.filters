@@ -46,8 +46,8 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TLB">
-      <UniqueIdentifier>{772e9760-e42c-40f7-84d5-3b7318f8a6bd}</UniqueIdentifier>
+    <Filter Include="Source Files\TLB">
+      <UniqueIdentifier>{dc509cb2-9390-4349-b0c9-175e71c23b92}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1893,10 +1893,10 @@
       <Filter>Tool Framework</Filter>
     </ClInclude>
     <ClInclude Include="c_movie_display.h">
-      <Filter>TLB</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClInclude>
     <ClInclude Include="hud_hitmarker.h">
-      <Filter>TLB</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3422,10 +3422,10 @@
       <Filter>Tool Framework</Filter>
     </ClCompile>
     <ClCompile Include="c_movie_display.cpp">
-      <Filter>TLB</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="hud_hitmarker.cpp">
-      <Filter>TLB</Filter>
+      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

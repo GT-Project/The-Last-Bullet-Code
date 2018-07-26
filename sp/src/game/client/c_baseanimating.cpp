@@ -3309,10 +3309,25 @@ void C_BaseAnimating::ProcessMuzzleFlashEvent()
 		//FIXME: We should really use a named attachment for this
 		if ( m_Attachments.Count() > 0 )
 		{
-			Vector vAttachment;
-			QAngle dummyAngles;
-			GetAttachment( 1, vAttachment, dummyAngles );
+			Vector vAttachment, vAng;
+			QAngle angles;
+#ifdef HL2_EPISODIC
+			GetAttachment(1, vAttachment, angles); // set 1 instead "attachment"
+#else
+			GetAttachment(attachment, vAttachment, angles);
+#endif
+			AngleVectors(angles, &vAng);
+			vAttachment += vAng * 2;
 
+			dlight_t *dl = effects->CL_AllocDlight(index);
+			dl->origin = vAttachment;
+			dl->color.r = 252;
+			dl->color.g = 238;
+			dl->color.b = 128;
+			dl->die = gpGlobals->curtime + 0.05f;
+			dl->radius = random->RandomFloat(245.0f, 256.0f);
+			dl->decay = 512.0f;
+			/*
 			// Make an elight
 			dlight_t *el = effects->CL_AllocElight( LIGHT_INDEX_MUZZLEFLASH + index );
 			el->origin = vAttachment;
@@ -3323,6 +3338,8 @@ void C_BaseAnimating::ProcessMuzzleFlashEvent()
 			el->color.g = 192;
 			el->color.b = 64;
 			el->color.exponent = 5;
+			*/
+
 		}
 	}
 }
@@ -4127,10 +4144,24 @@ void C_BaseAnimating::FireObsoleteEvent( const Vector& origin, const QAngle& ang
 
 			if ( iAttachment != -1 && m_Attachments.Count() > iAttachment )
 			{
+				/*
 				GetAttachment( iAttachment+1, attachOrigin, attachAngles );
 				int entId = render->GetViewEntity();
 				ClientEntityHandle_t hEntity = ClientEntityList().EntIndexToHandle( entId );
 				tempents->MuzzleFlash( attachOrigin, attachAngles, atoi( options ), hEntity, bFirstPerson );
+				*/
+				if (input->CAM_IsThirdPerson())
+				{
+					C_BaseCombatWeapon *pWeapon = GetActiveWeapon();
+					pWeapon->GetAttachment(1, attachOrigin, attachAngles);
+				}
+				else
+				{
+					C_BasePlayer *pPlayer = C_BasePlayer::GetLocalPlayer();
+					CBaseViewModel *vm = pPlayer->GetViewModel();
+					vm->GetAttachment(1, attachOrigin, attachAngles);
+					engine->GetViewAngles(attachAngles);
+				}
 			}
 		}
 		break;

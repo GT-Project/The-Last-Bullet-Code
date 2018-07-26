@@ -36,6 +36,7 @@ CLIENTEFFECT_MATERIAL( "effects/muzzleflash1" )
 CLIENTEFFECT_MATERIAL( "effects/muzzleflash2" )
 CLIENTEFFECT_MATERIAL( "effects/muzzleflash3" )
 CLIENTEFFECT_MATERIAL( "effects/muzzleflash4" )
+CLIENTEFFECT_MATERIAL( "effects/muzzleflashX" )
 #ifndef CSTRIKE_DLL
 CLIENTEFFECT_MATERIAL( "effects/bluemuzzle" )
 CLIENTEFFECT_MATERIAL( "effects/gunshipmuzzle" )
@@ -199,16 +200,7 @@ void FX_MuzzleEffect(
 	Vector			forward, offset;
 
 	AngleVectors( angles, &forward );
-	float flScale = random->RandomFloat( scale-0.25f, scale+0.25f );
-
-	if ( flScale < 0.5f )
-	{
-		flScale = 0.5f;
-	}
-	else if ( flScale > 8.0f )
-	{
-		flScale = 8.0f;
-	}
+	float flScale = 0.8f;
 
 	//
 	// Flash
@@ -219,13 +211,13 @@ void FX_MuzzleEffect(
 	{
 		offset = origin + (forward * (i*2.0f*scale));
 
-		pParticle = (SimpleParticle *) pSimple->AddParticle( sizeof( SimpleParticle ), pSimple->GetPMaterial( VarArgs( "effects/muzzleflash%d", random->RandomInt(1,4) ) ), offset );
+		pParticle = (SimpleParticle *) pSimple->AddParticle( sizeof( SimpleParticle ), pSimple->GetPMaterial( VarArgs( "effects/muzzleflashX" ) ), offset );
 			
 		if ( pParticle == NULL )
 			return;
 
 		pParticle->m_flLifetime		= 0.0f;
-		pParticle->m_flDieTime		= /*bOneFrame ? 0.0001f : */0.1f;
+		pParticle->m_flDieTime = 0.025f;
 
 		pParticle->m_vecVelocity.Init();
 
@@ -350,6 +342,10 @@ void FX_MuzzleEffectAttached(
 		pParticle->m_flDieTime		= bOneFrame ? 0.0001f : 0.1f;
 
 		pParticle->m_vecVelocity.Init();
+
+		C_BasePlayer *pPlayer = C_BasePlayer::GetLocalPlayer();
+		Vector velocity = pPlayer->GetLocalVelocity();
+		pParticle->m_vecVelocity += velocity;
 
 		if ( !pFlashColor )
 		{

@@ -320,6 +320,8 @@ void CWeaponk98::PrimaryAttack(void)
 	// do the traceline
 	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
 
+	pPlayer->DoMuzzleFlash();
+
 	// check to see if we hit a Player
 	// check to see if we hit an NPC
 	if (tr.m_pEnt)
