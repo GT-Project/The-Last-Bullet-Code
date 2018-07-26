@@ -32,7 +32,7 @@
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{e51c3225-a6e1-4a22-bbd0-6686433f0106}</UniqueIdentifier>
+      <UniqueIdentifier>{0c49e8af-b248-430a-b226-98979348ae4a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -3511,6 +3511,9 @@
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
+    <ClCompile Include="logic_playmovie.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="weapon_c96.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
@@ -3533,9 +3536,6 @@
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>

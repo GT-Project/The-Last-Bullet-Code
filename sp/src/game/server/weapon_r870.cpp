@@ -73,7 +73,7 @@ public:
 	void CheckHolsterReload(void);
 	void Pump(void);
 	//	void WeaponIdle( void );
-	// void ItemHolsterFrame(void);
+	void ItemHolsterFrame(void);
 	void ItemPostFrame(void);
 	void PrimaryAttack(void);
 	void DryFire(void);
@@ -468,8 +468,12 @@ void CWeaponRemington::PrimaryAttack(void)
 		return;
 	}
 
+	
 	trace_t tr;
 	Vector	vecStart, vecStop, vecDir;
+
+	
+	
 
 	// get the angles
 	AngleVectors(pPlayer->EyeAngles(), &vecDir);
@@ -480,21 +484,6 @@ void CWeaponRemington::PrimaryAttack(void)
 
 	// do the traceline
 	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
-
-	// check to see if we hit a Player
-	if (tr.m_pEnt)
-	{
-		if (tr.m_pEnt->IsNPC())
-#ifndef CLIENT_DLL		// Light Kill : Draw ONLY if we hit enemy
-			if (pPlayer->GetDefaultRelationshipDisposition(tr.m_pEnt->Classify()) != D_HT)
-			{
-				//DevMsg("Neitral npc ! \n");
-			}
-			else
-				DrawHitmarker();
-#endif
-	}
-
 
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
@@ -522,7 +511,22 @@ void CWeaponRemington::PrimaryAttack(void)
 
 	CSoundEnt::InsertSound(SOUND_COMBAT, GetAbsOrigin(), SOUNDENT_VOLUME_SHOTGUN, 0.2, GetOwner());
 
-	
+	// check to see if we hit an NPC
+	if (tr.m_pEnt)
+	{
+		if (tr.m_pEnt->IsNPC())
+		{
+#ifndef CLIENT_DLL		// Light Kill : Draw ONLY if we hit enemy
+			if (pPlayer->GetDefaultRelationshipDisposition(tr.m_pEnt->Classify()) != D_HT)
+			{
+				//DevMsg("Neitral npc ! \n");
+			}
+			else
+				DrawHitmarker();
+#endif
+		}
+	}
+
 
 	if (m_iClip1)
 	{
@@ -734,35 +738,35 @@ CWeaponRemington::CWeaponRemington(void)
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-//void CWeaponRemington::ItemHolsterFrame(void)
-//{
-//	// Must be player held
-//	if (GetOwner() && GetOwner()->IsPlayer() == false)
-//		return;
-//
-//	// We can't be active
-//	if (GetOwner()->GetActiveWeapon() == this)
-//		return;
-//
-//	// If it's been longer than three seconds, reload
-//	if ((gpGlobals->curtime - m_flHolsterTime) > sk_auto_reload_time.GetFloat())
-//	{
-//		// Reset the timer
-//		m_flHolsterTime = gpGlobals->curtime;
-//
-//		if (GetOwner() == NULL)
-//			return;
-//
-//		if (m_iClip1 == GetMaxClip1())
-//			return;
-//
-//		// Just load the clip with no animations
-//		int ammoFill = MIN((GetMaxClip1() - m_iClip1), GetOwner()->GetAmmoCount(GetPrimaryAmmoType()));
-//
-//		GetOwner()->RemoveAmmo(ammoFill, GetPrimaryAmmoType());
-//		m_iClip1 += ammoFill;
-//	}
-//}
+void CWeaponRemington::ItemHolsterFrame(void)
+{
+	// Must be player held
+	if (GetOwner() && GetOwner()->IsPlayer() == false)
+		return;
+
+	// We can't be active
+	if (GetOwner()->GetActiveWeapon() == this)
+		return;
+
+	// If it's been longer than three seconds, reload
+	if ((gpGlobals->curtime - m_flHolsterTime) > sk_auto_reload_time.GetFloat())
+	{
+		// Reset the timer
+		m_flHolsterTime = gpGlobals->curtime;
+
+		if (GetOwner() == NULL)
+			return;
+
+		if (m_iClip1 == GetMaxClip1())
+			return;
+
+		// Just load the clip with no animations
+		int ammoFill = MIN((GetMaxClip1() - m_iClip1), GetOwner()->GetAmmoCount(GetPrimaryAmmoType()));
+
+		GetOwner()->RemoveAmmo(ammoFill, GetPrimaryAmmoType());
+		m_iClip1 += ammoFill;
+	}
+}
 
 //==================================================
 // Purpose: 
