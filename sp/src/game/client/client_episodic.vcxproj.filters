@@ -47,7 +47,7 @@
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{8215682b-6ac3-4299-be12-06a42e4a33b8}</UniqueIdentifier>
+      <UniqueIdentifier>{d0c19efd-9bb0-4b0e-8e53-11064b898460}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1892,10 +1892,10 @@
     <ClInclude Include="toolframework_client.h">
       <Filter>Tool Framework</Filter>
     </ClInclude>
-    <ClInclude Include="hud_hitmarker.h">
+    <ClInclude Include="c_movie_display.h">
       <Filter>Source Files\TLB</Filter>
     </ClInclude>
-    <ClInclude Include="c_movie_display.h">
+    <ClInclude Include="hud_hitmarker.h">
       <Filter>Source Files\TLB</Filter>
     </ClInclude>
   </ItemGroup>
@@ -3421,10 +3421,10 @@
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
     </ClCompile>
-    <ClCompile Include="hud_hitmarker.cpp">
+    <ClCompile Include="c_movie_display.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
-    <ClCompile Include="c_movie_display.cpp">
+    <ClCompile Include="hud_hitmarker.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,7 +18,7 @@
 ConVar	sk_healthkit( "sk_healthkit","0" );		
 ConVar	sk_healthvial( "sk_healthvial","0" );		
 ConVar	sk_healthcharger( "sk_healthcharger","0" );	
-ConVar sk_kolbasa("sk_kolbasa", "0");
+ConVar sk_sausage("sk_sausage", "0");
 ConVar sk_water("sk_water", "0");
 ConVar sk_hotlunch("sk_hotlunch", "0");
 ConVar sk_bonusdrink1("sk_bonusdrink1", "0");
@@ -29,24 +29,24 @@ ConVar sk_bonusdrink1("sk_bonusdrink1", "0");
 //---------------------------------------------------------------------------Ч 
 //  олбаса, лечит игрока при подн€тии 
 //---------------------------------------------------------------------------Ч 
-class CKolbasa : public CItem
+class CSausage : public CItem
 {
 public:
-	DECLARE_CLASS(CKolbasa, CItem);
+	DECLARE_CLASS(CSausage, CItem);
 
 	void Spawn(void);
 	void Precache(void);
 	bool MyTouch(CBasePlayer *pPlayer);
 };
 
-LINK_ENTITY_TO_CLASS(item_kolbasa, CKolbasa);
-PRECACHE_REGISTER(item_kolbasa);
+LINK_ENTITY_TO_CLASS(item_sausage, CSausage);
+PRECACHE_REGISTER(item_sausage);
 
 
 //---------------------------------------------------------------------------Ч 
 // Purpose: 
 //---------------------------------------------------------------------------Ч 
-void CKolbasa::Spawn(void)
+void CSausage::Spawn(void)
 {
 	Precache();
 	SetModel("models\\Z-O-M-B-I-E\\STALKER\\dev_items\\dev_kolbasa.mdl");
@@ -58,11 +58,11 @@ void CKolbasa::Spawn(void)
 //---------------------------------------------------------------------------Ч 
 // Purpose: 
 //---------------------------------------------------------------------------Ч 
-void CKolbasa::Precache(void)
+void CSausage::Precache(void)
 {
 	PrecacheModel("models\\Z-O-M-B-I-E\\STALKER\\dev_items\\dev_kolbasa.mdl");
 
-	PrecacheScriptSound("Kolbasa.Touch");
+	PrecacheScriptSound("Sausage.Touch");
 }
 
 
@@ -71,9 +71,9 @@ void CKolbasa::Precache(void)
 // Input : *pPlayer - 
 // Output : 
 //---------------------------------------------------------------------------Ч 
-bool CKolbasa::MyTouch(CBasePlayer *pPlayer)
+bool CSausage::MyTouch(CBasePlayer *pPlayer)
 {
-	if (pPlayer->TakeHealth(sk_kolbasa.GetFloat(), DMG_GENERIC))
+	if (pPlayer->TakeHealth(sk_sausage.GetFloat(), DMG_GENERIC))
 	{
 		CSingleUserRecipientFilter user(pPlayer);
 		user.MakeReliable();
