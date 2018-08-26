@@ -274,8 +274,8 @@ void CHUDQuickInfo::Paint()
 				m_healthFade = 255;
 				m_warnHealth = true;
 				
-				CLocalPlayerFilter filter;
-				C_BaseEntity::EmitSound( filter, SOUND_FROM_LOCAL_PLAYER, "HUDQuickInfo.LowHealth" );
+				//CLocalPlayerFilter filter;
+				//C_BaseEntity::EmitSound( filter, SOUND_FROM_LOCAL_PLAYER, "HUDQuickInfo.LowHealth" );
 			}
 		}
 		else
@@ -302,8 +302,8 @@ void CHUDQuickInfo::Paint()
 				m_ammoFade = 255;
 				m_warnAmmo = true;
 
-				CLocalPlayerFilter filter;
-				C_BaseEntity::EmitSound( filter, SOUND_FROM_LOCAL_PLAYER, "HUDQuickInfo.LowAmmo" );
+				//CLocalPlayerFilter filter;
+				//C_BaseEntity::EmitSound( filter, SOUND_FROM_LOCAL_PLAYER, "HUDQuickInfo.LowAmmo" );
 			}
 		}
 		else

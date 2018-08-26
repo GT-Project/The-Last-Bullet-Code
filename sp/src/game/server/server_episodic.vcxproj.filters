@@ -3511,6 +3511,9 @@
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
+    <ClCompile Include="logic_playmovie.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="weapon_c96.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
@@ -3533,9 +3536,6 @@
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>

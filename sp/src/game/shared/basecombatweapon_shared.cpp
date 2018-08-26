@@ -89,6 +89,8 @@ CBaseCombatWeapon::CBaseCombatWeapon()
 
 	m_flIronsightedTime = 0.0f;
 
+	CanIronsight = true;
+
 #if defined( CLIENT_DLL )
 	m_iState = m_iOldState = WEAPON_NOT_CARRIED;
 	m_iClip1 = -1;
@@ -318,7 +320,7 @@ void CBaseCombatWeapon::ToggleIronsights(void)
 {
 	if (m_bIsIronsighted)
 		DisableIronsights();
-	else
+	else if (CanIronsight)
 		EnableIronsights();
 }
 
@@ -1831,12 +1833,17 @@ void CBaseCombatWeapon::ItemPreFrame(void)
 //====================================================================================
 // WEAPON BEHAVIOUR
 //====================================================================================
+
+
 void CBaseCombatWeapon::IronSightsWhileSprint(void){
 	CBasePlayer *pOwner = ToBasePlayer(GetOwner());
 	if (!pOwner) return;
-	if (m_bIsIronsighted && (pOwner->m_nButtons & IN_SPEED)){
+
+	if (CanIronsight && IsIronsighted() && (pOwner->m_nButtons & IN_SPEED) ){
 		DisableIronsights();
+		CanIronsight = false;
 	}
+	else CanIronsight = true;
 
 }
 void CBaseCombatWeapon::ItemPostFrame(void)
@@ -2505,7 +2512,7 @@ void CBaseCombatWeapon::PrimaryAttack(void)
 	if (!m_iClip1 && pPlayer->GetAmmoCount(m_iPrimaryAmmoType) <= 0)
 	{
 		// HEV suit - indicate out of ammo condition
-		pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
+		//pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
 	}
 
 	//Add our view kick in

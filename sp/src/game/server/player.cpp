@@ -164,8 +164,6 @@ int MapTextureTypeStepType(char chTextureType);
 extern void	SpawnBlood(Vector vecSpot, const Vector &vecDir, int bloodColor, float flDamage);
 extern void AddMultiDamage(const CTakeDamageInfo &info, CBaseEntity *pEntity);
 
-float     m_fRegenRemander;
-
 
 #define CMD_MOSTRECENT 0
 
@@ -184,13 +182,6 @@ ConVar	sk_player_chest("sk_player_chest", "1");
 ConVar	sk_player_stomach("sk_player_stomach", "1");
 ConVar	sk_player_arm("sk_player_arm", "1");
 ConVar	sk_player_leg("sk_player_leg", "1");
-
-ConVar sv_regeneration("sv_regeneration", "1", FCVAR_CHEAT);
-ConVar sv_regeneration_wait_time("sv_regeneration_wait_time", "5.0", FCVAR_CHEAT);
-ConVar sv_regeneration_rate("sv_regeneration_rate", "5", FCVAR_CHEAT);
-
-ConVar sv_regen_interval("sv_regen_interval", "0", FCVAR_CHEAT, "Set what interval of health to regen to.\n    i.e. if this is set to the default value (20), if you are damaged to 75 health, you'll regenerate to 80 health.\n    Set this to 0 to disable this mechanic.");
-ConVar sv_regen_limit("sv_regen_limit", "20", FCVAR_CHEAT, "Set the limit as to how much health you can regen to.\n    i.e. if this is set at 50, you can only regen to 50 health. If you are hurt and you are above 50 health, you will not regen.\n    Set this to 0 to disable this mechanic.");
 
 //ConVar	player_usercommand_timeout( "player_usercommand_timeout", "10", 0, "After this many seconds without a usercommand from a player, the client is kicked." );
 #ifdef _DEBUG
@@ -336,7 +327,6 @@ DEFINE_FIELD(m_iBonusProgress, FIELD_INTEGER),
 DEFINE_FIELD(m_iBonusChallenge, FIELD_INTEGER),
 DEFINE_FIELD(m_lastDamageAmount, FIELD_INTEGER),
 DEFINE_FIELD(m_tbdPrev, FIELD_TIME),
-DEFINE_FIELD(m_flLastDamageTime, FIELD_TIME),
 DEFINE_FIELD(m_flStepSoundTime, FIELD_FLOAT),
 DEFINE_ARRAY(m_szNetname, FIELD_CHARACTER, MAX_PLAYER_NAME_LENGTH),
 
@@ -589,7 +579,6 @@ CBasePlayer::CBasePlayer()
 	m_szNetname[0] = '\0';
 
 	m_iHealth = 0;
-	m_fRegenRemander = 0;
 	Weapon_SetLast(NULL);
 	m_bitsDamageType = 0;
 
@@ -837,12 +826,17 @@ void CBasePlayer::DeathSound(const CTakeDamageInfo &info)
 	{
 		// They died in the fall. Play a splat sound.
 		EmitSound("Player.FallGib");
-		EmitSound("Player.Death");
 	}
 	else
 	{
 		EmitSound("Player.Death");
 	}
+
+	//	// play one of the suit death alarms
+	//	if (IsSuitEquipped())
+	//	{
+	//		UTIL_EmitGroupnameSuit(edict(), "HEV_DEAD");
+	//	}
 }
 
 // override takehealth
@@ -868,7 +862,6 @@ int CBasePlayer::TakeHealth(float flHealth, int bitsDamageType)
 	char buf[256];
 	Q_snprintf(buf, 256, "[%f] Player %s healed for %d with damagetype %X\n", gpGlobals->curtime, GetDebugName(), healingTaken, bitsDamageType);
 	ADD_DEBUG_HISTORY(HISTORY_PLAYER_DAMAGE, buf);
-
 	return healingTaken;
 #endif
 }
@@ -1013,7 +1006,6 @@ void CBasePlayer::DamageEffect(float flDamage, int fDamageType)
 	else if (fDamageType & DMG_BULLET)
 	{
 		EmitSound("Flesh.BulletImpact");
-		ViewPunch(QAngle(random->RandomInt(-1, 1), random->RandomInt(-1, 1), random->RandomInt(-1, 1)));
 	}
 }
 
@@ -1065,15 +1057,14 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 {
 	// have suit diagnose the problem - ie: report damage type
 	int bitsDamage = inputInfo.GetDamageType();
-//	int ffound = true;
+	int ffound = true;
 	int fmajor;
 	int fcritical;
 	int fTookDamage;
 	int ftrivial;
 	float flRatio;
 	float flBonus;
-//	float flHealthPrev = m_iHealth;
-
+	//float flHealthPrev = m_iHealth;
 
 	CTakeDamageInfo info = inputInfo;
 
@@ -1261,23 +1252,23 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 	m_bitsDamageType |= bitsDamage; // Save this so we can report it to the client
 	m_bitsHUDDamage = -1;  // make sure the damage bits get resent
 
-/*	while (fTookDamage && (!ftrivial || g_pGameRules->Damage_IsTimeBased(bitsDamage)) && ffound && bitsDamage)
+	while (fTookDamage && (!ftrivial || g_pGameRules->Damage_IsTimeBased(bitsDamage)) && ffound && bitsDamage)
 	{
 		ffound = false;
 
 		if (bitsDamage & DMG_CLUB)
 		{
-			if (fmajor)
-				SetSuitUpdate("!HEV_DMG4", false, SUIT_NEXT_IN_30SEC);	// minor fracture
+			//if (fmajor)
+			//	SetSuitUpdate("!HEV_DMG4", false, SUIT_NEXT_IN_30SEC);	// minor fracture
 			bitsDamage &= ~DMG_CLUB;
 			ffound = true;
 		}
 		if (bitsDamage & (DMG_FALL | DMG_CRUSH))
 		{
-			if (fmajor)
-				SetSuitUpdate("!HEV_DMG5", false, SUIT_NEXT_IN_30SEC);	// major fracture
-			else
-				SetSuitUpdate("!HEV_DMG4", false, SUIT_NEXT_IN_30SEC);	// minor fracture
+			//if (fmajor)
+			//	SetSuitUpdate("!HEV_DMG5", false, SUIT_NEXT_IN_30SEC);	// major fracture
+			//else
+			//	SetSuitUpdate("!HEV_DMG4", false, SUIT_NEXT_IN_30SEC);	// minor fracture
 
 			bitsDamage &= ~(DMG_FALL | DMG_CRUSH);
 			ffound = true;
@@ -1285,10 +1276,10 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 
 		if (bitsDamage & DMG_BULLET)
 		{
-			if (m_lastDamageAmount > 5)
-				SetSuitUpdate("!HEV_DMG6", false, SUIT_NEXT_IN_30SEC);	// blood loss detected
-			//else
-			//	SetSuitUpdate("!HEV_DMG0", false, SUIT_NEXT_IN_30SEC);	// minor laceration
+			//if (m_lastDamageAmount > 5)
+			//	SetSuitUpdate("!HEV_DMG6", false, SUIT_NEXT_IN_30SEC);	// blood loss detected
+			////else
+			////	SetSuitUpdate("!HEV_DMG0", false, SUIT_NEXT_IN_30SEC);	// minor laceration
 
 			bitsDamage &= ~DMG_BULLET;
 			ffound = true;
@@ -1296,10 +1287,10 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 
 		if (bitsDamage & DMG_SLASH)
 		{
-			if (fmajor)
-				SetSuitUpdate("!HEV_DMG1", false, SUIT_NEXT_IN_30SEC);	// major laceration
-			else
-				SetSuitUpdate("!HEV_DMG0", false, SUIT_NEXT_IN_30SEC);	// minor laceration
+			//if (fmajor)
+			//	SetSuitUpdate("!HEV_DMG1", false, SUIT_NEXT_IN_30SEC);	// major laceration
+			//else
+			//	SetSuitUpdate("!HEV_DMG0", false, SUIT_NEXT_IN_30SEC);	// minor laceration
 
 			bitsDamage &= ~DMG_SLASH;
 			ffound = true;
@@ -1307,8 +1298,8 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 
 		if (bitsDamage & DMG_SONIC)
 		{
-			if (fmajor)
-				SetSuitUpdate("!HEV_DMG2", false, SUIT_NEXT_IN_1MIN);	// internal bleeding
+			//if (fmajor)
+			//	SetSuitUpdate("!HEV_DMG2", false, SUIT_NEXT_IN_1MIN);	// internal bleeding
 			bitsDamage &= ~DMG_SONIC;
 			ffound = true;
 		}
@@ -1322,28 +1313,28 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 				m_rgbTimeBasedDamage[itbd_PoisonRecover] = 0;
 			}
 
-			SetSuitUpdate("!HEV_DMG3", false, SUIT_NEXT_IN_1MIN);	// blood toxins detected
+			//SetSuitUpdate("!HEV_DMG3", false, SUIT_NEXT_IN_1MIN);	// blood toxins detected
 			bitsDamage &= ~(DMG_POISON | DMG_PARALYZE);
 			ffound = true;
 		}
 
 		if (bitsDamage & DMG_ACID)
 		{
-			SetSuitUpdate("!HEV_DET1", false, SUIT_NEXT_IN_1MIN);	// hazardous chemicals detected
+			//SetSuitUpdate("!HEV_DET1", false, SUIT_NEXT_IN_1MIN);	// hazardous chemicals detected
 			bitsDamage &= ~DMG_ACID;
 			ffound = true;
 		}
 
 		if (bitsDamage & DMG_NERVEGAS)
 		{
-			SetSuitUpdate("!HEV_DET0", false, SUIT_NEXT_IN_1MIN);	// biohazard detected
+			//SetSuitUpdate("!HEV_DET0", false, SUIT_NEXT_IN_1MIN);	// biohazard detected
 			bitsDamage &= ~DMG_NERVEGAS;
 			ffound = true;
 		}
 
 		if (bitsDamage & DMG_RADIATION)
 		{
-			SetSuitUpdate("!HEV_DET2", false, SUIT_NEXT_IN_1MIN);	// radiation detected
+			//SetSuitUpdate("!HEV_DET2", false, SUIT_NEXT_IN_1MIN);	// radiation detected
 			bitsDamage &= ~DMG_RADIATION;
 			ffound = true;
 		}
@@ -1353,7 +1344,7 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 			ffound = true;
 		}
 	}
-*/
+
 	float flPunch = -2;
 
 	if (hl2_episodic.GetBool() && info.GetAttacker() && !FInViewCone(info.GetAttacker()))
@@ -1364,9 +1355,9 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 			flPunch = RandomFloat(-5, -7);
 	}
 
-/*	m_Local.m_vecPunchAngle.SetX(flPunch);
+	m_Local.m_vecPunchAngle.SetX(flPunch);
 
-	if (fTookDamage && !ftrivial && fmajor && flHealthPrev >= 75)
+	/*if (fTookDamage && !ftrivial && fmajor && flHealthPrev >= 75)
 	{
 		// first time we take major damage...
 		// turn automedic on if not on
@@ -1400,17 +1391,12 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 		}
 		else
 			SetSuitUpdate("!HEV_HLTH1", false, SUIT_NEXT_IN_10MIN);	// health dropping
-	}
-*/
+	}*/
+
 	// Do special explosion damage effect
 	if (bitsDamage & DMG_BLAST)
 	{
 		OnDamagedByExplosion(info);
-	}
-
-	if (GetHealth() < 100)
-	{
-		m_flLastDamageTime = gpGlobals->curtime;
 	}
 
 	return fTookDamage;
@@ -2173,12 +2159,11 @@ void CBasePlayer::PlayerDeathThink(void)
 
 	//Msg( "Respawn\n");
 
-//	respawn(this, !IsObserver());// don't copy a corpse if we're in deathcam.
+	respawn(this, !IsObserver());// don't copy a corpse if we're in deathcam.
 	SetNextThink(TICK_NEVER_THINK);
 }
 
 /*
-
 //=========================================================
 // StartDeathCam - find an intermission spot and send the
 // player off into observer mode
@@ -2187,20 +2172,16 @@ void CBasePlayer::StartDeathCam( void )
 {
 CBaseEntity *pSpot, *pNewSpot;
 int iRand;
-
 if ( GetViewOffset() == vec3_origin )
 {
 // don't accept subsequent attempts to StartDeathCam()
 return;
 }
-
 pSpot = gEntList.FindEntityByClassname( NULL, "info_intermission");
-
 if ( pSpot )
 {
 // at least one intermission spot in the world.
 iRand = random->RandomInt( 0, 3 );
-
 while ( iRand > 0 )
 {
 pNewSpot = gEntList.FindEntityByClassname( pSpot, "info_intermission");
@@ -2209,10 +2190,8 @@ if ( pNewSpot )
 {
 pSpot = pNewSpot;
 }
-
 iRand--;
 }
-
 CreateCorpse();
 StartObserverMode( pSpot->GetAbsOrigin(), pSpot->GetAbsAngles() );
 }
@@ -2220,9 +2199,7 @@ else
 {
 // no intermission spot. Push them up in the air, looking down at their corpse
 trace_t tr;
-
 CreateCorpse();
-
 UTIL_TraceLine( GetAbsOrigin(), GetAbsOrigin() + Vector( 0, 0, 128 ),
 MASK_PLAYERSOLID_BRUSHONLY, this, COLLISION_GROUP_NONE, &tr );
 QAngle angles;
@@ -2589,31 +2566,21 @@ void CBasePlayer::ObserverUse(bool bIsPressed)
 	}
 
 	/* UTIL_SayText( "Spectator can not USE anything", this );
-
 	Vector dir,end;
 	Vector start = GetAbsOrigin();
-
 	AngleVectors( GetAbsAngles(), &dir );
 	VectorNormalize( dir );
-
 	VectorMA( start, 32.0f, dir, end );
-
 	trace_t	tr;
 	UTIL_TraceLine( start, end, MASK_PLAYERSOLID, this, COLLISION_GROUP_PLAYER_MOVEMENT, &tr );
-
 	if ( tr.fraction == 1.0f )
 	return;	// no obstacles in spectators way
-
 	VectorMA( start, 128.0f, dir, end );
-
 	Ray_t ray;
 	ray.Init( end, start, VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX );
-
 	UTIL_TraceRay( ray, MASK_PLAYERSOLID, this, COLLISION_GROUP_PLAYER_MOVEMENT, &tr );
-
 	if ( tr.startsolid || tr.allsolid )
 	return;
-
 	SetAbsOrigin( tr.endpos ); */
 #endif
 }
@@ -2742,7 +2709,6 @@ CBaseEntity * CBasePlayer::FindNextObserverTarget(bool bReverse)
 	{
 	return;
 	}
-
 	m_flNextFollowTime = gpGlobals->time + 0.25;
 	*/	// TODO move outside this function
 
@@ -3648,15 +3614,7 @@ ConVar xc_crouch_debounce("xc_crouch_debounce", "0", FCVAR_NONE);
 // Purpose: 
 // Input  : *ucmd - 
 //			*moveHelper - 
-
-/*void CBasePlayer:PausePlayer;
-{
-if (paused)
-{
-EmitSound("Player.IronSightIn");
-}
-}*/
-
+//-----------------------------------------------------------------------------
 void CBasePlayer::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 {
 	m_touchedPhysObject = false;
@@ -3895,7 +3853,6 @@ void CBasePlayer::PreThink(void)
 
 /* Time based Damage works as follows:
 1) There are several types of timebased damage:
-
 #define DMG_PARALYZE		(1 << 14)	// slows affected creature down
 #define DMG_NERVEGAS		(1 << 15)	// nerve toxins, very bad
 #define DMG_POISON			(1 << 16)	// blood poisioning
@@ -3903,12 +3860,10 @@ void CBasePlayer::PreThink(void)
 #define DMG_DROWNRECOVER	(1 << 18)	// drown recovery
 #define DMG_ACID			(1 << 19)	// toxic chemicals or acid burns
 #define DMG_SLOWBURN		(1 << 20)	// in an oven
-
 2) A new hit inflicting tbd restarts the tbd counter - each NPC has an 8bit counter,
 per damage type. The counter is decremented every second, so the maximum time
 an effect will last is 255/60 = 4.25 minutes.  Of course, staying within the radius
 of a damaging effect like fire, nervegas, radiation will continually reset the counter to max.
-
 3) Every second that a tbd counter is running, the player takes damage.  The damage
 is determined by the type of tdb.
 Paralyze		- 1/2 movement rate, 30 second duration.
@@ -3919,9 +3874,7 @@ Drown			- 5 points per second, 2 second duration.
 Acid/Chemical	- 5 points per second, 10 second duration = 50 points max.
 Burn			- 10 points per second, 2 second duration.
 Freeze			- 3 points per second, 10 second duration = 30 points max.
-
 4) Certain actions or countermeasures counteract the damaging effects of tbds:
-
 Armor/Heater/Cooler - Chemical(acid),burn, freeze all do damage to armor power, then to body
 - recharged by suit recharger
 Air In Lungs		- drowning damage is done to air in lungs first, then to body
@@ -4079,14 +4032,11 @@ void CBasePlayer::CheckTimeBasedDamage()
 
 /*
 THE POWER SUIT
-
 The Suit provides 3 main functions: Protection, Notification and Augmentation.
 Some functions are automatic, some require power.
 The player gets the suit shortly after getting off the train in C1A0 and it stays
 with him for the entire game.
-
 Protection
-
 Heat/Cold
 When the player enters a hot/cold area, the heating/cooling indicator on the suit
 will come on and the battery will drain while the player stays in the area.
@@ -4104,9 +4054,7 @@ The armor works using energy to create a protective field that deflects a
 percentage of damage projectile and explosive attacks. After the armor has been deployed,
 it will attempt to recharge itself to full capacity with the energy reserves from the battery.
 It takes the armor N seconds to fully charge.
-
 Notification (via the HUD)
-
 x	Health
 x	Ammo
 x	Automatic Health Care
@@ -4117,9 +4065,7 @@ alerts player to dangerous levels of radiation. This is not visible when radiati
 x	Poison
 Armor
 Displays the current level of armor.
-
 Augmentation
-
 Reanimation (w/adrenaline)
 Causes the player to come back to life after he has been dead for 3 seconds.
 Will not work if player was gibbed. Single use.
@@ -4130,7 +4076,6 @@ Used automatically after picked up and after player enters the water.
 Works for N seconds. Single use.
 
 Things powered by the battery
-
 Armor
 Uses N watts for every M units of damage.
 Heat/Cool
@@ -4188,7 +4133,6 @@ void CBasePlayer::UpdateGeigerCounter(void)
 /*
 ================
 CheckSuitUpdate
-
 Play suit update if it's time
 ================
 */
@@ -4265,7 +4209,7 @@ void CBasePlayer::SetSuitUpdate(const char *name, int fgroup, int iNoRepeatTime)
 
 
 	// Ignore suit updates if no suit
-	if (IsSuitEquipped())
+	if (!IsSuitEquipped())
 		return;
 
 	if (g_pGameRules->IsMultiplayer())
@@ -4630,38 +4574,6 @@ void CBasePlayer::PostThink()
 	SimulatePlayerSimulatedEntities();
 #endif
 
-	// Regenerate heath
-	if (IsAlive() && GetHealth() < GetMaxHealth() && (sv_regeneration.GetInt() == 1))
-	{
-		// Color to overlay on the screen while the player is taking damage
-		color32 hurtScreenOverlay = { 80, 0, 0, 64 };
-
-		if (gpGlobals->curtime > m_flLastDamageTime + sv_regeneration_wait_time.GetFloat())
-		{
-			//Regenerate based on rate, and scale it by the frametime
-			m_fRegenRemander += sv_regeneration_rate.GetFloat() * gpGlobals->frametime;
-
-			if (m_fRegenRemander >= 1)
-			{
-				//If the regen interval is set, and the health is evenly divisible by that interval, don't regen.
-				if (sv_regen_interval.GetFloat() > 0 && floor(m_iHealth / sv_regen_interval.GetFloat()) == m_iHealth / sv_regen_interval.GetFloat()){
-					m_fRegenRemander = 0;
-				}
-				//If the regen limit is set, and the health is equal to or above the limit, don't regen.
-				else if (sv_regen_limit.GetFloat() > 0 && m_iHealth >= sv_regen_limit.GetFloat()){
-					m_fRegenRemander = 0;
-				}
-				else {
-					TakeHealth(m_fRegenRemander, DMG_GENERIC);
-					m_fRegenRemander = 0;
-				}
-			}
-		}
-		else
-		{
-			UTIL_ScreenFade(this, hurtScreenOverlay, 1.0f, 0.1f, FFADE_IN | FFADE_PURGE);
-		}
-	}
 }
 
 // handles touching physics objects
@@ -4825,9 +4737,7 @@ CBaseEntity *FindPlayerStart(const char *pszClassName)
 /*
 ============
 EntSelectSpawnPoint
-
 Returns the entity to spawn at
-
 USES AND SETS GLOBAL g_pLastSpawn
 ============
 */
@@ -5890,7 +5800,6 @@ CAI_Link *FindPickerAILink(CBasePlayer* pPlayer)
 /*
 ===============
 ForceClientDllUpdate
-
 When recording a demo, we need to have the server tell us the entire client state
 so that the client side .dll can behave correctly.
 Reset stuff so that the state is transmitted.
@@ -6192,20 +6101,29 @@ void CBasePlayer::CheatImpulseCommands(int iImpulse)
 
 		// Give the player everything!
 		GiveAmmo(255, "Pistol");
+		GiveAmmo(255, "AR2");
+		GiveAmmo(5, "AR2AltFire");
 		GiveAmmo(255, "SMG1");
 		GiveAmmo(255, "Buckshot");
+		GiveAmmo(3, "smg1_grenade");
+		GiveAmmo(3, "rpg_round");
 		GiveAmmo(5, "grenade");
 		GiveAmmo(32, "357");
-		GiveAmmo(25, "762");
+		GiveAmmo(16, "XBowBolt");
 #ifdef HL2_EPISODIC
 		GiveAmmo(5, "Hopwire");
 #endif		
-		GiveNamedItem("weapon_walter");
-		GiveNamedItem("weapon_mp40");
+		GiveNamedItem("weapon_smg1");
+		GiveNamedItem("weapon_frag");
+		GiveNamedItem("weapon_crowbar");
+		GiveNamedItem("weapon_pistol");
+		GiveNamedItem("weapon_ar2");
 		GiveNamedItem("weapon_shotgun");
-		GiveNamedItem("weapon_k98");
+		GiveNamedItem("weapon_physcannon");
+		GiveNamedItem("weapon_bugbait");
+		GiveNamedItem("weapon_rpg");
 		GiveNamedItem("weapon_357");
-
+		GiveNamedItem("weapon_crossbow");
 #ifdef HL2_EPISODIC
 		// GiveNamedItem( "weapon_magnade" );
 #endif
@@ -6588,6 +6506,7 @@ bool CBasePlayer::ClientCommand(const CCommand &args)
 			}
 			return true;
 		}
+
 		else if (stricmp(cmd, "toggle_ironsight") == 0)
 		{
 			CBaseCombatWeapon *pWeapon = GetActiveWeapon();
@@ -6596,6 +6515,7 @@ bool CBasePlayer::ClientCommand(const CCommand &args)
 
 			return true;
 		}
+
 
 		return false;
 }
@@ -6782,7 +6702,6 @@ Vector CBasePlayer::BodyTarget(const Vector &posSrc, bool bNoisy)
 /*
 =========================================================
 UpdateClientData
-
 resends any changed player HUD info to the client.
 Called every frame by PlayerPreThink
 Also called at start of demo recording and playback by
