@@ -27,7 +27,7 @@ ConVar sk_bonusdrink1("sk_bonusdrink1", "0");
 
 
 //---------------------------------------------------------------------------— 
-// Колбаса, лечит игрока при поднятии 
+// Purpose: Heals the player 
 //---------------------------------------------------------------------------— 
 class CSausage : public CItem
 {
@@ -82,8 +82,8 @@ bool CSausage::MyTouch(CBasePlayer *pPlayer)
 		WRITE_STRING(GetClassname());
 		MessageEnd();
 
-		CPASAttenuationFilter filter(pPlayer, "Kolbasa.Touch");
-		EmitSound(filter, pPlayer->entindex(), "Kolbasa.Touch");
+		CPASAttenuationFilter filter(pPlayer, "Sausage.Touch");
+		EmitSound(filter, pPlayer->entindex(), "Sausage.Touch");
 
 		if (g_pGameRules->ItemShouldRespawn(this))
 		{
@@ -140,7 +140,7 @@ void CHealthKit::Precache( void )
 
 
 //---------------------------------------------------------------------------— 
-// обед, лечит игрока при поднятии 
+// Purpose: Hotlunch, heals the player
 //---------------------------------------------------------------------------— 
 class CHotlunch : public CItem
 {
@@ -214,7 +214,7 @@ bool CHotlunch::MyTouch(CBasePlayer *pPlayer)
 }
 
 //---------------------------------------------------------------------------— 
-// бонус вода, лечит игрока при поднятии 
+// Purpose: Heals the player 
 //---------------------------------------------------------------------------— 
 class CBonusdrink1 : public CItem
 {
@@ -288,7 +288,7 @@ bool CBonusdrink1::MyTouch(CBasePlayer *pPlayer)
 }
 
 //---------------------------------------------------------------------------Ч 
-//  еда, лечит игрока при подн¤тии 
+//  Purpose: Heals the player
 //---------------------------------------------------------------------------Ч 
 class CWater : public CItem
 {
