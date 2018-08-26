@@ -156,6 +156,7 @@ extern CServerGameDLL g_ServerGameDLL;
 
 extern bool		g_fDrawLines;
 int				gEvilImpulse101;
+float     m_fRegenRemander;
 
 bool gInitHUD = true;
 
@@ -182,6 +183,13 @@ ConVar	sk_player_chest("sk_player_chest", "1");
 ConVar	sk_player_stomach("sk_player_stomach", "1");
 ConVar	sk_player_arm("sk_player_arm", "1");
 ConVar	sk_player_leg("sk_player_leg", "1");
+
+ConVar sv_regeneration("sv_regeneration", "1", FCVAR_CHEAT);
+ConVar sv_regeneration_wait_time("sv_regeneration_wait_time", "5.0", FCVAR_CHEAT);
+ConVar sv_regeneration_rate("sv_regeneration_rate", "5", FCVAR_CHEAT);
+
+ConVar sv_regen_interval("sv_regen_interval", "0", FCVAR_CHEAT, "Set what interval of health to regen to.\n    i.e. if this is set to the default value (20), if you are damaged to 75 health, you'll regenerate to 80 health.\n    Set this to 0 to disable this mechanic.");
+ConVar sv_regen_limit("sv_regen_limit", "20", FCVAR_CHEAT, "Set the limit as to how much health you can regen to.\n    i.e. if this is set at 50, you can only regen to 50 health. If you are hurt and you are above 50 health, you will not regen.\n    Set this to 0 to disable this mechanic.");
 
 //ConVar	player_usercommand_timeout( "player_usercommand_timeout", "10", 0, "After this many seconds without a usercommand from a player, the client is kicked." );
 #ifdef _DEBUG
@@ -327,6 +335,7 @@ DEFINE_FIELD(m_iBonusProgress, FIELD_INTEGER),
 DEFINE_FIELD(m_iBonusChallenge, FIELD_INTEGER),
 DEFINE_FIELD(m_lastDamageAmount, FIELD_INTEGER),
 DEFINE_FIELD(m_tbdPrev, FIELD_TIME),
+DEFINE_FIELD(m_flLastDamageTime, FIELD_TIME),
 DEFINE_FIELD(m_flStepSoundTime, FIELD_FLOAT),
 DEFINE_ARRAY(m_szNetname, FIELD_CHARACTER, MAX_PLAYER_NAME_LENGTH),
 
@@ -579,6 +588,7 @@ CBasePlayer::CBasePlayer()
 	m_szNetname[0] = '\0';
 
 	m_iHealth = 0;
+	m_fRegenRemander = 0;
 	Weapon_SetLast(NULL);
 	m_bitsDamageType = 0;
 
@@ -1398,6 +1408,11 @@ int CBasePlayer::OnTakeDamage(const CTakeDamageInfo &inputInfo)
 	{
 		OnDamagedByExplosion(info);
 	}
+
+	if (GetHealth() < 100)
+		{
+		   m_flLastDamageTime = gpGlobals->curtime;
+		}
 
 	return fTookDamage;
 }
@@ -4574,6 +4589,42 @@ void CBasePlayer::PostThink()
 	SimulatePlayerSimulatedEntities();
 #endif
 
+	// Regenerate heath
+	 if (IsAlive() && GetHealth() < GetMaxHealth() && (sv_regeneration.GetInt() == 1))
+		 {
+				// Color to overlay on the screen while the player is taking damage
+			color32 hurtScreenOverlay = { 80, 0, 0, 64 };
+		
+			if (gpGlobals->curtime > m_flLastDamageTime + sv_regeneration_wait_time.GetFloat())
+			 {
+						//Regenerate based on rate, and scale it by the frametime
+				m_fRegenRemander += sv_regeneration_rate.GetFloat() * gpGlobals->frametime;
+			
+				if (m_fRegenRemander >= 1)
+				 {
+								//If the regen interval is set, and the health is evenly divisible by that interval, don't regen.
+					if (sv_regen_interval.GetFloat() > 0 && floor(m_iHealth / sv_regen_interval.GetFloat()) == m_iHealth / sv_regen_interval.GetFloat()){
+					m_fRegenRemander = 0;
+					
+				}
+							//If the regen limit is set, and the health is equal to or above the limit, don't regen.
+					else if (sv_regen_limit.GetFloat() > 0 && m_iHealth >= sv_regen_limit.GetFloat()){
+					m_fRegenRemander = 0;
+					
+				}
+				else {
+					TakeHealth(m_fRegenRemander, DMG_GENERIC);
+					m_fRegenRemander = 0;
+					
+				  }
+				}
+			}
+		else
+			{
+			UTIL_ScreenFade(this, hurtScreenOverlay, 1.0f, 0.1f, FFADE_IN | FFADE_PURGE);
+			}
+		}
+
 }
 
 // handles touching physics objects
@@ -6114,6 +6165,13 @@ void CBasePlayer::CheatImpulseCommands(int iImpulse)
 		GiveAmmo(5, "Hopwire");
 #endif		
 		GiveNamedItem("weapon_smg1");
+		GiveNamedItem("weapon_c96");
+		GiveNamedItem("weapon_mp40");
+		GiveNamedItem("weapon_walter");
+		GiveNamedItem("weapon_mp44");
+		GiveNamedItem("weapon_k98");
+		GiveNamedItem("weapon_r870");
+		GiveNamedItem("weapon_knife");
 		GiveNamedItem("weapon_frag");
 		GiveNamedItem("weapon_crowbar");
 		GiveNamedItem("weapon_pistol");

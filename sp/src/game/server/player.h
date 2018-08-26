@@ -860,6 +860,7 @@ public:
 	IMPLEMENT_NETWORK_VAR_FOR_DERIVED( m_nNextThinkTick );
 	IMPLEMENT_NETWORK_VAR_FOR_DERIVED( m_vecVelocity );
 	IMPLEMENT_NETWORK_VAR_FOR_DERIVED( m_nWaterLevel );
+
 	
 	int						m_nButtons;
 	int						m_afButtonPressed;
@@ -869,6 +870,7 @@ public:
 	int						m_afButtonForced;	// These are forced onto the player's inputs
 
 	float			m_flLastDamageTime;
+
 
 	CNetworkVar( bool, m_fOnTarget );		//Is the crosshair on a target?
 
