@@ -320,8 +320,10 @@ void CBaseCombatWeapon::ToggleIronsights(void)
 {
 	if (m_bIsIronsighted)
 		DisableIronsights();
-	else if (CanIronsight)
+	else {
 		EnableIronsights();
+	}
+	
 }
 
 void CBaseCombatWeapon::EnableIronsights(void)
@@ -1698,6 +1700,7 @@ void CBaseCombatWeapon::InputHideWeapon(inputdata_t &inputdata)
 #endif
 
 #ifdef CLIENT_DLL
+
 void CC_ToggleIronSights(void)
 {
 	CBasePlayer* pPlayer = C_BasePlayer::GetLocalPlayer();
@@ -1707,8 +1710,9 @@ void CC_ToggleIronSights(void)
 	CBaseCombatWeapon *pWeapon = pPlayer->GetActiveWeapon();
 	if (pWeapon == NULL)
 		return;
-
-	pWeapon->ToggleIronsights();
+	
+		pWeapon->ToggleIronsights();
+	
 
 	engine->ServerCmd("toggle_ironsight"); //forward to server
 }
@@ -1839,11 +1843,11 @@ void CBaseCombatWeapon::IronSightsWhileSprint(void){
 	CBasePlayer *pOwner = ToBasePlayer(GetOwner());
 	if (!pOwner) return;
 
-	if (CanIronsight && IsIronsighted() && (pOwner->m_nButtons & IN_SPEED) ){
+	if (m_bIsIronsighted && (pOwner->m_nButtons & IN_SPEED) ){
 		DisableIronsights();
 		CanIronsight = false;
 	}
-	else CanIronsight = true;
+	else if (pOwner->m_afButtonReleased & IN_SPEED) CanIronsight = true;
 
 }
 void CBaseCombatWeapon::ItemPostFrame(void)

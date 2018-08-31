@@ -466,6 +466,8 @@ void CNPC_MetroPolice::NotifyDeadFriend( CBaseEntity* pFriend )
 //-----------------------------------------------------------------------------
 CNPC_MetroPolice::CNPC_MetroPolice()
 {
+	PrecacheScriptSound("NPC_MetroPolice.Pain");
+	PrecacheScriptSound("NPC_MetroPolice.Die");
 }
 
 
@@ -2497,8 +2499,9 @@ void CNPC_MetroPolice::DeathSound( const CTakeDamageInfo &info )
 {
 	if ( IsOnFire() )
 		return;
-
-	m_Sentences.Speak( "METROPOLICE_DIE", SENTENCE_PRIORITY_INVALID, SENTENCE_CRITERIA_ALWAYS );
+	
+	EmitSound("NPC_MetroPolice.Die");
+	//m_Sentences.Speak( "METROPOLICE_DIE", SENTENCE_PRIORITY_INVALID, SENTENCE_CRITERIA_ALWAYS );
 }
 
 
@@ -2651,25 +2654,30 @@ void CNPC_MetroPolice::PainSound( const CTakeDamageInfo &info )
 	if ( IsOnFire() )
 		return;
 
+	
+
 	float healthRatio = (float)GetHealth() / (float)GetMaxHealth();
 	if ( healthRatio > 0.0f )
 	{
-		const char *pSentenceName = "METROPOLICE_PAIN";
+		//const char *pSentenceName = "METROPOLICE_PAIN";
 		if ( !HasMemory(bits_MEMORY_PAIN_HEAVY_SOUND) && (healthRatio < 0.25f) )
 		{
 			Remember( bits_MEMORY_PAIN_HEAVY_SOUND | bits_MEMORY_PAIN_LIGHT_SOUND );
-			pSentenceName = "METROPOLICE_PAIN_HEAVY";
+			//pSentenceName = "METROPOLICE_PAIN_HEAVY"
+			EmitSound("NPC_MetroPolice.Pain");
 		}
 		else if ( !HasMemory(bits_MEMORY_PAIN_LIGHT_SOUND) && healthRatio > 0.8f )
 		{
 			Remember( bits_MEMORY_PAIN_LIGHT_SOUND );
-			pSentenceName = "METROPOLICE_PAIN_LIGHT";
+			//pSentenceName = "METROPOLICE_PAIN_LIGHT";
+			EmitSound("NPC_MetroPolice.Pain");
 		}
 		
 		// This causes it to speak it no matter what; doesn't bother with setting sounds.
-		m_Sentences.Speak( pSentenceName, SENTENCE_PRIORITY_INVALID, SENTENCE_CRITERIA_ALWAYS );
+		//m_Sentences.Speak( pSentenceName, SENTENCE_PRIORITY_INVALID, SENTENCE_CRITERIA_ALWAYS );
 		m_flNextPainSoundTime = gpGlobals->curtime + 1;
 	}
+	
 }
 
 //-----------------------------------------------------------------------------
@@ -3106,7 +3114,7 @@ void CNPC_MetroPolice::Event_Killed( const CTakeDamageInfo &info )
 		// Attempt to drop health
 		if ( pHL2GameRules->NPC_ShouldDropHealth( pPlayer ) )
 		{
-			DropItem( "item_healthvial", WorldSpaceCenter()+RandomVector(-4,4), RandomAngle(0,360) );
+			DropItem( "item_sausage", WorldSpaceCenter()+RandomVector(-4,4), RandomAngle(0,360) );
 			pHL2GameRules->NPC_DroppedHealth();
 		}
 	}

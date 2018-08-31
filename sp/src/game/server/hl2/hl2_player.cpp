@@ -672,6 +672,7 @@ void CHL2_Player::PreThink(void)
 	}
 	else if (IsSprinting())
 	{
+		
 		// Disable sprint while ducked unless we're in the air (jumping)
 		if (IsDucked() && (GetGroundEntity() != NULL))
 		{
@@ -1212,12 +1213,15 @@ void CHL2_Player::StartSprinting(void)
 	if (!SuitPower_AddDevice(SuitDeviceSprint))
 		return;
 
+	
+	
 	CPASAttenuationFilter filter(this);
 	filter.UsePredictionRules();
 	EmitSound(filter, entindex(), "HL2Player.Sprint");
 
 	SetMaxSpeed(HL2_SPRINT_SPEED);
 	m_fIsSprinting = true;
+	
 }
 
 
@@ -1822,6 +1826,7 @@ void CHL2_Player::SuitPower_Update(void)
 			// TURN OFF ALL DEVICES!!
 			if (IsSprinting())
 			{
+				
 				StopSprinting();
 			}
 
