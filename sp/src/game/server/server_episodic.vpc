@@ -298,6 +298,21 @@ $Project "Server (Episodic)"
 				$File	"hl2\weapon_flaregun.cpp"
 				$File	"hl2\weapon_flaregun.h"
 			}
+
+			
 		}
+		$Folder "TLB"
+			{
+			   $File "$SRCDIR\game\server\logic_playmovie.cpp"
+			   $File "$SRCDIR\game\server\weapon_knife.h"
+			   $File "$SRCDIR\game\server\weapon_knife.cpp"
+			   $File "$SRCDIR\game\server\weapon_minigun.cpp"
+			   $File "$SRCDIR\game\server\weapon_mp40.cpp"
+			   $File "$SRCDIR\game\server\weapon_mp44.cpp"
+			   $File "$SRCDIR\game\server\weapon_r870.cpp"
+			   $File "$SRCDIR\game\server\weapon_walter.cpp"
+			   $File "$SRCDIR\game\server\weapon_c96.cpp"
+			   $File "$SRCDIR\game\server\weapon_k98.cpp"
+			}
 	}
 }

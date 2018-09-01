@@ -25,14 +25,14 @@
     <Filter Include="Source Files\temporary entities">
       <UniqueIdentifier>{EE0D1E04-BD60-DE4A-710E-2457C590BA24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TLB">
+      <UniqueIdentifier>{8BE47116-4C4F-267F-30A3-B8644E9F1E99}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Tools Framework">
       <UniqueIdentifier>{7B72D9D0-E55D-2A74-4A7B-5D5B7AFE85C6}</UniqueIdentifier>
     </Filter>
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TLB">
-      <UniqueIdentifier>{64eeed2e-8298-44dc-8bf5-34ab34250917}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1784,11 +1784,11 @@
     <ClInclude Include="te_particlesystem.h">
       <Filter>Source Files\temporary entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\game\server\weapon_knife.h">
+      <Filter>Source Files\TLB</Filter>
+    </ClInclude>
     <ClInclude Include="toolframework_server.h">
       <Filter>Tools Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="weapon_knife.h">
-      <Filter>Source Files\TLB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3505,38 +3505,38 @@
     <ClCompile Include="..\..\game\shared\usermessages.cpp">
       <Filter>Source Files\temporary entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\server\logic_playmovie.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_c96.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_k98.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_knife.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_minigun.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_mp40.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_mp44.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_r870.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\server\weapon_walter.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="entity_tools_server.cpp">
       <Filter>Tools Framework</Filter>
     </ClCompile>
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="logic_playmovie.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_c96.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_k98.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_knife.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_minigun.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_mp40.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_mp44.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_r870.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
-    <ClCompile Include="weapon_walter.cpp">
-      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

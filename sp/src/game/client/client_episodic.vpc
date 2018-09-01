@@ -15,12 +15,28 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories	".\hl2;.\hl2\elements;$SRCDIR\game\shared\hl2;$SRCDIR\game\shared\episodic;..\..\public;$BASE"
-		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL;HL2_EPISODIC"
+		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL;HL2_EPISODIC;SOURCE_2013"
 	}
 }
 
 $Project "Client (Episodic)"
 {
+    $Folder	"Header Files"
+			{
+				$File	"$SRCDIR\game\client\ShaderEditor\ISEdit_ModelRender.h"
+				$File	"$SRCDIR\game\client\ShaderEditor\IVShaderEditor.h"
+				$File	"$SRCDIR\game\client\ShaderEditor\ShaderEditorSystem.h"
+				$File	"$SRCDIR\game\client\ShaderEditor\SEdit_ModelRender.h"
+				//$File	"$SRCDIR\game\client\ShaderEditor\Grass\CGrassCluster.h"
+			}
+		
+			$Folder	"Implementation Files"
+			{
+				$File	"$SRCDIR\game\client\ShaderEditor\ShaderEditorSystem.cpp"
+				$File	"$SRCDIR\game\client\ShaderEditor\SEdit_ModelRender.cpp"
+				//$File	"$SRCDIR\game\client\ShaderEditor\Grass\CGrassCluster.cpp"
+			}
+
 	$Folder	"Source Files"
 	{
 		$File	"hud_chat.cpp"
@@ -126,6 +142,13 @@ $Project "Client (Episodic)"
 			$File	"$SRCDIR\game\shared\hl2\survival_gamerules.cpp"
 			$File	"hl2\vgui_rootpanel_hl2.cpp"
 			$File	"episodic\c_npc_puppet.cpp"
+		}
+		$Folder	"TLB" 
+		{
+		   $File "$SRCDIR\game\client\c_movie_display.h"
+		   $File "$SRCDIR\game\client\c_movie_display.cpp"
+		   $File "$SRCDIR\game\client\hud_hitmarker.h"
+		   $File "$SRCDIR\game\client\hud_hitmarker.cpp"
 		}
 	}
 	
