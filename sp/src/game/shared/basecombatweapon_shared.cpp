@@ -1710,11 +1710,12 @@ void CC_ToggleIronSights(void)
 	CBaseCombatWeapon *pWeapon = pPlayer->GetActiveWeapon();
 	if (pWeapon == NULL)
 		return;
-	
+	if (pWeapon->CanIronsight == true){
 		pWeapon->ToggleIronsights();
-	
 
-	engine->ServerCmd("toggle_ironsight"); //forward to server
+
+		engine->ServerCmd("toggle_ironsight"); //forward to server
+	}
 }
 
 static ConCommand toggle_ironsight("toggle_ironsight", CC_ToggleIronSights);

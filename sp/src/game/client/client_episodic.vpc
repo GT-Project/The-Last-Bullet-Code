@@ -21,6 +21,8 @@ $Configuration
 
 $Project "Client (Episodic)"
 {
+   $Folder "Source Shader Editor" 
+   {
     $Folder	"Header Files"
 			{
 				$File	"$SRCDIR\game\client\ShaderEditor\ISEdit_ModelRender.h"
@@ -36,6 +38,7 @@ $Project "Client (Episodic)"
 				$File	"$SRCDIR\game\client\ShaderEditor\SEdit_ModelRender.cpp"
 				//$File	"$SRCDIR\game\client\ShaderEditor\Grass\CGrassCluster.cpp"
 			}
+	}
 
 	$Folder	"Source Files"
 	{

@@ -555,7 +555,7 @@ void CWeaponRemington::ItemPostFrame(void)
 	{
 		return;
 	}
-
+	IronSightsWhileSprint();
 	if (m_bInReload)
 	{
 		// If I'm primary firing and have one round stop reloading and fire
@@ -642,7 +642,7 @@ void CWeaponRemington::ItemPostFrame(void)
 			{
 				m_flNextPrimaryAttack = gpGlobals->curtime;
 			}
-			SecondaryAttack();
+			
 		}
 	}
 	else if ((m_bDelayedFire1 || pOwner->m_nButtons & IN_ATTACK) && m_flNextPrimaryAttack <= gpGlobals->curtime)
