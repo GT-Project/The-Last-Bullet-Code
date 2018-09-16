@@ -1901,6 +1901,9 @@
     <ClInclude Include="..\..\game\client\hud_hitmarker.h">
       <Filter>Source Files\TLB</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\game\client\menu_background.h">
+      <Filter>Source Files\TLB</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\game\client\ShaderEditor\ISEdit_ModelRender.h">
       <Filter>Source Shader Editor\Header Files</Filter>
     </ClInclude>
@@ -3437,6 +3440,9 @@
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="..\..\game\client\hud_hitmarker.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\game\client\menu_background.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
     <ClCompile Include="..\..\game\client\ShaderEditor\SEdit_ModelRender.cpp">

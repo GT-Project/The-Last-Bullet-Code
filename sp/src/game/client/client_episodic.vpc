@@ -152,6 +152,8 @@ $Project "Client (Episodic)"
 		   $File "$SRCDIR\game\client\c_movie_display.cpp"
 		   $File "$SRCDIR\game\client\hud_hitmarker.h"
 		   $File "$SRCDIR\game\client\hud_hitmarker.cpp"
+		   $File "$SRCDIR\game\client\menu_background.h"
+		   $File "$SRCDIR\game\client\menu_background.cpp"
 		}
 	}
 	

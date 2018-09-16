@@ -9,7 +9,7 @@
 #define SDKVIEWPORT_H
 
 
-#include "sdk_shareddefs.h"
+
 #include "baseviewport.h"
 
 
