@@ -313,6 +313,7 @@ $Project "Server (Episodic)"
 			   $File "$SRCDIR\game\server\weapon_walter.cpp"
 			   $File "$SRCDIR\game\server\weapon_c96.cpp"
 			   $File "$SRCDIR\game\server\weapon_k98.cpp"
+			   $File "$SRCDIR\game\server\skyboxswapper.cpp"
 			}
 	}
 }

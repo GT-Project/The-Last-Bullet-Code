@@ -3508,6 +3508,9 @@
     <ClCompile Include="..\..\game\server\logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\server\skyboxswapper.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\server\weapon_c96.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
