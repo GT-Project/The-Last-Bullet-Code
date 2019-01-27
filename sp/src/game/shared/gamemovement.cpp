@@ -1903,9 +1903,9 @@ void CGameMovement::WalkMove( void )
 
 	if (cl_viewbob_enabled.GetInt() == 1 && !engine->IsPaused())
 	{
-		float xoffset = sin(gpGlobals->curtime * cl_viewbob_timer.GetFloat()) * player->GetAbsVelocity().Length() * cl_viewbob_scale.GetFloat() / 100;
-		float yoffset = sin(2 * gpGlobals->curtime * cl_viewbob_timer.GetFloat()) * player->GetAbsVelocity().Length() * cl_viewbob_scale.GetFloat() / 400;
-		float zoffset = sin(gpGlobals->curtime * cl_viewbob_timer.GetFloat()) * player->GetAbsVelocity().Length() * cl_viewbob_scale.GetFloat() * 100;
+		float xoffset = sin(gpGlobals->curtime * 10) * player->GetAbsVelocity().Length() * 0.005 / 100;
+		float yoffset = sin(2 * gpGlobals->curtime * 10) * player->GetAbsVelocity().Length() * 0.005 / 400;
+		float zoffset = sin(gpGlobals->curtime * 7) * player->GetAbsVelocity().Length() * 0.000002 * 100;
 		player->ViewPunch(QAngle(xoffset, yoffset, zoffset));
 
 	}

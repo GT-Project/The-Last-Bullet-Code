@@ -232,13 +232,13 @@ public:
 	virtual void EndGameFrame( void );
 
 	virtual bool IsSkillLevel( int iLevel ) { return GetSkillLevel() == iLevel; }
-	virtual int	GetSkillLevel() { return g_iSkillLevel; }
+	virtual int	GetSkillLevel() { return 3; }
 	virtual void OnSkillLevelChanged( int iNewLevel ) {};
 	virtual void SetSkillLevel( int iLevel )
 	{
 		int oldLevel = g_iSkillLevel; 
 
-		if ( iLevel < 1 )
+		if ( iLevel < 3 )
 		{
 			iLevel = 3;
 		}
