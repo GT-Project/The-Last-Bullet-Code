@@ -19,9 +19,9 @@ ConVar	sk_healthkit( "sk_healthkit","0" );
 ConVar	sk_healthvial( "sk_healthvial","0" );		
 ConVar	sk_healthcharger( "sk_healthcharger","0" );	
 ConVar sk_sausage("sk_sausage", "0");
-ConVar sk_water("sk_water", "0");
+ConVar sk_kakao("sk_kakao", "0");
 ConVar sk_hotlunch("sk_hotlunch", "0");
-ConVar sk_bonusdrink1("sk_bonusdrink1", "0");
+ConVar sk_whiskey("sk_whiskey", "0");
 
 
 
@@ -216,27 +216,27 @@ bool CHotlunch::MyTouch(CBasePlayer *pPlayer)
 //---------------------------------------------------------------------------— 
 // Purpose: Heals the player 
 //---------------------------------------------------------------------------— 
-class CBonusdrink1 : public CItem
+class CWhiskey : public CItem
 {
 public:
-	DECLARE_CLASS(CBonusdrink1, CItem);
+	DECLARE_CLASS(CWhiskey, CItem);
 
 	void Spawn(void);
 	void Precache(void);
 	bool MyTouch(CBasePlayer *pPlayer);
 };
 
-LINK_ENTITY_TO_CLASS(item_bonusdrink1, CBonusdrink1);
-PRECACHE_REGISTER(item_bonusdrink1);
+LINK_ENTITY_TO_CLASS(item_whiskey, CWhiskey);
+PRECACHE_REGISTER(item_whiskey);
 
 
 //---------------------------------------------------------------------------— 
 // Purpose: 
 //---------------------------------------------------------------------------— 
-void CBonusdrink1::Spawn(void)
+void CWhiskey::Spawn(void)
 {
 	Precache();
-	SetModel("models\\newfood\\bonusdrink\\bonusdrink1.mdl");
+	SetModel("models\\props_tlb\\oleg_whiskey.mdl");
 
 	BaseClass::Spawn();
 }
@@ -245,11 +245,11 @@ void CBonusdrink1::Spawn(void)
 //---------------------------------------------------------------------------— 
 // Purpose: 
 //---------------------------------------------------------------------------— 
-void CBonusdrink1::Precache(void)
+void CWhiskey::Precache(void)
 {
-	PrecacheModel("models\\newfood\\bonusdrink\\bonusdrink1.mdl");
+	PrecacheModel("models\\props_tlb\\oleg_whiskey.mdl");
 
-	PrecacheScriptSound("Bonusdrink1.Touch");
+	PrecacheScriptSound("Whiskey.Touch");
 }
 
 
@@ -258,9 +258,9 @@ void CBonusdrink1::Precache(void)
 // Input : *pPlayer - 
 // Output : 
 //---------------------------------------------------------------------------— 
-bool CBonusdrink1::MyTouch(CBasePlayer *pPlayer)
+bool CWhiskey::MyTouch(CBasePlayer *pPlayer)
 {
-	if (pPlayer->TakeHealth(sk_bonusdrink1.GetFloat(), DMG_GENERIC))
+	if (pPlayer->TakeHealth(sk_whiskey.GetFloat(), DMG_GENERIC))
 	{
 		CSingleUserRecipientFilter user(pPlayer);
 		user.MakeReliable();
@@ -269,8 +269,8 @@ bool CBonusdrink1::MyTouch(CBasePlayer *pPlayer)
 		WRITE_STRING(GetClassname());
 		MessageEnd();
 
-		CPASAttenuationFilter filter(pPlayer, "Bonusdrink1.Touch");
-		EmitSound(filter, pPlayer->entindex(), "Bonusdrink1.Touch");
+		CPASAttenuationFilter filter(pPlayer, "Whiskey.Touch");
+		EmitSound(filter, pPlayer->entindex(), "Whiskey.Touch");
 
 		if (g_pGameRules->ItemShouldRespawn(this))
 		{
@@ -290,27 +290,27 @@ bool CBonusdrink1::MyTouch(CBasePlayer *pPlayer)
 //---------------------------------------------------------------------------× 
 //  Purpose: Heals the player
 //---------------------------------------------------------------------------× 
-class CWater : public CItem
+class CKakao : public CItem
 {
 public:
-	DECLARE_CLASS(CWater, CItem);
+	DECLARE_CLASS(CKakao, CItem);
 
 	void Spawn(void);
 	void Precache(void);
 	bool MyTouch(CBasePlayer *pPlayer);
 };
 
-LINK_ENTITY_TO_CLASS(item_water, CWater);
-PRECACHE_REGISTER(item_water);
+LINK_ENTITY_TO_CLASS(item_kakao, CKakao);
+PRECACHE_REGISTER(item_kakao);
 
 
 //---------------------------------------------------------------------------× 
 // Purpose: 
 //---------------------------------------------------------------------------× 
-void CWater::Spawn(void)
+void CKakao::Spawn(void)
 {
 	Precache();
-	SetModel("models\\newfood\\water\\water.mdl");
+	SetModel("models\\props_tlb\\oleg_kakao.mdl");
 
 	BaseClass::Spawn();
 }
@@ -319,11 +319,11 @@ void CWater::Spawn(void)
 //---------------------------------------------------------------------------× 
 // Purpose: 
 //---------------------------------------------------------------------------× 
-void CWater::Precache(void)
+void CKakao::Precache(void)
 {
-	PrecacheModel("models\\newfood\\water\\water.mdl");
+	PrecacheModel("models\\props_tlb\\oleg_kakao.mdl");
 
-	PrecacheScriptSound("Water.Touch");
+	PrecacheScriptSound("Kakao.Touch");
 }
 
 
@@ -332,9 +332,9 @@ void CWater::Precache(void)
 // Input : *pPlayer - 
 // Output : 
 //---------------------------------------------------------------------------× 
-bool CWater::MyTouch(CBasePlayer *pPlayer)
+bool CKakao::MyTouch(CBasePlayer *pPlayer)
 {
-	if (pPlayer->TakeHealth(sk_water.GetFloat(), DMG_GENERIC))
+	if (pPlayer->TakeHealth(sk_kakao.GetFloat(), DMG_GENERIC))
 	{
 		CSingleUserRecipientFilter user(pPlayer);
 		user.MakeReliable();
@@ -343,8 +343,8 @@ bool CWater::MyTouch(CBasePlayer *pPlayer)
 		WRITE_STRING(GetClassname());
 		MessageEnd();
 
-		CPASAttenuationFilter filter(pPlayer, "Water.Touch");
-		EmitSound(filter, pPlayer->entindex(), "Water.Touch");
+		CPASAttenuationFilter filter(pPlayer, "Kakao.Touch");
+		EmitSound(filter, pPlayer->entindex(), "Kakao.Touch");
 
 		if (g_pGameRules->ItemShouldRespawn(this))
 		{

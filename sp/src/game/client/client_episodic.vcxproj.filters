@@ -1923,7 +1923,7 @@
       <Filter>Tool Framework</Filter>
     </ClInclude>
     <ClInclude Include="estranged_system_caps.h">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3464,7 +3464,7 @@
       <Filter>Tool Framework</Filter>
     </ClCompile>
     <ClCompile Include="estranged_system_caps.cpp">
-      <Filter>Source Files\TLB</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
