@@ -1128,7 +1128,7 @@ bool CHLClient::ReplayPostInit()
 // Purpose: Called after client & server DLL are loaded and all systems initialized
 //-----------------------------------------------------------------------------
 
-void SwapDisconnectCommand();
+
 void CHLClient::PostInit()
 {
 	IGameSystem::PostInitAllSystems();
@@ -1139,7 +1139,7 @@ void CHLClient::PostInit()
 #endif
 
 	g_ClientVirtualReality.StartupComplete();
-	SwapDisconnectCommand();
+	
 #ifdef HL1MP_CLIENT_DLL
 	if ( s_cl_load_hl1_content.GetBool() && steamapicontext && steamapicontext->SteamApps() )
 	{

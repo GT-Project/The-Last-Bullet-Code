@@ -1901,9 +1901,6 @@
     <ClInclude Include="..\..\game\client\hud_hitmarker.h">
       <Filter>Source Files\TLB</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\game\client\menu_background.h">
-      <Filter>Source Files\TLB</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\game\client\ShaderEditor\ISEdit_ModelRender.h">
       <Filter>Source Shader Editor\Header Files</Filter>
     </ClInclude>
@@ -1921,9 +1918,6 @@
     </ClInclude>
     <ClInclude Include="toolframework_client.h">
       <Filter>Tool Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="estranged_system_caps.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -3445,9 +3439,6 @@
     <ClCompile Include="..\..\game\client\hud_hitmarker.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\game\client\menu_background.cpp">
-      <Filter>Source Files\TLB</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\game\client\ShaderEditor\SEdit_ModelRender.cpp">
       <Filter>Source Shader Editor\Implementation Files</Filter>
     </ClCompile>
@@ -3462,9 +3453,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="estranged_system_caps.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

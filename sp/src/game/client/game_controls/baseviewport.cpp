@@ -17,7 +17,6 @@
 #include <cdll_client_int.h>
 #include <cdll_util.h>
 #include <globalvars_base.h>
-#include "../menu_background.h"
 
 // VGUI panel includes
 #include <vgui_controls/Panel.h>
@@ -153,7 +152,7 @@ CBaseViewport::CBaseViewport() : vgui::EditablePanel( NULL, "CBaseViewport")
 	SetSize( 10, 10 ); // Quiet "parent not sized yet" spew
 	gViewPortInterface = this;
 	m_bInitialized = false;
-	m_pMainMenuPanel = NULL;
+	
 
 	m_GameuiFuncs = NULL;
 	m_GameEventManager = NULL;
@@ -199,38 +198,30 @@ void CBaseViewport::OnScreenSizeChanged(int iOldWide, int iOldTall)
 
 	IViewPortPanel* pSpecGuiPanel = FindPanelByName(PANEL_SPECGUI);
 	bool bSpecGuiWasVisible = pSpecGuiPanel && pSpecGuiPanel->IsVisible();
-	
+
 	// reload the script file, so the screen positions in it are correct for the new resolution
-	ReloadScheme( NULL );
+	ReloadScheme(NULL);
 
 	// recreate all the default panels
 	RemoveAllPanels();
 #ifndef _XBOX
-	m_pBackGround = new CBackGroundPanel( NULL );
-	m_pBackGround->SetZPos( -20 ); // send it to the back 
-	m_pBackGround->SetVisible( false );
+	m_pBackGround = new CBackGroundPanel(NULL);
+	m_pBackGround->SetZPos(-20); // send it to the back 
+	m_pBackGround->SetVisible(false);
 #endif
 	CreateDefaultPanels();
 #ifndef _XBOX
-	vgui::ipanel()->MoveToBack( m_pBackGround->GetVPanel() ); // really send it to the back 
+	vgui::ipanel()->MoveToBack(m_pBackGround->GetVPanel()); // really send it to the back 
 #endif
 
 	// hide all panels when reconnecting 
-	ShowPanel( PANEL_ALL, false );
+	ShowPanel(PANEL_ALL, false);
 
 	// re-enable the spectator gui if it was previously visible
-	if ( bSpecGuiWasVisible )
+	if (bSpecGuiWasVisible)
 	{
-		ShowPanel( PANEL_SPECGUI, true );
+		ShowPanel(PANEL_SPECGUI, true);
 	}
-	bool bRestartMainMenuVideo = false;
-	if (m_pMainMenuPanel)
-		bRestartMainMenuVideo = m_pMainMenuPanel->IsVideoPlaying();
-	m_pMainMenuPanel = new CMainMenu(NULL, NULL);
-	m_pMainMenuPanel->SetZPos(500);
-	m_pMainMenuPanel->SetVisible(false);
-	if (bRestartMainMenuVideo)
-		m_pMainMenuPanel->StartVideo();
 }
 
 void CBaseViewport::CreateDefaultPanels( void )
@@ -480,21 +471,13 @@ void CBaseViewport::RemoveAllPanels( void)
 	m_Panels.Purge();
 	m_pActivePanel = NULL;
 	m_pLastActivePanel = NULL;
-	if (m_pMainMenuPanel)
-	{
-		m_pMainMenuPanel->MarkForDeletion();
-		m_pMainMenuPanel = NULL;
-	}
+	
 }
 
 CBaseViewport::~CBaseViewport()
 {
 	m_bInitialized = false;
-	if (!m_bHasParent && m_pMainMenuPanel)
-	{
-		m_pMainMenuPanel->MarkForDeletion();
-	}
-	m_pMainMenuPanel = NULL;
+	
 
 #ifndef _XBOX
 	if ( !m_bHasParent && m_pBackGround )
@@ -525,10 +508,7 @@ void CBaseViewport::Start( IGameUIFuncs *pGameUIFuncs, IGameEventManager2 * pGam
 	CreateDefaultPanels();
 
 	m_GameEventManager->AddListener( this, "game_newmap", false );
-	m_pMainMenuPanel = new CMainMenu(NULL, NULL);
-	m_pMainMenuPanel->SetZPos(500);
-	m_pMainMenuPanel->SetVisible(false);
-	m_pMainMenuPanel->StartVideo();
+	
 	
 	m_bInitialized = true;
 }
@@ -732,17 +712,7 @@ int CBaseViewport::GetDeathMessageStartHeight( void )
 	return YRES(2);
 }
 
-void CBaseViewport::StartMainMenuVideo()
-{
-	if (m_pMainMenuPanel)
-		m_pMainMenuPanel->StartVideo();
-}
 
-void CBaseViewport::StopMainMenuVideo()
-{
-	if (m_pMainMenuPanel)
-		m_pMainMenuPanel->StopVideo();
-}
 
 void CBaseViewport::Paint()
 {
