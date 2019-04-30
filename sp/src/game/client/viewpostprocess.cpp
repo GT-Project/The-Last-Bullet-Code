@@ -3263,17 +3263,6 @@ void DoImageSpaceMotionBlur(const CViewSetup &view, int x, int y, int w, int h)
 #ifdef CSS_PERF_TEST
 	return;
 #endif
-
-	// FAKEFACTORY ESTRANGED
-	//if ( ( !mat_motion_blur_enabled.GetInt() ) || ( g_pMaterialSystemHardwareConfig->GetDXSupportLevel() < 90 ) )
-	if ((!mat_motion_blur_enabled.GetInt()) || !CEstrangedSystemCaps::HasCaps(CAPS_SHADER_POSTPROCESS))
-
-
-		// FAKEFACTORY ESTRANGED
-	{
-		return;
-	}
-
 	//======================================================================================================//
 	// Get these convars here to make it easier to remove them later and to default each client differently //
 	//======================================================================================================//
