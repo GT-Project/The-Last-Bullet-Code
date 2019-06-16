@@ -87,13 +87,18 @@ void CWeaponKnife::AddViewKick(void)
 	pPlayer->ViewPunch(punchAng);
 }
 
+bool CWeaponKnife::HasIronsights()
+{
+	return false;
+}
+
 
 //-----------------------------------------------------------------------------
 // Attempt to lead the target (needed because citizens can't hit manhacks with the crowbar!)
 //-----------------------------------------------------------------------------
 ConVar sk_knife_lead_time("sk_knife_lead_time", "0.9");
 
-bool			HasIronsights(void) { return false; }
+
 
 int CWeaponKnife::WeaponMeleeAttack1Condition(float flDot, float flDist)
 {

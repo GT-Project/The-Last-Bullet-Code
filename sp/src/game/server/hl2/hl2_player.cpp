@@ -1215,13 +1215,16 @@ void CHL2_Player::StartSprinting(void)
 
 	
 	
-	CPASAttenuationFilter filter(this);
-	filter.UsePredictionRules();
-	EmitSound(filter, entindex(), "HL2Player.Sprint");
+	
+	
 
 	SetMaxSpeed(HL2_SPRINT_SPEED);
-	m_fIsSprinting = true;
-	
+    m_fIsSprinting = true;
+
+	CPASAttenuationFilter filter(this);
+	m_sndSprint = (CSoundEnvelopeController::GetController()).SoundCreate(filter, entindex(), CHAN_STATIC, "HL2Player.Sprint", ATTN_NORM);
+	if (m_sndSprint)(
+		(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100));
 }
 
 
@@ -1251,7 +1254,8 @@ void CHL2_Player::StopSprinting(void)
 		m_fAutoSprintMinTime = 0.0f;
 	}
 
-	StopSound( entindex(), "HL2Player.Sprint");
+	if (m_sndSprint)(
+		(CSoundEnvelopeController::GetController()).SoundDestroy(m_sndSprint));
 }
 
 

@@ -555,7 +555,7 @@ void CWeaponRemington::ItemPostFrame(void)
 	{
 		return;
 	}
-	IronSightsWhileSprint();
+
 	if (m_bInReload)
 	{
 		// If I'm primary firing and have one round stop reloading and fire

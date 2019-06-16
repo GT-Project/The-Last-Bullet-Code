@@ -30,6 +30,7 @@
 //-----------------------------------------------------------------------------
 // Fragmentation grenades
 //-----------------------------------------------------------------------------
+
 class CWeaponFrag: public CBaseHLCombatWeapon
 {
 	DECLARE_CLASS( CWeaponFrag, CBaseHLCombatWeapon );
@@ -45,7 +46,7 @@ public:
 	void	SecondaryAttack( void );
 	void	DecrementAmmo( CBaseCombatCharacter *pOwner );
 	void	ItemPostFrame( void );
-
+	virtual bool HasIronsights(void);
 	bool	Deploy( void );
 	bool	Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
 
@@ -125,6 +126,11 @@ bool CWeaponFrag::Deploy( void )
 	return BaseClass::Deploy();
 }
 
+bool    CWeaponFrag::HasIronsights(void)
+{
+	return false;
+}
+ 
 //-----------------------------------------------------------------------------
 // Purpose: 
 // Output : Returns true on success, false on failure.
@@ -206,6 +212,9 @@ void CWeaponFrag::Operator_HandleAnimEvent( animevent_t *pEvent, CBaseCombatChar
 // Purpose: 
 // Output : Returns true on success, false on failure.
 //-----------------------------------------------------------------------------
+
+
+
 bool CWeaponFrag::Reload( void )
 {
 	if ( !HasPrimaryAmmo() )
@@ -267,6 +276,8 @@ void CWeaponFrag::SecondaryAttack( void )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
+
+
 void CWeaponFrag::PrimaryAttack( void )
 {
 	if ( m_bRedraw )

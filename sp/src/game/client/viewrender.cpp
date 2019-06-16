@@ -53,9 +53,7 @@
 #include "clientmode_shared.h"
 #include "sourcevr/isourcevirtualreality.h"
 #include "client_virtualreality.h"
-// FAKEFACTORY ESTRANGED
-#include "estranged_system_caps.h"
-// FAKEFACTORY ESTRANGED
+
 
 #ifdef PORTAL
 //#include "C_Portal_Player.h"

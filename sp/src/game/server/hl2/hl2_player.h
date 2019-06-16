@@ -285,6 +285,8 @@ public:
 
 	CSoundPatch *m_sndLeeches;
 	CSoundPatch *m_sndWaterSplashes;
+	CSoundPatch *m_sndSprint;
+	
 
 protected:
 	virtual void		PreThink( void );

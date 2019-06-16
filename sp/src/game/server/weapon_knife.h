@@ -42,6 +42,7 @@ public:
 
 	virtual int WeaponMeleeAttack1Condition(float flDot, float flDist);
 	void		SecondaryAttack(void)	{ return; }
+	virtual bool HasIronsights(void);
 
 	// Animation event
 	virtual void Operator_HandleAnimEvent(animevent_t *pEvent, CBaseCombatCharacter *pOperator);

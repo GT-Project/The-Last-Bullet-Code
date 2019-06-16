@@ -16,6 +16,8 @@
 
 // NVNT start extra includes
 #include "haptics/haptic_utils.h"
+
+
 #ifdef CLIENT_DLL
 #include "prediction.h"
 #endif
@@ -89,7 +91,7 @@ CBaseCombatWeapon::CBaseCombatWeapon()
 
 	m_flIronsightedTime = 0.0f;
 
-	CanIronsight = true;
+	
 
 #if defined( CLIENT_DLL )
 	m_iState = m_iOldState = WEAPON_NOT_CARRIED;
@@ -318,9 +320,12 @@ bool CBaseCombatWeapon::IsIronsighted(void)
 
 void CBaseCombatWeapon::ToggleIronsights(void)
 {
-	if (m_bIsIronsighted)
+
+	if (m_bIsIronsighted) {
 		DisableIronsights();
+	}
 	else {
+
 		EnableIronsights();
 	}
 	
@@ -1710,12 +1715,10 @@ void CC_ToggleIronSights(void)
 	CBaseCombatWeapon *pWeapon = pPlayer->GetActiveWeapon();
 	if (pWeapon == NULL)
 		return;
-	if (pWeapon->CanIronsight == true){
-		pWeapon->ToggleIronsights();
 
+	pWeapon->ToggleIronsights();
 
-		engine->ServerCmd("toggle_ironsight"); //forward to server
-	}
+	engine->ServerCmd("toggle_ironsight");
 }
 
 static ConCommand toggle_ironsight("toggle_ironsight", CC_ToggleIronSights);
@@ -1840,17 +1843,7 @@ void CBaseCombatWeapon::ItemPreFrame(void)
 //====================================================================================
 
 
-void CBaseCombatWeapon::IronSightsWhileSprint(void){
-	CBasePlayer *pOwner = ToBasePlayer(GetOwner());
-	if (!pOwner) return;
 
-	if (m_bIsIronsighted && (pOwner->m_nButtons & IN_SPEED) ){
-		DisableIronsights();
-		CanIronsight = false;
-	}
-	else if (pOwner->m_afButtonReleased & IN_SPEED) CanIronsight = true;
-
-}
 void CBaseCombatWeapon::ItemPostFrame(void)
 {
 	CBasePlayer *pOwner = ToBasePlayer(GetOwner());
@@ -1858,7 +1851,7 @@ void CBaseCombatWeapon::ItemPostFrame(void)
 		return;
 
 	UpdateAutoFire();
-	IronSightsWhileSprint();
+
 
 	//Track the duration of the fire
 	//FIXME: Check for IN_ATTACK2 as well?
