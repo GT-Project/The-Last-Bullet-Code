@@ -19,10 +19,10 @@ class CHudWeaponIcon : public CHudElement, public vgui::Panel
 	DECLARE_CLASS_SIMPLE(CHudWeaponIcon, vgui::Panel);
 public:
 	CHudWeaponIcon(const char *pElementName);
-	virtual void				Init(void);
+	/*virtual void				Init(void);
 	virtual void VidInit(void);
 	virtual void Reset(void);
-	virtual void OnThink();
+	virtual void OnThink();*/
 };
 DECLARE_HUDELEMENT(CHudWeaponIcon);
 CHudWeaponIcon::CHudWeaponIcon(const char *pElementName) : CHudElement(pElementName), BaseClass(NULL, "HudWeaponIcon")

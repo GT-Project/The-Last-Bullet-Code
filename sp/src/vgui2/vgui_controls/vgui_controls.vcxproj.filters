@@ -12,8 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\public\vgui_controls\AnalogBar.h">
       <Filter>Public Header Files</Filter>
     </ClInclude>

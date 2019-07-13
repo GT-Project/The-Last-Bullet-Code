@@ -19,6 +19,7 @@
 #include "video/ivideoservices.h"
 
 
+
 class VideoPanel : public vgui::EditablePanel
 {
 	DECLARE_CLASS_SIMPLE( VideoPanel, vgui::EditablePanel );
@@ -45,12 +46,14 @@ public:
 	}
 
 	bool BeginPlayback( const char *pFilename );
+	void StopPlayback(void);
 
 	void SetBlackBackground( bool bBlack ){ m_bBlackBackground = bBlack; }
+	void SetAllowInterrupt(bool bAllowInterrupt) { m_bAllowInterruption = bAllowInterrupt; }
 
 protected:
 
-	virtual void OnTick( void ) { BaseClass::OnTick(); }
+	virtual void OnTick(void){ BaseClass::OnTick(); }
 	virtual void OnCommand( const char *pcCommand ) { BaseClass::OnCommand( pcCommand ); }
 	virtual void OnVideoOver(){}
 
@@ -66,6 +69,8 @@ protected:
 	float			m_flV;
 
 	bool			m_bBlackBackground;
+	int				m_nShutdownCount;
+	bool			m_bAllowInterruption;
 	bool			m_bAllowAlternateMedia;
 };
 

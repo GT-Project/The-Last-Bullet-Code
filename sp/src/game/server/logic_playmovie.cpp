@@ -65,7 +65,7 @@ void CLogicPlayMovie::Spawn( void )
 //-----------------------------------------------------------------------------
 void CLogicPlayMovie::InputPlayMovie( inputdata_t &data )
 {
-	const char *szVideoCommand = ( m_bAllowUserSkip ) ? "playvideo" : "playvideo_exitcommand";
+	const char *szVideoCommand = (m_bAllowUserSkip) ? "playvideo_exitcommand" : "playvideo_exitcommand_nointerrupt";
 	// Build the hacked string
 
 	char szClientCmd[256];
