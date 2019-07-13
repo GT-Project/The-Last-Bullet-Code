@@ -22,7 +22,6 @@ VideoPanel::VideoPanel( unsigned int nXPos, unsigned int nYPos, unsigned int nHe
 	m_VideoMaterial( NULL ),
 	m_nPlaybackWidth( 0 ),
 	m_nPlaybackHeight( 0 ),
-	m_nShutdownCount(0),
 	m_bAllowAlternateMedia( allowAlternateMedia ),
 	m_bAllowInterruption(true)
 {

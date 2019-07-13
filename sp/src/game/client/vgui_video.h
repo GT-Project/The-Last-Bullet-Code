@@ -69,7 +69,6 @@ protected:
 	float			m_flV;
 
 	bool			m_bBlackBackground;
-	int				m_nShutdownCount;
 	bool			m_bAllowInterruption;
 	bool			m_bAllowAlternateMedia;
 };
