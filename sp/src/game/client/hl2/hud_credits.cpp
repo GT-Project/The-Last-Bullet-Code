@@ -521,7 +521,15 @@ void CHudCredits::DrawIntroCreditsName( void )
 		surface()->DrawSetTextColor( m_cColor[0], m_cColor[1], m_cColor[2], FadeBlend( m_flFadeInTime, m_flFadeOutTime, m_flFadeHoldTime + pCredit->flTimeAdd, localTime ) * m_cColor[3] );
 		
 		wchar_t unicode[256];
-		g_pVGuiLocalize->ConvertANSIToUnicode( pCredit->szCreditName, unicode, sizeof( unicode ) );
+		
+		if ( pCredit->szCreditName[0] == '#' )
+		{
+			g_pVGuiLocalize->ConstructString( unicode, sizeof(unicode), g_pVGuiLocalize->Find(pCredit->szCreditName), 0 );
+		}
+		else
+		{
+			g_pVGuiLocalize->ConvertANSIToUnicode( pCredit->szCreditName, unicode, sizeof( unicode ) );
+		}
 
 		surface()->DrawSetTextPos( XRES( pCredit->flXPos ), YRES( pCredit->flYPos ) );
 		surface()->DrawUnicodeString( unicode );

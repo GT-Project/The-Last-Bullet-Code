@@ -87,10 +87,7 @@ void CWeaponKnife::AddViewKick(void)
 	pPlayer->ViewPunch(punchAng);
 }
 
-bool CWeaponKnife::HasIronsights()
-{
-	return false;
-}
+
 
 
 //-----------------------------------------------------------------------------

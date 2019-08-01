@@ -4,8 +4,8 @@
 //
 //=============================================================================//
 
-#ifndef WEAPON_CROWBAR_H
-#define WEAPON_CROWBAR_H
+#ifndef WEAPON_KNIFE_H
+#define WEAPON_KNIFE_H
 
 #include "basebludgeonweapon.h"
 
@@ -41,8 +41,8 @@ public:
 	float		GetDamageForActivity(Activity hitActivity);
 
 	virtual int WeaponMeleeAttack1Condition(float flDot, float flDist);
-	void		SecondaryAttack(void)	{ return; }
-	virtual bool HasIronsights(void);
+	void		SecondaryAttack(void)	{ return; };
+	virtual bool HasIronsights(void) { return false; };
 
 	// Animation event
 	virtual void Operator_HandleAnimEvent(animevent_t *pEvent, CBaseCombatCharacter *pOperator);

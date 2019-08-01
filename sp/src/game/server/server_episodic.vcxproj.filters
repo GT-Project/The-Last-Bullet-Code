@@ -3508,6 +3508,9 @@
     <ClCompile Include="..\..\game\server\logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\server\sdk_logicandgate.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\server\skyboxswapper.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
@@ -3540,9 +3543,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="sdk_logicandgate.cpp">
-      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

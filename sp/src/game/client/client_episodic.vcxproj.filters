@@ -3439,6 +3439,9 @@
     <ClCompile Include="..\..\game\client\hud_hitmarker.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\client\hud_weaponicon.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\client\ShaderEditor\SEdit_ModelRender.cpp">
       <Filter>Source Shader Editor\Implementation Files</Filter>
     </ClCompile>
@@ -3453,9 +3456,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_weaponicon.cpp">
-      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

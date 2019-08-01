@@ -320,6 +320,7 @@ bool CBaseCombatWeapon::IsIronsighted(void)
 
 void CBaseCombatWeapon::ToggleIronsights(void)
 {
+	
 
 	if (m_bIsIronsighted) {
 		DisableIronsights();
@@ -351,11 +352,9 @@ void CBaseCombatWeapon::EnableIronsights(void)
 	{
 		m_bIsIronsighted = true;
 		SetIronsightTime();
+		pOwner->EmitSound("Player.IronSightIn");
 	}
-	if (HasIronsights()){
-		EmitSound("Player.IronSightIn");
-	}
-	else return;
+		
 }
 
 void CBaseCombatWeapon::DisableIronsights(void)
@@ -379,11 +378,11 @@ void CBaseCombatWeapon::DisableIronsights(void)
 	{
 		m_bIsIronsighted = false;
 		SetIronsightTime();
+		pOwner->EmitSound("Player.IronSightOut");
 	}
-	if (HasIronsights()){
-		EmitSound("Player.IronSightOut");
-	}
-	else return;
+	
+		
+	
 }
 
 void CBaseCombatWeapon::SetIronsightTime(void)

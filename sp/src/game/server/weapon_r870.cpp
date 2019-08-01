@@ -325,8 +325,10 @@ bool CWeaponRemington::StartReload(void)
 
 	pOwner->m_flNextAttack = gpGlobals->curtime;
 	m_flNextPrimaryAttack = gpGlobals->curtime + SequenceDuration();
-
+	
 	m_bInReload = true;
+	DisableIronsights();
+	
 	return true;
 }
 
