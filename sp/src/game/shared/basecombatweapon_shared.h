@@ -208,6 +208,7 @@ public:
 	Vector					GetIronsightPositionOffset(void) const;
 	QAngle					GetIronsightAngleOffset(void) const;
 	float					GetIronsightFOVOffset(void) const;
+	bool                    GetUsingIronsights(void) const;
 
 	virtual bool			HasIronsights(void) { return true; } //default yes; override and return false for weapons with no ironsights (like weapon_crowbar)
 

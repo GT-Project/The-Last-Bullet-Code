@@ -153,6 +153,7 @@ $Project "Client (Episodic)"
 		   $File "$SRCDIR\game\client\hud_hitmarker.h"
 		   $File "$SRCDIR\game\client\hud_hitmarker.cpp"
 		   $File "$SRCDIR\game\client\hud_weaponicon.cpp"
+		   $File "$SRCDIR\game\shared\achievements_tlb.cpp"
 		  
 		}
 	}

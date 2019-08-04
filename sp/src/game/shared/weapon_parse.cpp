@@ -385,7 +385,7 @@ void FileWeaponInfo_t::Parse( KeyValues *pKeyValuesData, const char *szWeaponNam
 	iDefaultClip1 = pKeyValuesData->GetInt( "default_clip", iMaxClip1 );		// amount of primary ammo placed in the primary clip when it's picked up
 	iDefaultClip2 = pKeyValuesData->GetInt( "default_clip2", iMaxClip2 );		// amount of secondary ammo placed in the secondary clip when it's picked up
 	iWeight = pKeyValuesData->GetInt( "weight", 0 );
-
+	bUsingIronsights = (pKeyValuesData->GetInt("UsingIronsights", 1) != 0) ? true : false;
 	KeyValues *pSights = pKeyValuesData->FindKey("IronSight");
 	if (pSights)
 	{
@@ -405,7 +405,7 @@ void FileWeaponInfo_t::Parse( KeyValues *pKeyValuesData, const char *szWeaponNam
 		vecIronsightPosOffset = vec3_origin;
 		angIronsightAngOffset.Init();
 		flIronsightFOVOffset = 0.0f;
-		iIronsightble = pKeyValuesData->GetBool("ironsightble", 0);
+		bUsingIronsights = false;
 	}
 
 	iRumbleEffect = pKeyValuesData->GetInt( "rumble", -1 );

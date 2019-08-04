@@ -94,7 +94,7 @@ public:
 	Vector					vecIronsightPosOffset;
 	QAngle					angIronsightAngOffset;
 	float					flIronsightFOVOffset;
-	bool                    iIronsightble;
+	bool                    bUsingIronsights;
 	int						iWeight;								// this value used to determine this weapon's importance in autoselection.
 	int						iRumbleEffect;							// Which rumble effect to use when fired? (xbox)
 	bool					bAutoSwitchTo;							// whether this weapon should be considered for autoswitching to

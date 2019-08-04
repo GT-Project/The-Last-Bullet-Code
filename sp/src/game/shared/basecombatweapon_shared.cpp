@@ -254,7 +254,7 @@ const unsigned char *CBaseCombatWeapon::GetEncryptionKey(void)
 }
 
 //-----------------------------------------------------------------------------
-// Purpose: do i know i just copy-paste
+// Purpose: get values from weapon script for IronSight
 //-----------------------------------------------------------------------------
 
 Vector CBaseCombatWeapon::GetIronsightPositionOffset(void) const
@@ -276,6 +276,11 @@ float CBaseCombatWeapon::GetIronsightFOVOffset(void) const
 	if (viewmodel_adjust_enabled.GetBool())
 		return viewmodel_adjust_fov.GetFloat();
 	return GetWpnData().flIronsightFOVOffset;
+}
+
+bool CBaseCombatWeapon::GetUsingIronsights(void) const
+{
+	return GetWpnData().bUsingIronsights;
 }
 
 void vm_adjust_enable_callback(IConVar *pConVar, char const *pOldString, float flOldValue)
@@ -340,7 +345,7 @@ void CBaseCombatWeapon::EnableIronsights(void)
 	return;
 	#endif*/
 
-	if (!HasIronsights() || m_bIsIronsighted)
+	if (!GetUsingIronsights() || m_bIsIronsighted)
 		return;
 
 	CBasePlayer *pOwner = ToBasePlayer(GetOwner());
@@ -366,7 +371,7 @@ void CBaseCombatWeapon::DisableIronsights(void)
 	#endif*/
 
 
-	if (!HasIronsights() || !m_bIsIronsighted)
+	if (!GetUsingIronsights() || !m_bIsIronsighted)
 		return;
 
 	CBasePlayer *pOwner = ToBasePlayer(GetOwner());

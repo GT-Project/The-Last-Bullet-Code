@@ -3457,6 +3457,9 @@
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
     </ClCompile>
+    <ClCompile Include="..\shared\achievements_tlb.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

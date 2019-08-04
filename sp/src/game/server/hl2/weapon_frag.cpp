@@ -135,6 +135,7 @@ bool CWeaponFrag::Holster( CBaseCombatWeapon *pSwitchingTo )
 {
 	m_bRedraw = false;
 	m_fDrawbackFinished = false;
+	DisableIronsights();
 
 	return BaseClass::Holster( pSwitchingTo );
 }
@@ -215,7 +216,7 @@ bool CWeaponFrag::Reload( void )
 {
 	if ( !HasPrimaryAmmo() )
 		return false;
-
+	DisableIronsights();
 	if ( ( m_bRedraw ) && ( m_flNextPrimaryAttack <= gpGlobals->curtime ) && ( m_flNextSecondaryAttack <= gpGlobals->curtime ) )
 	{
 		//Redraw the weapon
@@ -229,7 +230,7 @@ bool CWeaponFrag::Reload( void )
 		//Mark this as done
 		m_bRedraw = false;
 	}
-
+	
 	return true;
 }
 
