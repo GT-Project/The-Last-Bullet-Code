@@ -3505,6 +3505,9 @@
     <ClCompile Include="..\..\game\shared\usermessages.cpp">
       <Filter>Source Files\temporary entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\shared\achievements_tlb.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\server\logic_playmovie.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
@@ -3543,9 +3546,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\shared\achievements_tlb.cpp">
-      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

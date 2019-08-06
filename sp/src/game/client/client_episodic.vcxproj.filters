@@ -3433,6 +3433,9 @@
     <ClCompile Include="smoke_fog_overlay.cpp">
       <Filter>Source Files\Temporary Entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\game\shared\achievements_tlb.cpp">
+      <Filter>Source Files\TLB</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\game\client\c_movie_display.cpp">
       <Filter>Source Files\TLB</Filter>
     </ClCompile>
@@ -3456,9 +3459,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_client.cpp">
       <Filter>Tool Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="..\shared\achievements_tlb.cpp">
-      <Filter>Source Files\TLB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

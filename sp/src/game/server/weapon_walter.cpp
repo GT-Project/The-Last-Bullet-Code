@@ -17,6 +17,7 @@
 #include "game.h"
 #include "vstdlib/random.h"
 #include "gamestats.h"
+#include "particle_parse.h"
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -165,6 +166,8 @@ CWeaponWalter::CWeaponWalter(void)
 //-----------------------------------------------------------------------------
 void CWeaponWalter::Precache(void)
 {
+	PrecacheParticleSystem("weapon_muzzle_flash_pistol");
+	PrecacheParticleSystem("weapon_muzzle_smoke");
 	BaseClass::Precache();
 }
 
@@ -285,8 +288,12 @@ void CWeaponWalter::PrimaryAttack(void)
 
 	// do the traceline
 	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
-
-	pPlayer->DoMuzzleFlash();
+	
+	DispatchParticleEffect("weapon_muzzle_flash_pistol",PATTACH_POINT_FOLLOW,pPlayer->GetViewModel(),"muzzle",true);
+	if (m_nNumShotsFired >= 5){
+		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
+	};
+	//pPlayer->DoMuzzleFlash();
 	// check to see if we hit a Player
 	// check to see if we hit an NPC
 	if (tr.m_pEnt)

@@ -18,12 +18,13 @@
 #include "soundent.h"
 #include "vstdlib/random.h"
 #include "gamestats.h"
+#include "particle_parse.h"
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
 extern ConVar sk_auto_reload_time;
-extern ConVar sk_plr_num_shotgun_pellets;
+extern ConVar sk_plr_num_r870_pellets;
 
 class CWeaponRemington : public CBaseHLCombatWeapon
 {
@@ -155,6 +156,7 @@ IMPLEMENT_ACTTABLE(CWeaponRemington);
 
 void CWeaponRemington::Precache(void)
 {
+	PrecacheParticleSystem("weapon_muzzle_flash_assaultrifle");
 	CBaseCombatWeapon::Precache();
 }
 
@@ -490,8 +492,11 @@ void CWeaponRemington::PrimaryAttack(void)
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
 
-	pPlayer->DoMuzzleFlash();
-
+	//pPlayer->DoMuzzleFlash();
+	DispatchParticleEffect("weapon_muzzle_flash_assaultrifle", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
+	if (m_iPrimaryAttacks == 5){
+		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
+	};
 	SendWeaponAnim(ACT_VM_PRIMARYATTACK);
 
 	// player "shoot" animation
