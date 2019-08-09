@@ -54,7 +54,7 @@ public:
 	
 	bool	Reload( void );
 
-	bool	ShouldDisplayHUDHint() { return true; }
+	bool	ShouldDisplayHUDHint() { return false; }
 
 private:
 	void	ThrowGrenade( CBasePlayer *pPlayer );

@@ -482,6 +482,8 @@ void CHL2_Player::RemoveSuit(void)
 void CHL2_Player::HandleSpeedChanges(void)
 {
 	int buttonsChanged = m_afButtonPressed | m_afButtonReleased;
+	CBaseCombatWeapon *pWeapon = dynamic_cast<CBaseCombatWeapon *>(GetActiveWeapon());
+	
 
 	bool bCanSprint = CanSprint();
 	bool bIsSprinting = IsSprinting();
@@ -496,10 +498,20 @@ void CHL2_Player::HandleSpeedChanges(void)
 			if (sv_stickysprint.GetBool())
 			{
 				StartAutoSprint();
+
+				if (pWeapon != NULL){
+					pWeapon->DisableIronsights();
+				}
+			
 			}
 			else
 			{
 				StartSprinting();
+
+				if (pWeapon != NULL){
+					pWeapon->DisableIronsights();
+				}
+				
 			}
 		}
 		else
@@ -511,6 +523,16 @@ void CHL2_Player::HandleSpeedChanges(void)
 			// Reset key, so it will be activated post whatever is suppressing it.
 			m_nButtons &= ~IN_SPEED;
 		}
+
+		
+	}
+	/*if (pWeapon == NULL)
+		return;*/
+
+	if (bIsSprinting && pWeapon != NULL && pWeapon->IsIronsighted())
+	{
+		StopSprinting();
+		bWantSprint = false;
 	}
 
 	bool bIsWalking = IsWalking();
@@ -1224,11 +1246,6 @@ void CHL2_Player::StartSprinting(void)
 	if (!SuitPower_AddDevice(SuitDeviceSprint))
 		return;
 
-	
-	
-	
-	CBasePlayer* pPlayer = UTIL_GetLocalPlayer();
-	m_vecSprint = pPlayer->GetAbsVelocity();
 	
 
 	SetMaxSpeed(HL2_SPRINT_SPEED);
