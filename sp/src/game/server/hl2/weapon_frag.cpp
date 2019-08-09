@@ -294,7 +294,7 @@ void CWeaponFrag::PrimaryAttack( void )
 
 	// Note that this is a primary attack and prepare the grenade attack to pause.
 	m_AttackPaused = GRENADE_PAUSED_PRIMARY;
-	SendWeaponAnim( ACT_VM_PULLBACK_HIGH );
+	SendWeaponAnim(ACT_VM_PULLBACK_HIGH);
 	
 	// Put both of these off indefinitely. We do not know how long
 	// the player will hold the grenade.

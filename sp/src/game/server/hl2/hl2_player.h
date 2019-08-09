@@ -172,6 +172,7 @@ public:
 	bool IsSprinting( void ) { return m_fIsSprinting; }
 	bool CanSprint( void );
 	void EnableSprint( bool bEnable);
+	Vector m_vecSprint;
 
 	bool CanZoom( CBaseEntity *pRequester );
 	void ToggleZoom(void);

@@ -69,7 +69,7 @@ private:
 
 	virtual void			InitDefaultAIRelationships( void );
 	virtual const char*		AIClassText(int classType);
-	virtual const char *GetGameDescription( void ) { return "Half-Life 2"; }
+	virtual const char *GetGameDescription( void ) { return "The Last Bullet: Remake"; }
 
 	// Ammo
 	virtual void			PlayerThink( CBasePlayer *pPlayer );

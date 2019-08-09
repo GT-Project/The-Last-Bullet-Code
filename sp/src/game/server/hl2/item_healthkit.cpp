@@ -11,6 +11,8 @@
 #include "items.h"
 #include "in_buttons.h"
 #include "engine/IEngineSound.h"
+#include "basecombatcharacter.h"
+
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -50,7 +52,6 @@ void CSausage::Spawn(void)
 {
 	Precache();
 	SetModel("models\\Z-O-M-B-I-E\\STALKER\\dev_items\\dev_kolbasa.mdl");
-
 	BaseClass::Spawn();
 }
 
@@ -237,8 +238,8 @@ void CWhiskey::Spawn(void)
 {
 	Precache();
 	SetModel("models\\props_tlb\\oleg_whiskey.mdl");
-
 	BaseClass::Spawn();
+
 }
 
 
@@ -311,10 +312,8 @@ void CKakao::Spawn(void)
 {
 	Precache();
 	SetModel("models\\props_tlb\\oleg_kakao.mdl");
-
 	BaseClass::Spawn();
 }
-
 
 //---------------------------------------------------------------------------× 
 // Purpose: 

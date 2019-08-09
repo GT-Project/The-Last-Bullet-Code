@@ -371,6 +371,7 @@ DEFINE_INPUTFUNC(FIELD_VOID, "DisableFlashlight", InputDisableFlashlight),
 DEFINE_INPUTFUNC(FIELD_VOID, "EnableFlashlight", InputEnableFlashlight),
 DEFINE_INPUTFUNC(FIELD_VOID, "ForceDropPhysObjects", InputForceDropPhysObjects),
 
+DEFINE_SOUNDPATCH(m_sndSprint),
 DEFINE_SOUNDPATCH(m_sndLeeches),
 DEFINE_SOUNDPATCH(m_sndWaterSplashes),
 
@@ -465,7 +466,7 @@ void CHL2_Player::EquipSuit(bool bPlayEffects)
 
 	m_HL2Local.m_bDisplayReticle = true;
 
-	if (bPlayEffects == true)
+	if (bPlayEffects)
 	{
 		StartAdmireGlovesAnimation();
 	}
@@ -569,6 +570,16 @@ void CHL2_Player::PreThink(void)
 
 		NDebugOverlay::Box(predPos, NAI_Hull::Mins(GetHullType()), NAI_Hull::Maxs(GetHullType()), 0, 255, 0, 0, 0.01f);
 		NDebugOverlay::Line(GetAbsOrigin(), predPos, 0, 255, 0, 0, 0.01f);
+	}
+
+	if (IsSprinting())
+	{
+		m_vecSprint = UTIL_GetLocalPlayer()->GetAbsVelocity();
+		
+		if (m_vecSprint.Length() == 0 && m_vecSprint.Length() < 10.0f)
+			(CSoundEnvelopeController::GetController()).Shutdown(m_sndSprint);
+		else if (m_vecSprint.Length() >= 10.0f)
+			(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100);
 	}
 
 #ifdef HL2_EPISODIC
@@ -1216,6 +1227,8 @@ void CHL2_Player::StartSprinting(void)
 	
 	
 	
+	CBasePlayer* pPlayer = UTIL_GetLocalPlayer();
+	m_vecSprint = pPlayer->GetAbsVelocity();
 	
 
 	SetMaxSpeed(HL2_SPRINT_SPEED);
@@ -1223,8 +1236,9 @@ void CHL2_Player::StartSprinting(void)
 
 	CPASAttenuationFilter filter(this);
 	m_sndSprint = (CSoundEnvelopeController::GetController()).SoundCreate(filter, entindex(), CHAN_STATIC, "HL2Player.Sprint", ATTN_NORM);
-	if (m_sndSprint)(
-		(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100));
+	/*if (m_vecSprint.Length() >= 10.0f){
+		if (m_sndSprint)(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100);
+	}*/
 }
 
 
@@ -1253,6 +1267,9 @@ void CHL2_Player::StopSprinting(void)
 		m_bIsAutoSprinting = false;
 		m_fAutoSprintMinTime = 0.0f;
 	}
+
+	
+
 
 	if (m_sndSprint)(
 		(CSoundEnvelopeController::GetController()).SoundDestroy(m_sndSprint));
