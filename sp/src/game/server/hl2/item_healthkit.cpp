@@ -11,7 +11,7 @@
 #include "items.h"
 #include "in_buttons.h"
 #include "engine/IEngineSound.h"
-#include "basecombatcharacter.h"
+
 
 
 // memdbgon must be the last include file in a .cpp file!!!
@@ -126,6 +126,7 @@ void CHealthKit::Spawn( void )
 	SetModel( "models/items/healthkit.mdl" );
 
 	BaseClass::Spawn();
+	
 }
 
 

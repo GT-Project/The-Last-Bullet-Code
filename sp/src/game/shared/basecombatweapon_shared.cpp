@@ -695,6 +695,11 @@ CHudTexture const *CBaseCombatWeapon::GetSpriteZoomedAutoaim(void) const
 	return GetWpnData().iconZoomedAutoaim;
 }
 
+CHudTexture const *CBaseCombatWeapon::GetSpriteWeaponIcon(void) const
+{
+	return GetWpnData().iconWeaponIcon;
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
@@ -1584,6 +1589,9 @@ bool CBaseCombatWeapon::DefaultDeploy(char *szViewModel, char *szWeaponModel, in
 
 		pOwner->SetNextAttack(gpGlobals->curtime + SequenceDuration());
 	}
+
+	
+
 
 	// Can't shoot again until we've finished deploying
 	m_flNextPrimaryAttack = gpGlobals->curtime + SequenceDuration();

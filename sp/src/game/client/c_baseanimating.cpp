@@ -4748,6 +4748,7 @@ void C_BaseAnimating::OnDataChanged( DataUpdateType_t updateType )
 	{
 		m_nPrevSequence = -1;
 		m_nRestoreSequence = -1;
+		//CGlowObject(this, Vector(255,0,0),1);
 	}
 
 

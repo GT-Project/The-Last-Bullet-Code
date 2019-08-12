@@ -102,6 +102,7 @@ void WeaponsResource::LoadWeaponSprites( WEAPON_FILE_INFO_HANDLE hWeaponFileInfo
 	pWeaponInfo->iconCrosshair = NULL;
 	pWeaponInfo->iconAutoaim = NULL;
 	pWeaponInfo->iconSmall = NULL;
+	pWeaponInfo->iconWeaponIcon = NULL;
 
 	char sz[128];
 	Q_snprintf(sz, sizeof( sz ), "scripts/%s", pWeaponInfo->szClassName);
@@ -150,6 +151,16 @@ void WeaponsResource::LoadWeaponSprites( WEAPON_FILE_INFO_HANDLE hWeaponFileInfo
 	else
 	{
 		pWeaponInfo->iconZoomedAutoaim = pWeaponInfo->iconZoomedCrosshair;  //default to zoomed crosshair
+	}
+
+	p = FindHudTextureInDict(tempList, "weapon_icon");
+	if (p)
+	{
+		pWeaponInfo->iconWeaponIcon = gHUD.AddUnsearchableHudIconToList(*p);
+		if (pWeaponInfo->iconWeaponIcon) 
+		{
+			pWeaponInfo->iconWeaponIcon->Precache();
+		}
 	}
 
 	CHudHistoryResource *pHudHR = GET_HUDELEMENT( CHudHistoryResource );	

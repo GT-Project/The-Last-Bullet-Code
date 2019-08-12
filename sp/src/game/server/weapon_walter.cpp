@@ -233,6 +233,8 @@ void CWeaponWalter::DrawHitmarker(void)
 #endif
 }
 
+
+
 //-----------------------------------------------------------------------------
 // Purpose:
 //-----------------------------------------------------------------------------
@@ -292,7 +294,7 @@ void CWeaponWalter::PrimaryAttack(void)
 	DispatchParticleEffect("weapon_muzzle_flash_pistol",PATTACH_POINT_FOLLOW,pPlayer->GetViewModel(),"muzzle",true);
 	if (m_nNumShotsFired >= 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
-	};
+	}
 	//pPlayer->DoMuzzleFlash();
 	// check to see if we hit a Player
 	// check to see if we hit an NPC
@@ -310,6 +312,7 @@ void CWeaponWalter::PrimaryAttack(void)
 #endif
 		}
 	}
+	
 }
 
 //-----------------------------------------------------------------------------

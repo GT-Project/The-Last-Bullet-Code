@@ -10,6 +10,7 @@
 #pragma once
 #endif
 
+
 #include "sharedInterface.h"
 #include "vphysics_interface.h"
 #include "predictable_entity.h"
@@ -39,6 +40,7 @@ class CBasePlayer;
 class CBaseCombatCharacter;
 class IPhysicsConstraint;
 class CUserCmd;
+
 
 // How many times to display altfire hud hints (per weapon)
 #define WEAPON_ALTFIRE_HUD_HINT_COUNT	1
@@ -401,6 +403,7 @@ public:
 	virtual CHudTexture const	*GetSpriteAutoaim( void ) const;
 	virtual CHudTexture const	*GetSpriteZoomedCrosshair( void ) const;
 	virtual CHudTexture const	*GetSpriteZoomedAutoaim( void ) const;
+	virtual CHudTexture const   *GetSpriteWeaponIcon(void) const;
 
 	virtual Activity		ActivityOverride( Activity baseAct, bool *pRequired );
 	virtual	acttable_t*		ActivityList( void ) { return NULL; }

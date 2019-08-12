@@ -1,4 +1,3 @@
-//========= Copyright Valve Corporation, All rights reserved. ============//
 //
 // Purpose: Weapon data file parsing, shared by game & client dlls.
 //
@@ -344,6 +343,7 @@ FileWeaponInfo_t::FileWeaponInfo_t()
 	iconAutoaim = 0;
 	iconZoomedCrosshair = 0;
 	iconZoomedAutoaim = 0;
+	iconWeaponIcon = 0;
 	bShowUsageHint = false;
 	m_bAllowFlipping = true;
 	m_bBuiltRightHanded = true;

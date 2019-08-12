@@ -128,6 +128,7 @@ public:
 	CHudTexture 					*iconZoomedCrosshair;
 	CHudTexture 					*iconZoomedAutoaim;
 	CHudTexture						*iconSmall;
+	CHudTexture                     *iconWeaponIcon;
 
 // TF2 specific
 	bool					bShowUsageHint;							// if true, then when you receive the weapon, show a hint about it

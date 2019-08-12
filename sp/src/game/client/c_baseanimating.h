@@ -26,6 +26,7 @@
 #include "ragdoll_shared.h"
 #include "tier0/threadtools.h"
 #include "datacache/idatacache.h"
+#include "glow_outline_effect.h"
 
 #define LIPSYNC_POSEPARAM_NAME "mouth"
 #define NUM_HITBOX_FIRES	10
@@ -47,6 +48,7 @@ class CBoneList;
 class KeyValues;
 class CJiggleBones;
 class IBoneSetup;
+class CGlowObject;
 FORWARD_DECLARE_HANDLE( memhandle_t );
 typedef unsigned short MDLHandle_t;
 
