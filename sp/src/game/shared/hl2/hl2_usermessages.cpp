@@ -47,6 +47,7 @@ void RegisterUserMessages( void )
 	usermessages->Register( "UpdateJalopyRadar", -1 );
 	usermessages->Register("ShowHitmarker", 1); // Show Hit Marker
 	//usermessages->Register("ShowWeaponIcon", 1); //Show Weapon Icon(Hope this will work UPD: It works)
+	usermessages->Register("ShowSavingData", 1);
 #ifndef _X360
 	// NVNT register haptic user messages
 	RegisterHapticMessages();

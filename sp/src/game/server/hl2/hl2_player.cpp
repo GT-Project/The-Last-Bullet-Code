@@ -596,6 +596,7 @@ void CHL2_Player::PreThink(void)
 
 	if (IsSprinting())
 	{
+		Vector m_vecSprint;
 		m_vecSprint = UTIL_GetLocalPlayer()->GetAbsVelocity();
 		
 		if (m_vecSprint.Length() == 0 && m_vecSprint.Length() < 10.0f)
@@ -1290,6 +1291,7 @@ void CHL2_Player::StopSprinting(void)
 
 	if (m_sndSprint)(
 		(CSoundEnvelopeController::GetController()).SoundDestroy(m_sndSprint));
+	m_sndSprint = NULL;
 }
 
 

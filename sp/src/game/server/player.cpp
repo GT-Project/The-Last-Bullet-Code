@@ -5148,12 +5148,29 @@ void CBasePlayer::ForceRespawn(void)
 
 	Spawn();
 }
+void CBasePlayer::DrawShowSavingData()
+{
+	CBasePlayer *pPlayer = UTIL_GetLocalPlayer();
+
+	if (pPlayer == NULL)
+	{
+		return;
+	}
+
+#ifndef CLIENT_DLL
+	CSingleUserRecipientFilter filter(pPlayer);
+	UserMessageBegin(filter, "ShowSavingData");
+	WRITE_BYTE(1);
+	MessageEnd();
+#endif
+
+}
 
 int CBasePlayer::Save(ISave &save)
 {
 	if (!BaseClass::Save(save))
 		return 0;
-
+	DrawShowSavingData();
 	return 1;
 }
 

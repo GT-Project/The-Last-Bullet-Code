@@ -273,6 +273,7 @@ public:
 	void					UnlockPlayer( void );
 
 	virtual void			DrawDebugGeometryOverlays(void);
+	void DrawShowSavingData();
 	
 	// Networking is about to update this entity, let it override and specify it's own pvs
 	virtual void			SetupVisibility( CBaseEntity *pViewEntity, unsigned char *pvs, int pvssize );
