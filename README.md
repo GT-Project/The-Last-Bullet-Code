@@ -1,5 +1,6 @@
-#The Last Bullet: Remake SRC. NOT FOR PUBLIC USES   
-   SOURCE 1 SDK LICENSE
+# The Last Bullet: Remake SRC
+
+SOURCE 1 SDK LICENSE
 
 Source SDK Copyright(c) Valve Corp.  
 
