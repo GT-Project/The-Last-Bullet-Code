@@ -188,6 +188,8 @@ IMPLEMENT_CLIENTCLASS_DT(C_BaseAnimating, DT_BaseAnimating, CBaseAnimating)
 	RecvPropInt( RECVINFO( m_bClientSideAnimation )),
 	RecvPropInt( RECVINFO( m_bClientSideFrameReset )),
 
+	RecvPropBool(RECVINFO( m_bGlowEnabled )),
+
 	RecvPropInt( RECVINFO( m_nNewSequenceParity )),
 	RecvPropInt( RECVINFO( m_nResetEventsParity )),
 	RecvPropInt( RECVINFO( m_nMuzzleFlashParity ) ),
@@ -734,6 +736,11 @@ C_BaseAnimating::C_BaseAnimating() :
 	Q_memset(&m_mouth, 0, sizeof(m_mouth));
 	m_flCycle = 0;
 	m_flOldCycle = 0;
+#ifdef GLOWS_ENABLE
+	m_cGlowObject = NULL;
+	m_bOldGlow = false;
+	m_bGlowEnabled = false;
+#endif
 }
 
 //-----------------------------------------------------------------------------
@@ -764,6 +771,8 @@ C_BaseAnimating::~C_BaseAnimating()
 		m_pAttachedTo->RemoveBoneAttachment( this );
 		m_pAttachedTo = NULL;
 	}
+
+	//DestroyGlowEffect();
 }
 
 bool C_BaseAnimating::UsesPowerOfTwoFrameBufferTexture( void )
@@ -2132,7 +2141,29 @@ bool C_BaseAnimating::GetAttachmentVelocity( int number, Vector &originVel, Quat
 	return true;
 }
 
+void C_BaseAnimating::UpdateGlowEffect()
+{
+	// destroy the existing effect
+	if (m_cGlowObject)
+	{
+		DestroyGlowEffect();
+	}
+	// create a new effect
+	if (m_bGlowEnabled)
+	{
+		m_cGlowObject = new CGlowObject(this, Vector(0.011f, 0.988f, 0.745f), 1.0, true);
+	}
+}
 
+
+void C_BaseAnimating::DestroyGlowEffect()
+{
+	if (m_cGlowObject)
+	{
+		delete m_cGlowObject;
+		m_cGlowObject = NULL;
+	}
+}
 //-----------------------------------------------------------------------------
 // Returns the attachment in local space
 //-----------------------------------------------------------------------------
@@ -4548,6 +4579,9 @@ void C_BaseAnimating::OnPreDataChanged( DataUpdateType_t updateType )
 	BaseClass::OnPreDataChanged( updateType );
 
 	m_bLastClientSideFrameReset = m_bClientSideFrameReset;
+#ifdef GLOWS_ENABLE
+	m_bOldGlow = m_bGlowEnabled;
+#endif // GLOWS_ENABLE
 }
 
 void C_BaseAnimating::ForceSetupBonesAtTime( matrix3x4_t *pBonesOut, float flTime )
@@ -4749,6 +4783,10 @@ void C_BaseAnimating::OnDataChanged( DataUpdateType_t updateType )
 		m_nPrevSequence = -1;
 		m_nRestoreSequence = -1;
 		//CGlowObject(this, Vector(255,0,0),1);
+		if (m_bOldGlow != m_bGlowEnabled)
+		{
+			UpdateGlowEffect();
+		}
 	}
 
 

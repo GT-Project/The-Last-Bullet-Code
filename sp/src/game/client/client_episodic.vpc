@@ -19,7 +19,7 @@ $Configuration
 	}
 }
 
-$Project "Client (Episodic)"
+$Project "Client (TLBR)"
 {
    $Folder "Source Shader Editor" 
    {

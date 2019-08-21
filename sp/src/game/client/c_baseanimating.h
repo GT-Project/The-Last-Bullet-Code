@@ -48,7 +48,7 @@ class CBoneList;
 class KeyValues;
 class CJiggleBones;
 class IBoneSetup;
-class CGlowObject;
+
 FORWARD_DECLARE_HANDLE( memhandle_t );
 typedef unsigned short MDLHandle_t;
 
@@ -270,7 +270,7 @@ public:
 	virtual bool					GetAttachment( int number, Vector &origin, QAngle &angles );
 	virtual bool					GetAttachment( int number, matrix3x4_t &matrix );
 	virtual bool					GetAttachmentVelocity( int number, Vector &originVel, Quaternion &angleVel );
-	
+
 	// Returns the attachment in local space
 	bool							GetAttachmentLocal( int iAttachment, matrix3x4_t &attachmentToLocal );
 	bool							GetAttachmentLocal( int iAttachment, Vector &origin, QAngle &angles );
@@ -453,9 +453,16 @@ protected:
 	// use TransformViewModelAttachmentToWorld.
 	virtual void					FormatViewModelAttachment( int nAttachment, matrix3x4_t &attachmentToWorld ) {}
 
+
 	// View models say yes to this.
 	bool							IsBoneAccessAllowed() const;
 	CMouthInfo&						MouthInfo();
+
+	//Glow Effect
+#ifdef GLOWS_ENABLE
+	virtual	void UpdateGlowEffect();
+	virtual void DestroyGlowEffect();
+#endif
 
 	// Models used in a ModelPanel say yes to this
 	virtual bool					IsMenuModel() const;
@@ -479,6 +486,13 @@ private:
 	void							UpdateRelevantInterpolatedVars();
 	void							AddBaseAnimatingInterpolatedVars();
 	void							RemoveBaseAnimatingInterpolatedVars();
+
+	//Glow Effect
+#ifdef GLOWS_ENABLE
+	CGlowObject         *m_cGlowObject;
+	bool m_bGlowEnabled;
+	bool m_bOldGlow;
+#endif
 
 public:
 	CRagdoll						*m_pRagdoll;
@@ -618,6 +632,8 @@ private:
 
 	bool							m_bInitModelEffects;
 
+
+
 	// Dynamic models
 	bool							m_bDynamicModelAllowed;
 	bool							m_bDynamicModelPending;
@@ -635,6 +651,7 @@ private:
 	mutable CStudioHdr				*m_pStudioHdr;
 	mutable MDLHandle_t				m_hStudioHdr;
 	CThreadFastMutex				m_StudioHdrInitLock;
+	
 };
 
 enum 

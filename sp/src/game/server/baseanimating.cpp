@@ -226,40 +226,42 @@ END_SEND_TABLE()
 void *SendProxy_ClientSideAnimation( const SendProp *pProp, const void *pStruct, const void *pVarData, CSendProxyRecipients *pRecipients, int objectID );
 
 // SendTable stuff.
-IMPLEMENT_SERVERCLASS_ST(CBaseAnimating, DT_BaseAnimating)
-	SendPropInt		( SENDINFO(m_nForceBone), 8, 0 ),
-	SendPropVector	( SENDINFO(m_vecForce), -1, SPROP_NOSCALE ),
+	IMPLEMENT_SERVERCLASS_ST(CBaseAnimating, DT_BaseAnimating)
+		SendPropInt(SENDINFO(m_nForceBone), 8, 0),
+		SendPropVector(SENDINFO(m_vecForce), -1, SPROP_NOSCALE),
 
-	SendPropInt		( SENDINFO(m_nSkin), ANIMATION_SKIN_BITS),
-	SendPropInt		( SENDINFO(m_nBody), ANIMATION_BODY_BITS),
+		SendPropInt(SENDINFO(m_nSkin), ANIMATION_SKIN_BITS),
+		SendPropInt(SENDINFO(m_nBody), ANIMATION_BODY_BITS),
 
-	SendPropInt		( SENDINFO(m_nHitboxSet),ANIMATION_HITBOXSET_BITS, SPROP_UNSIGNED ),
+		SendPropInt(SENDINFO(m_nHitboxSet), ANIMATION_HITBOXSET_BITS, SPROP_UNSIGNED),
 
-	SendPropFloat	( SENDINFO(m_flModelScale) ),
+		SendPropFloat(SENDINFO(m_flModelScale)),
 
-	SendPropArray3  ( SENDINFO_ARRAY3(m_flPoseParameter), SendPropFloat(SENDINFO_ARRAY(m_flPoseParameter), ANIMATION_POSEPARAMETER_BITS, 0, 0.0f, 1.0f ) ),
-	
-	SendPropInt		( SENDINFO(m_nSequence), ANIMATION_SEQUENCE_BITS, SPROP_UNSIGNED ),
-	SendPropFloat	( SENDINFO(m_flPlaybackRate), ANIMATION_PLAYBACKRATE_BITS, SPROP_ROUNDUP, -4.0, 12.0f ), // NOTE: if this isn't a power of 2 than "1.0" can't be encoded correctly
+		SendPropArray3(SENDINFO_ARRAY3(m_flPoseParameter), SendPropFloat(SENDINFO_ARRAY(m_flPoseParameter), ANIMATION_POSEPARAMETER_BITS, 0, 0.0f, 1.0f)),
 
-	SendPropArray3 	(SENDINFO_ARRAY3(m_flEncodedController), SendPropFloat(SENDINFO_ARRAY(m_flEncodedController), 11, SPROP_ROUNDDOWN, 0.0f, 1.0f ) ),
+		SendPropInt(SENDINFO(m_nSequence), ANIMATION_SEQUENCE_BITS, SPROP_UNSIGNED),
+		SendPropFloat(SENDINFO(m_flPlaybackRate), ANIMATION_PLAYBACKRATE_BITS, SPROP_ROUNDUP, -4.0, 12.0f), // NOTE: if this isn't a power of 2 than "1.0" can't be encoded correctly
 
-	SendPropInt( SENDINFO( m_bClientSideAnimation ), 1, SPROP_UNSIGNED ),
-	SendPropInt( SENDINFO( m_bClientSideFrameReset ), 1, SPROP_UNSIGNED ),
+		SendPropArray3(SENDINFO_ARRAY3(m_flEncodedController), SendPropFloat(SENDINFO_ARRAY(m_flEncodedController), 11, SPROP_ROUNDDOWN, 0.0f, 1.0f)),
 
-	SendPropInt( SENDINFO( m_nNewSequenceParity ), EF_PARITY_BITS, SPROP_UNSIGNED ),
-	SendPropInt( SENDINFO( m_nResetEventsParity ), EF_PARITY_BITS, SPROP_UNSIGNED ),
-	SendPropInt( SENDINFO( m_nMuzzleFlashParity ), EF_MUZZLEFLASH_BITS, SPROP_UNSIGNED ),
+		SendPropInt(SENDINFO(m_bClientSideAnimation), 1, SPROP_UNSIGNED),
+		SendPropInt(SENDINFO(m_bClientSideFrameReset), 1, SPROP_UNSIGNED),
 
-	SendPropEHandle( SENDINFO( m_hLightingOrigin ) ),
-	SendPropEHandle( SENDINFO( m_hLightingOriginRelative ) ),
+		SendPropInt(SENDINFO(m_nNewSequenceParity), EF_PARITY_BITS, SPROP_UNSIGNED),
+		SendPropInt(SENDINFO(m_nResetEventsParity), EF_PARITY_BITS, SPROP_UNSIGNED),
+		SendPropInt(SENDINFO(m_nMuzzleFlashParity), EF_MUZZLEFLASH_BITS, SPROP_UNSIGNED),
 
-	SendPropDataTable( "serveranimdata", 0, &REFERENCE_SEND_TABLE( DT_ServerAnimationData ), SendProxy_ClientSideAnimation ),
+		SendPropEHandle(SENDINFO(m_hLightingOrigin)),
+		SendPropEHandle(SENDINFO(m_hLightingOriginRelative)),
 
-	// Fading
-	SendPropFloat( SENDINFO( m_fadeMinDist ), 0, SPROP_NOSCALE ),
-	SendPropFloat( SENDINFO( m_fadeMaxDist ), 0, SPROP_NOSCALE ),
-	SendPropFloat( SENDINFO( m_flFadeScale ), 0, SPROP_NOSCALE ),
+		SendPropDataTable("serveranimdata", 0, &REFERENCE_SEND_TABLE(DT_ServerAnimationData), SendProxy_ClientSideAnimation),
+
+		// Fading
+		SendPropFloat(SENDINFO(m_fadeMinDist), 0, SPROP_NOSCALE),
+		SendPropFloat(SENDINFO(m_fadeMaxDist), 0, SPROP_NOSCALE),
+		SendPropFloat(SENDINFO(m_flFadeScale), 0, SPROP_NOSCALE),
+
+		SendPropBool(SENDINFO(m_bGlowEnabled)),
 
 END_SEND_TABLE()
 
@@ -1770,6 +1772,33 @@ inline bool CBaseAnimating::CanSkipAnimation( void )
 	}
 }
 
+
+#ifdef GLOWS_ENABLE
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CBaseAnimating::AddGlowEffect(void)
+{
+	SetTransmitState(FL_EDICT_ALWAYS);
+	m_bGlowEnabled.Set(true);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CBaseAnimating::RemoveGlowEffect(void)
+{
+	m_bGlowEnabled.Set(false);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+bool CBaseAnimating::IsGlowEffectActive(void)
+{
+	return m_bGlowEnabled;
+}
+#endif // GLOWS_ENABLE
 
 void CBaseAnimating::SetupBones( matrix3x4_t *pBoneToWorld, int boneMask )
 {

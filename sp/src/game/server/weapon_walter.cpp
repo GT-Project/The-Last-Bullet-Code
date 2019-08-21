@@ -169,6 +169,8 @@ void CWeaponWalter::Precache(void)
 	PrecacheParticleSystem("weapon_muzzle_flash_pistol");
 	PrecacheParticleSystem("weapon_muzzle_smoke");
 	BaseClass::Precache();
+
+	
 }
 
 //-----------------------------------------------------------------------------

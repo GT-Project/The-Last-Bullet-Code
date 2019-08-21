@@ -84,6 +84,13 @@ public:
 	void StudioFrameAdvanceManual( float flInterval );
 	bool	IsValidSequence( int iSequence );
 
+#ifdef GLOWS_ENABLE
+	// Glows
+	void				AddGlowEffect(void);
+	void				RemoveGlowEffect(void);
+	bool				IsGlowEffectActive(void);
+#endif // GLOWS_ENABLE
+
 	inline float					GetPlaybackRate();
 	inline void						SetPlaybackRate( float rate );
 
@@ -356,6 +363,7 @@ public:
 	// was pev->framerate
 	CNetworkVar( float, m_flPlaybackRate );
 
+
 public:
 	void InitStepHeightAdjust( void );
 	void SetIKGroundContactInfo( float minHeight, float maxHeight );
@@ -372,6 +380,7 @@ protected:
   	CIKContext			*m_pIk;
 	int					m_iIKCounter;
 
+	CNetworkVar(bool, m_bGlowEnabled);
 public:
 	Vector	GetStepOrigin( void ) const;
 	QAngle	GetStepAngles( void ) const;
@@ -381,6 +390,9 @@ private:
 	bool				m_bSequenceLoops;	// true if the sequence loops
 	bool				m_bResetSequenceInfoOnLoad; // true if a ResetSequenceInfo was queued up during dynamic load
 	float				m_flDissolveStartTime;
+
+	void				UpdateGlowEffect(void);
+	void				DestroyGlowEffect(void);
 
 	// was pev->frame
 	CNetworkVar( float, m_flCycle );

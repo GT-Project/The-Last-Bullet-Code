@@ -19,7 +19,7 @@ $Configuration
 	}
 }
 
-$Project "Server (Episodic)"
+$Project "Server (TLBR)"
 {
 	$Folder	"Source Files"
 	{
@@ -305,6 +305,7 @@ $Project "Server (Episodic)"
 			{
 			   $File "$SRCDIR\game\server\logic_playmovie.cpp"
 			   $File "$SRCDIR\game\server\sdk_logicandgate.cpp"
+			   $File "$SRCDIR\game\server\sdk_glowingentity.cpp"
 			   $File "$SRCDIR\game\shared\achievements_tlb.cpp"
 			   $File "$SRCDIR\game\server\weapon_knife.h"
 			   $File "$SRCDIR\game\server\weapon_knife.cpp"
