@@ -772,7 +772,7 @@ C_BaseAnimating::~C_BaseAnimating()
 		m_pAttachedTo = NULL;
 	}
 
-	//DestroyGlowEffect();
+	DestroyGlowEffect();
 }
 
 bool C_BaseAnimating::UsesPowerOfTwoFrameBufferTexture( void )
