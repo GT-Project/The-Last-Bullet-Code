@@ -1,1 +1,1 @@
-devtools\bin\vpc.exe /episodic +game /mksln TLBR-CS_DLL.sln
+devtools\bin\vpc.exe /tlbr +game /mksln TLBR-CS_DLL.sln

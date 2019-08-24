@@ -1,0 +1,31 @@
+// load the base configuration
+// пер: загрузка обычной конфигурации
+//exec default.cfg
+// Setup custom controller
+// пер: настройки устройств ввода(джойстик)
+exec joystick.cfg
+
+// run a user script file if present
+// пер: запуск пользовательского скрипта, если он существует
+exec autoexec.cfg
+
+//
+// stuff command line statements
+// пер: выдать параметры командной строки
+//
+stuffcmds// load the base configuration
+// пер: загрузка обычной конфигурации
+//exec default.cfg
+// Setup custom controller
+// пер: настройки устройств ввода(джойстик)
+exec joystick.cfg
+
+// run a user script file if present
+// пер: запуск пользовательского скрипта, если он существует
+exec autoexec.cfg
+
+//
+// stuff command line statements
+// пер: выдать параметры командной строки
+//
+stuffcmds

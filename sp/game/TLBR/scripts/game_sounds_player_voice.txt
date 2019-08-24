@@ -1,0 +1,73 @@
+//Player's voice
+
+"Player.Locked_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\door_locked_1.wav"
+}
+
+"Player.Intro_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Intro_1.wav"
+}
+
+"Player.Intro_2" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Intro_1.wav"
+}
+
+"Player.FoundKey_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Key_Found_1.wav"
+}
+
+"Player.Locked_2" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\door_locked_2.wav"
+}
+
+"Player.Caution_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Caution_1.wav"
+}
+
+"Player.Hint_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Hint_1.wav"
+}
+
+"Player.Locked_3" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\door_locked_3.wav"
+}

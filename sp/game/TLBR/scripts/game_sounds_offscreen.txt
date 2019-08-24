@@ -1,0 +1,10 @@
+//Offscreen voice 
+
+"Offscreen.Intro_Door_Locked_1" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "chapters\offscreen\intro\intro_door_locked_1.wav"
+}

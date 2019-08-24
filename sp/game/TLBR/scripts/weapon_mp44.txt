@@ -1,0 +1,99 @@
+﻿WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"	"#TLBR_MP44" // // Название
+	"viewmodel"				"models/weapons/v_mp44.mdl" // Путь к модельке v
+	"playermodel"			"models/weapons/w_mp44.mdl"	 // Путь к модельке w
+	"anim_prefix"			"smg2" // не трогать
+	"bucket"				"1" // позиция в выборе оружия по горизонтали
+	"bucket_position"		"1" // позиция в выборе оружия по вертикали
+	"bucket_360"			"1" // Тоже самое для x360
+	"bucket_position_360"	"1" // Тоже самое для x360
+
+	"clip_size"				"30" // Размер магазина
+	"clip2_size"			"-1" // Размер магазина подствола (подствола нету)
+
+	"default_clip"			"30" // Размер магазина при первом поднятии оружия
+	"default_clip2"			"-1"
+
+	"primary_ammo"			"AR2" // Тип патронов
+	"secondary_ammo"		"None"
+
+	"weight"				"3" // Вес, не важно
+	"rumble"			"3" // Не важно
+	"item_flags"			"0" // Не важно
+	"Ironsightble" "1"
+	
+	IronSight
+	{
+     	"right"		"-3.61"
+		"up"		"1.6"
+		"forward"	"-4.2"
+		"pitch"	    "0.25"
+		"yaw"	    "0.3"
+		"roll"		"0"
+		"fov"		"-25"
+	}
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"reload"			"common/null.wav"
+		"reload_npc"		"Weapon_MP44.NPC_Reload"
+		"empty"				"Weapon_MP44.Empty"
+		"single_shot"		"Weapon_MP44.Single"
+		"single_shot_npc"	"Weapon_MP44.NPC_Single"
+		"special1"			"Weapon_MP44.Special1"
+		"special2"			"Weapon_MP44.Special2"
+		"double_shot"		"Weapon_MP44.Double"
+		"burst"				"Weapon_MP44.Burst"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"f"
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"f"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"f"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"r"
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"f"
+		}
+		"crosshair"
+		{
+				"font"		"WeaponIcons"
+				"character"	"f"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+                 "weapon_icon"
+                {
+                      "font"		"WeaponIcons"
+				"character"	"f"
+                }
+	}
+}

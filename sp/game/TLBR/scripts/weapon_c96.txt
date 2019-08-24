@@ -1,0 +1,91 @@
+﻿WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"	"#TLBR_C96" // // Название
+	"viewmodel"				"models/weapons/v_c96.mdl" // Путь к модельке v
+	"playermodel"			"models/weapons/w_c96.mdl"	 // Путь к модельке w
+	"anim_prefix"			"pistol" // не трогать
+	"bucket"				"1" // позиция в выборе оружия по горизонтали
+	"bucket_position"		"2" // позиция в выборе оружия по вертикали
+	"bucket_360"			"1" // Тоже самое для x360
+	"bucket_position_360"	"2" // Тоже самое для x360	
+	
+	"clip_size"				"20" // Размер магазина
+	"clip2_size"			"-1" // Размер магазина подствола (подствола нету)
+
+	"default_clip"			"40" // Кол-во патронов при первом поднятии оружия
+	"default_clip2"			"-1"
+
+	"primary_ammo"			"mauser" // Тип патронов
+
+	"weight"				"3" // Вес, не важно
+	"rumble"			"3" // Не важно
+	"item_flags"			"0" // Не важно
+	"Ironsightble" "1"
+	
+	IronSight
+	{
+     	"right"		"-6.32"
+		"up"		"3.27"
+		"forward"	"-4.2"
+		"pitch"	    "0"
+		"yaw"       "-0.2"
+		"roll"		"0"
+		"fov"		"-15"
+	}	
+	
+	SoundData
+	{
+		"reload_npc"	"Weapon_Walter.NPC_Reload"
+		"empty"			"Weapon_Walter.Empty"
+		"single_shot"	"Weapon_C96.Single"
+		"single_shot_npc"	"Weapon_Walter.NPC_Single"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"l"
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"l"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"l"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"r"
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"l"
+		}
+		"crosshair"
+		{
+				"font"		"WeaponIcons"
+				"character"	"l"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+                "weapon_icon"
+                {
+                      "font"		"WeaponIcons"
+				"character"	"l"
+                }
+	}
+}

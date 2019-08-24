@@ -1,0 +1,6 @@
+bonus_maps_manifest
+{
+	"dir"		"scripts/bonus_maps"
+
+	//"search"	"maps"	[$WIN32]
+}

@@ -1,0 +1,88 @@
+﻿// Small Machine Gun 1
+
+WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"	"#TLBR_MINI" // // Название
+	"viewmodel"				"models/weapons/v_minigun.mdl" // Путь к модельке v
+	"playermodel"			"models/weapons/w_minigun.mdl"	 // Путь к модельке w
+	"anim_prefix"			"smg2" // не трогать
+	"bucket"				"4" // позиция в выборе оружия по горизонтали
+	"bucket_position"		"1" // позиция в выборе оружия по вертикали
+	"bucket_360"			"4" // Тоже самое для x360
+	"bucket_position_360"	"1" // Тоже самое для x360
+
+	"clip_size"				"100" // Размер магазина
+	"clip2_size"			"-1" // Размер магазина подствола (подствола нету)
+
+	"default_clip"			"100" // Размер магазина при первом поднятии оружия
+	"default_clip2"			"-1"
+
+	"primary_ammo"			"AR2" // Тип патронов
+
+	"weight"				"3" // Вес, не важно
+	"rumble"			"3" // Не важно
+	"item_flags"			"0" // Не важно
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"reload"			"Weapon_Minigun.Reload"
+		"reload_npc"		"Weapon_Minigun.NPC_Reload"
+		"empty"				"Weapon_Minigun.Empty"
+		"single_shot"		"Weapon_Minigun.Single"
+		"single_shot_npc"	"Weapon_Minigun.NPC_Single"
+		"special1"			"Weapon_Minigun.Special1"
+		"special2"			"Weapon_Minigun.Special2"
+		"double_shot"		"Weapon_Minigun.Double"
+		"burst"				"Weapon_Minigun.Burst"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"a"
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"a"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"a"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"r"
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"t"
+		}
+		"crosshair"
+		{
+				"font"		"WeaponIcons"
+				"character"	"a"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+                "weapon_icon"
+                {
+                      "font"		"WeaponIcons"
+				"character"	"a"
+                }
+	}
+}

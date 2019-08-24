@@ -1,0 +1,53 @@
+"GameInfo" 
+{ 
+game "The Last Bullet: Remake (Demo)" 
+title " " 
+title2 "" 
+nodifficulty 1 
+gamelogo 1 
+developer "GT-Projects"
+type singleplayer_only 
+icon		"resource/icon" 
+
+FileSystem 
+{ 
+SteamAppId 243730 // This sets the app ID in Steam 
+
+
+SearchPaths 
+{ 
+
+game+mod TLBR/custom/* 
+
+
+game+mod+mod_write+default_write_path |gameinfo_path|. 
+gamebin |gameinfo_path|bin 
+
+
+game_lv hl2/hl2_lv.vpk 
+game+mod ep2/ep2_english.vpk 
+game+mod ep2/ep2_pak.vpk 
+game |all_source_engine_paths|episodic/ep1_english.vpk 
+game |all_source_engine_paths|episodic/ep1_pak.vpk 
+game |all_source_engine_paths|hl2/hl2_english.vpk 
+game |all_source_engine_paths|hl2/hl2_pak.vpk 
+game |all_source_engine_paths|hl2/hl2_textures.vpk 
+game |all_source_engine_paths|hl2/hl2_sound_vo_english.vpk 
+game |all_source_engine_paths|hl2/hl2_sound_misc.vpk 
+game |all_source_engine_paths|hl2/hl2_misc.vpk 
+platform |all_source_engine_paths|platform/platform_misc.vpk 
+
+// Add the HL2 directory as a game search path. This is also where where writes 
+// to the "game" path go. 
+game+game_write ep2 
+
+// Where the game's binaries are 
+gamebin episodic/bin 
+
+// Last, mount in shared HL2 loose files 
+game |all_source_engine_paths|episodic 
+game |all_source_engine_paths|hl2 
+platform |all_source_engine_paths|platform 
+} 
+} 
+}

@@ -1,0 +1,9 @@
+	Ironsight
+	{
+		"right"	"-5.690000"
+		"up" "4.050000"
+		"forward" "-4.200000""
+		"pitch"	"0"
+		"roll"	"0"
+		"fov"	"-15"
+	}	

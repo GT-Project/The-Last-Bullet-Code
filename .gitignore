@@ -55,4 +55,14 @@ config.cfg
 # shader files
 *.tmp
 
+# Game Files
+sp/game/TLBR/materials/
+sp/game/TLBR/materialsrc
+sp/game/TLBR/models/
+sp/game/TLBR/media/
+sp/game/TLBR/sound/
+sp/game/TLBR/screenshots/
+sp/game/TLBR/save/
+sp/game/TLBR/maps/
+
 /.metadata/

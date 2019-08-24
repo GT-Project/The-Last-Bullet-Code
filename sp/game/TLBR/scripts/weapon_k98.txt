@@ -1,0 +1,86 @@
+﻿WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"		"#TLBR_k98"
+	"viewmodel"		"models/weapons/v_k98.mdl"
+	"playermodel"		"models/weapons/w_k98.mdl"
+	"anim_prefix"		"shotgun"
+	"bucket"			"3"
+	"bucket_position"		"4"
+    "bucket_360"			"3" // Тоже самое для x360
+	"bucket_position_360"	"1" // Тоже самое для x360
+	"clip_size"		"5"
+	"primary_ammo"		"762"
+	"secondary_ammo"	"None"
+
+	"weight"			"2"
+	"item_flags"		"0"
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+
+		"empty"				"Weapon_k98.Empty"
+		"reload"			"Weapon_k98.Reload"
+		"special1"			"Weapon_k98.Special1"
+		"single_shot"		"Weapon_k98.Single"
+		"double_shot"		"Weapon_k98.Double"
+		// NPC WEAPON SOUNDS
+		"reload_npc"		"Weapon_k98.NPC_Reload"
+		"single_shot_npc"	"Weapon_k98.NPC_Single"
+	}
+	
+	IronSight
+	{
+     	"right"		"-6.68"
+		"up"		"3.89"
+		"forward"	"-7.2"
+		"pitch"	    "0"
+		"roll"		"0"
+		"fov"		"-25"
+	}
+        "ViewModelFOV" "45"
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"g"
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"g"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"r"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"g"
+		}
+		"crosshair"
+		{
+				"font"		"WeaponIcons"
+				"character"	"g"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+                "weapon_icon"
+                {
+                      "font"		"WeaponIcons"
+				"character"	"g"
+                }
+	}
+}

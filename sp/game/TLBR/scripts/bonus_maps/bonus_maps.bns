@@ -1,0 +1,7 @@
+"#BonusMap_TLBR_L1P1"
+{
+  "map" "l1p1"
+  "image" "chapters/chapter1"
+  "comment" "#BonusMap_TLBR_L1P1_Comment"
+  "lock" "1"
+}

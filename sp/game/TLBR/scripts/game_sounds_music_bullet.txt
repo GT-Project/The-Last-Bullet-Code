@@ -1,0 +1,9 @@
+"Mu.Credits_mp3"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1"
+	"soundlevel"	"SNDLVL_NORM"
+
+
+	"wave"		"peeisstoredintheballs.mp3"
+}

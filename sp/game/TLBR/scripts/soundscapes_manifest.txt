@@ -1,0 +1,9 @@
+soundscapes_manifest
+{
+	"file"		"scripts/soundscapes.txt"
+
+	// List additional soundscape files here
+	
+	"file"		"scripts/soundscapes_castle.txt"
+
+}

@@ -1,0 +1,35 @@
+"Sausage.Touch" 
+{
+"channel" "CHAN_ITEM" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "eda\kolbasa.wav"
+}
+
+"Hotlunch.Touch" 
+{
+"channel" "CHAN_ITEM" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "eda\hotlunch.wav"
+}
+
+"Whiskey.Touch" 
+{
+"channel" "CHAN_ITEM" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "eda\Bonusdrink1.wav"
+}
+
+"Kakao.Touch" 
+{
+"channel" "CHAN_ITEM" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "eda\Water.wav"
+}

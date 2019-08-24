@@ -1,0 +1,176 @@
+//THE LAST BULLET: REMAKE FORGE GAME DATA FILE
+//COPYRIGHT GT-PROJECTS 2019(C)
+//ALL RIGHTS RESERVED
+
+@include "base.fgd"
+@include "halflife2.fgd"
+
+
+@NPCClass base(BaseNPC,RappelNPC) studio("models/Police.mdl") = npc_metropolice : "MetroPolice"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_walter" : "Walther"
+		"0"  : "Nothing"
+	]
+
+	manhacks(Choices) : "Number of Manhacks" : 0 =
+	[
+		0 : "None"
+		1 : "1"
+		2 : "2"
+	]
+
+	weapondrawn(Choices) : "Pistol starts drawn" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	spawnflags(Flags) =
+	[
+		131072 : "Simple cops" : 0
+		262144 : "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0
+		524288 : "Always stitch" : 0
+		1048576 : "No chatter" : 0
+		2097152 : "Arrest enemies" : 0
+		4194304 : "No far stitching" : 0
+		8388608 : "Prevent manhack toss" : 0
+		16777216: "Allowed to respond to thrown objects" : 0
+		33554432: "Mid-range attacks (halfway between normal + long-range)" : 0
+	]
+	  
+	// Inputs
+	input EnableManhackToss(void) : "Enables manhack toss (which had been disabled by the spawnflag)"
+	input SetPoliceGoal(string) : "Causes the NPC to police the area defined by an ai_goal_police"
+	input ActivateBaton(void) : "Set the baton to active"
+
+	// Outputs
+	output OnStunnedPlayer(void) : "Fires when the player is hit by a stunstick by this NPC."
+	output OnCupCopped(void) : "Fires if the player hits me with the cupcop can. ONLY use for x360 achievement."
+]
+
+
+//WEAPON DEFINITION
+
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_minigun.mdl") = weapon_minigun : "Minigun" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_amerk.mdl") = weapon_knife : "Knife" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_357.mdl") = weapon_357 : "357" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_grenade.mdl") = weapon_frag : "Frag Grenade" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_mp40.mdl") = weapon_mp40: "MP40" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_p38.mdl") = weapon_walter: "Walter" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_k98.mdl") = weapon_k98: "MK98" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_mp44.mdl") = weapon_mp44: "MP44" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_c96.mdl") = weapon_c96: "C96" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/weapons/w_r870.mdl") = weapon_r870: "Remington 870" []
+
+// ITEM DEFINITION(Food mostly)
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/Z-O-M-B-I-E/STALKER/dev_items/dev_kolbasa.mdl") = item_sausage: "sausage" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/props_tlb/oleg_kakao.mdl") = item_kakao: "kakao" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/newfood/hotlunch/hotlunch.mdl") = item_hotlunch: "hotlunch" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/props_tlb/oleg_wiskey.mdl") = item_whiskey: "whiskey" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/items/helmet.mdl") = item_helmet: "helmet" []
+@PointClass base(Item) studio("models/items/BoxMRounds.mdl")= item_ammo_762 : "Box of 7.62 ammo" []
+@PointClass base(Item) studio("models/items/BoxMRounds.mdl")= item_ammo_smg1_large : "Box of smg ammo" []
+
+
+// CUSTOM LOGIC ENTITIES DEFINITION
+@PointClass base(Targetname) iconsprite("editor/logic_playmovie") = logic_playmovie : "Plays a movie and allows for various playback options"
+[
+	MovieFilename(string) : "Movie to play" : "media/" : "Filename of the movie to play"
+	allowskip(choices) : "Allow User to Skip" : 0 : "Whether or not the user may skip the video with common keys" = 
+	[
+       0 : "No"
+       1 : "Yes"
+	]
+
+	input PlayMovie(void) : "Play the movie."
+	
+
+	// Outputs
+	output OnPlaybackFinished(void) : "Fired when the movie has completed playing back or was skipped by the user."
+]
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = point_clientcommand : 
+	"An entity that issues commands to the client console, as if it was typed in by the player (if activator is a player, or the local player in single player)."
+[
+	// Inputs
+	input Command(string) : "Command to execute."
+
+
+]
+
+
+@PointClass base(Targetname) iconsprite("editor/skybox_swapper") = skybox_swapper : "Swaps skybox material ingame"
+[
+  SkyboxName(string) : "Skybox Name Material" :  :"Name Of The Skybox Material To Change"
+
+  input Trigger(void) : "Change Material"
+]
+
+
+@PointClass base(Targetname, Parentname, Angles) size(-2 -2 -2, 2 2 2) frustum(lightfov,nearz,farz,lightcolor,-1) = env_projectedtexture : 
+	"Projected texture entity."
+[
+	spawnflags(flags) =
+	[
+		1  : "Enabled"				: 1
+	]
+
+	target(target_destination)	: "target" : : "target"	
+	lightfov(float)				: "FOV" : "90.0" : "FOV"
+	nearz(float)				: "NearZ" : "4.0" : "Near Z for projected texture"
+	farz(float)					: "FarZ" : "750.0" : "Far Z for projected texture"	
+	
+	enableshadows(Choices) : "Enable Shadows" : 0 : "Enables/disables shadows from this projected texture." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	shadowquality(Choices) : "Shadow Quality" : 1 : "Quality of shadows." =
+	[
+		0 : "Low"
+		1 : "High"
+	]
+	lightonlytarget(Choices) : "Light Only Target" : 0 : "Limit flashlight effect to only effect target entity." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	lightworld(Choices) : "Light World" : 1 : "Control whether flashlight effects static world geometry." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	lightcolor(color255)		: "Light Color" : "255 255 255 200" : "Light Color RGB-Intensity"
+	cameraspace(integer)		: "Camera Space" : 0 : "Angles are interpreted as being relative to camera."
+	texturename(material)	: "Texture" : : "path/texture to be projected. Relative to main/materials/"
+
+	// Inputs
+	input TurnOn(void)		: "Turn on the texture"
+	input TurnOff(void)		: "Turn off the texture"
+	input SetFOV(float)		: "Set FOV"
+]
+
+@PointClass base(Targetname, Parentname, Angles) studio("models/props/cs_office/coffee_mug.mdl") = sdk_glowingentity : "Glow Effect Test"
+[
+    GlowEnable(Choices) : "Start Enabled" : 0 : "If set Yes, it will start glowing on spawn" =
+	[  
+	   0 : "No"
+	   1 : "Yes"
+	]
+	
+	GlowColor(color1) : "Glow Color" : "1.0 1.0 1.0" : "Set the Glow Color"
+]
+
+@PointClass base(Targetname) = sdk_logicandgate : "First Written By Hand"
+[
+  //Inputs
+  input SetFirstVal(void) : "Set First Value"
+  input SetSecondVal(void) : "Set Second Value"
+  
+  //Outputs
+  
+  output OnAllTrue(void) : "On All Values true"
+]

@@ -1,0 +1,146 @@
+//Adrian: This file contains the credits info for both the Intro and outro.
+"credits.txt"
+{
+
+//========================================================
+//These are the names used in the intro (trainride)
+//========================================================
+"IntroCreditsNames"
+{
+	"#TLBR_Credits_MadeBy"	"CreditsText"
+	" "	"CreditsText"
+	" "	"CreditsText"
+	"gabataka"	"CreditsText"
+	" "	"CreditsText"
+	" "	"CreditsText"
+	"roman_memes"	"CreditsText"
+	" "	"CreditsText"
+	" "	"CreditsText"
+	"Alivebyte!"	"CreditsText"
+    " "	"CreditsText"
+	" "	"CreditsText"
+	"RudyK"	"CreditsText"
+	" "	"CreditsText"
+	" "	"CreditsText"
+	"MrIceBreaker"	"CreditsText"
+	" " "CreditsText"
+	" " "CreditsText"
+}
+
+"CreditsParams"
+{
+	"logo" "The Last Bullet"
+
+	"fadeintime"	"2.5"
+	"fadeouttime"	"1"
+	"fadeholdtime"	"1.0"
+	"nextfadetime"	"1.0"
+	"pausebetweenwaves" "1.0"
+	"logotime" "1.0"
+	"posx"	"96"
+	"posy"	"360"
+
+	"color" "255 255 255 128"
+
+	// Outro Parameters
+	"scrolltime" "80"
+	"separation"  "10"
+}
+
+//========================================================
+//These are the names used in the outro (outland_12a)
+//========================================================
+"OutroCreditsNames"
+{
+	"#TLBR_Credits_GameTitle" "ClientTitleFont"
+	"#TLBR_Credits_MadeBy" "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+ 	"#TLBR_Credits_LocGabeTitle"   "CreditsOutroText"
+	"gabataka"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+ 	"#TLBR_Credits_ProgTitle"   "CreditsOutroText"
+	"Alivebyte!"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#TLBR_Credits_GameDesignTitle"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+    "gabataka"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#TLBR_Credits_LevelDesignTitle"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+    "RudyK"   "CreditsOutroText"
+	"gabataka"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#TLBR_Credits_ModelTextureTitle"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+	"Alivebyte!"   "CreditsOutroText"
+	"MrIceBreaker"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	"#TLBR_Credits_SoundDesign"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+ 	"#TLBR_Credits_VoicesTitle"   "CreditsOutroText"
+	"roman_memes - Victor Baclajovich"   "CreditsOutroText"
+	"roman_memes - Axis"   "CreditsOutroText"
+	"roman_memes - Klubnikin"   "CreditsOutroText"
+	"roman_memes - Commander"   "CreditsOutroText"
+	"roman_memes - Axis General"   "CreditsOutroText"
+	
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+ 	"ROLE_NAME_HERE:"   "CreditsOutroText"
+	"roman_memes"   "CreditsOutroText"
+	
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	" "	"CreditsOutroText"
+	
+	"#TLBR_Credits_ThanksContent"   "CreditsOutroText"
+	"RaraCerberus"   "CreditsOutroText"
+    "FakeFactory"   "CreditsOutroText"
+	"Diamphid"   "CreditsOutroText"
+	"Z-O-M-B-I-E"   "CreditsOutroText"
+    "S.D.A."   "CreditsOutroText"
+	"RaraKnight" "CreditsOutroText"
+	"My Friend Mashiro" "CreditsOutroText"
+	"Adam" "CreditsOutroText"
+	"AidenDemon" "CreditsOutroText"
+	"Obsidian Conflict Team" "CreditsOutroText"
+	"Banana Maximus" "CreditsOutroText"
+	"Moon" "CreditsOutroText"
+	"EA DICE" "CreditsOutroText"
+	"Seven Zero" "CreditsOutroText"
+	"Navaro" "CreditsOutroText"
+	"KrIsCrEeP" "CreditsOutroText"
+	"Shadow_RUN" "CreditsOutroText"
+	"GuNsHiP Mark II" "CreditsOutroText"
+	"Juniez" "CreditsOutroText"
+	"Elite Metrocop"	"CreditsOutroText"
+	"3037"	"CreditsOutroText"
+	"#TLBR_Credits_EveryoneElseForgotten"   "CreditsOutroText"
+	" " "CreditsOutroText"
+	" " "CreditsOutroText"
+	" " "CreditsOutroText"
+	" " "CreditsOutroText"
+	" " "CreditsOutroText"
+	"#TLBR_Credits_ThankYou" "CreditsOutroText"
+}
+
+
+
+}

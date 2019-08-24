@@ -1,0 +1,2616 @@
+detail
+{
+	strandgras
+	{
+		"density" "800.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}
+
+
+	strandgras_revers
+	{
+		"density" "800.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.9"
+
+		}
+	}
+
+	strandgras_ueberall
+	{
+		"density" "800.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+	}
+
+
+	strandgras2
+	{
+		"density" "400.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}
+
+	strandgras2_dicht
+	{
+		"density" "1000.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}
+
+	strandgras2_revers
+	{
+		"density" "400.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.8"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}
+
+	strandgras2_revers_dicht
+	{
+		"density" "1000.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.8"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}
+
+	strandgras2_revers_dicht_ueberall
+	{
+		"density" "1000.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.8"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+	}
+
+	strandgras2_revers_ueberall
+	{
+		"density" "400.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.8"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+	}
+
+	strandgras2_revers_sehr_dicht
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 70 50"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.6"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 60 40"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.0"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.5"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 18"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.3"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.0"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.8"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}
+
+	waldgras
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}		
+
+
+	waldgras_ueberall
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 40 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.8"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+	}	
+
+	waldgras_revers_ueberall
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 40 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.8"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+	}	
+
+	waldgras_revers_dicht_ueberall
+	{
+		"density" "2000.0"
+
+		Group1
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 40 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.8"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+	}	
+
+	waldgras_dicht
+	{
+		"density" "2000.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 50"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 25"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 30"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}	
+
+	waldgras_ultradicht
+	{
+		"density" "3500.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 50"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 25"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 30"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}	
+
+	waldgras_niedrig_ultradicht
+	{
+		"density" "3500.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 15"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 19"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}	
+
+	waldgras_niedrig_ultradicht2_revers
+	{
+		"density" "6500.0"
+
+		Group1
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 15"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.4"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 19"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}	
+	
+	waldgras_niedrig_ultradicht_revers
+	{
+		"density" "3500.0"
+
+		Group1
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 15"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 20"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.4"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 19"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}		
+	
+	
+	
+	waldgras_dicht_ueberall
+	{
+		"density" "2000.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 50 50"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 45 25"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 30 30"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 40 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.8"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+
+	}		
+	waldgras_hoch
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 80 90"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				"upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 70"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 60 90"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 70"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 22"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 44 44"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 22"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "0.2"
+
+		}
+	}		
+
+
+	waldgras_hoch_revers
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 80 90"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				"upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 70"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 60 90"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 70"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 22"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 44 44"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 22"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}		
+
+	waldgras_hoch_ueberall
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "1"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 80 90"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				"upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 70"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 60 90"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 70"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 22"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 44 44"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 40 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.8"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		
+	}		
+	
+		waldgras_revers
+	{
+		"density" "1200.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}		
+	
+	
+		waldgras_revers_dicht
+	{
+		"density" "2000.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}		
+	
+	
+	
+			waldgras_revers_ultradicht
+	{
+		"density" "3500.0"
+
+		Group1
+		{
+			"alpha" "0"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 60"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.0"
+				"amount" "0.2"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 60 30"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.1"
+				"amount" "0.7"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model3
+			{
+				"sprite" "768 512 256 256 1024" 
+				"spritesize" "0.5 0.0 30 60"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.01"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model4
+			{
+				"sprite" "768 256 256 256 1024" 
+				"spritesize" "0.5 0.0 40 40"
+				"spriterandomscale" "0.1"
+				"sprite_shape" "cross"
+				"amount" "0.03"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group2
+		{
+			"alpha" "0.3"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 44 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.3"
+				"amount" "0.9"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+			Model2
+			{
+				"sprite" "256 512 256 256 1024" 
+				"spritesize" "0.5 0.0 24 24"
+				"spriterandomscale" "0.5"
+				"amount" "0.05"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}
+
+		Group3
+		{
+			"alpha" "0.7"
+			Model1
+			{
+				"sprite" "0 0 256 256 1024" 
+				"spritesize" "0.5 0.0 24 12"
+				"sprite_shape" "tri"
+				"spriterandomscale" "0.5"
+				"amount" "0.1"
+				// "upright" "1"
+				// "sway" "0.2"
+				"detailOrientation" "0"
+			}
+		}	
+
+		Group4
+		{
+			"alpha" "1"
+
+		}
+	}		
+	
+	
+	
+	
+	
+}
+
