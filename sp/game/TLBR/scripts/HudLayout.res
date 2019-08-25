@@ -25,15 +25,16 @@ HudAmmoBar
 	"xpos" "r176"
 	"ypos" "400"
 	"wide" "159"
-	"tall" "12"
+	"tall" "16"
 	"PaintBackgroundType" "0"
 	"BarChunkWidth" "1"
 	"BarChunkGap" "1"
 	"BarInsetX" "2"
     "BarInsetY" "2"
     "BarWidth" "157"
-    "BarHeight" "8"
-
+    "BarHeight" "12"
+	"AmmoBarColor" "247 208 79 255"
+    "AmmoBarDisabledAlpha" "70"
 }
 
 HudHitmarker

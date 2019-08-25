@@ -32,7 +32,7 @@ public:
       CHudAmmoBar( const char *pElementName);
 	  void Init( void );
 	  void Reset();
-
+	  bool ShouldDraw();
 	  virtual void OnThink();
 protected:
     virtual void Paint();
@@ -72,7 +72,7 @@ void CHudAmmoBar::Reset()
 {
 	m_iBar = AMMO1_INIT;
 	m_nBarLow = -1;
-	SetBgColor (Color (0,0,0,128));
+	SetBgColor (Color (0,0,0,255));
 }
 
 void CHudAmmoBar::OnThink()
@@ -91,12 +91,27 @@ void CHudAmmoBar::OnThink()
 	
 }
 
+bool CHudAmmoBar::ShouldDraw()
+{
+	bool bNeedsDraw = false;
+
+	C_BasePlayer *pPlayer = C_BasePlayer::GetLocalPlayer();
+	if (!pPlayer)
+		return false;
+
+	CBaseCombatWeapon *wpn = pPlayer->GetActiveWeapon();
+	if (!wpn) return false;
+	bNeedsDraw = (!wpn->IsMeleeWeapon());
+
+	return (bNeedsDraw && CHudElement::ShouldDraw());
+}
+
 void CHudAmmoBar::Paint()
 {
 	// Get bar chunks
 
 	int chunkCount = m_flBarWidth / (m_flBarChunkWidth + m_flBarChunkGap);
-	int enabledChunks = (int)((float)chunkCount * (m_iBar / 100.0f) + 0.5f );
+	int enabledChunks = m_iBar;
 
 	// Draw the suit power bar
 	surface()->DrawSetColor (m_AmmoBarColor);
