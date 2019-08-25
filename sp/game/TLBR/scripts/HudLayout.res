@@ -15,6 +15,27 @@
 //		"fgcolor_override" 	"255 255 255 255" // CROSSHAIR COLOR
 //	}
 
+
+HudAmmoBar
+{
+
+	"fieldName" "HudAmmoBar"
+	"visible" "1"
+	"enabled" "1"
+	"xpos" "r176"
+	"ypos" "400"
+	"wide" "159"
+	"tall" "12"
+	"PaintBackgroundType" "0"
+	"BarChunkWidth" "1"
+	"BarChunkGap" "1"
+	"BarInsetX" "2"
+    "BarInsetY" "2"
+    "BarWidth" "157"
+    "BarHeight" "8"
+
+}
+
 HudHitmarker
 	{
 		"fieldName" "HudHitmarker"

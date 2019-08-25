@@ -9,6 +9,7 @@ $Macro GAMENAME 	"TLBR" [!$SOURCESDK]
 $Macro GAMENAME 	"TLBR" [$SOURCESDK]
 
 $Include "$SRCDIR\game\server\server_base.vpc"
+$Include "$SRCDIR\game\server\nav_mesh.vpc"
 
 $Configuration
 {

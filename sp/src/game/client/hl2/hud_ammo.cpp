@@ -10,6 +10,7 @@
 #include "hud_macros.h"
 #include "hud_numericdisplay.h"
 #include "iclientmode.h"
+#include "c_baseplayer.h"
 #include "iclientvehicle.h"
 #include <vgui_controls/AnimationController.h>
 #include <vgui/ILocalize.h>
@@ -24,6 +25,100 @@ using namespace vgui;
 //-----------------------------------------------------------------------------
 // Purpose: Displays current ammunition level
 //-----------------------------------------------------------------------------
+class CHudAmmoBar : public CHudElement, public vgui::Panel
+{
+	DECLARE_CLASS_SIMPLE(CHudAmmoBar, vgui::Panel);
+public:
+      CHudAmmoBar( const char *pElementName);
+	  void Init( void );
+	  void Reset();
+
+	  virtual void OnThink();
+protected:
+    virtual void Paint();
+
+	
+private:
+	CPanelAnimationVar( Color, m_AmmoBarColor, "AmmoBarColor", "255 255 255 255" );
+    CPanelAnimationVar( int, m_iAmmoBarDisabledAlpha, "AmmoBarDisabledAlpha", "50");
+	CPanelAnimationVarAliasType( float, m_flBarInsetX, "BarInsetX", "8", "proportional_float" );
+	CPanelAnimationVarAliasType( float, m_flBarInsetY, "BarInsetY", "8", "proportional_float" );
+	CPanelAnimationVarAliasType( float, m_flBarWidth, "BarWidth", "80", "proportional_float" );
+	CPanelAnimationVarAliasType( float, m_flBarHeight, "BarHeight", "10", "proportional_float" );
+	CPanelAnimationVarAliasType( float, m_flBarChunkWidth, "BarChunkWidth", "10", "proportional_float" );
+	CPanelAnimationVarAliasType( float, m_flBarChunkGap, "BarChunkGap", "1", "proportional_float" );
+	//float m_flBarChunkWidth;
+	int m_iBar;
+	int m_nBarLow;
+};
+DECLARE_HUDELEMENT(CHudAmmoBar);
+
+#define AMMO1_INIT -1
+
+CHudAmmoBar::CHudAmmoBar(const char *pElementName) : CHudElement(pElementName), BaseClass(NULL, "HudAmmoBar")
+{
+	vgui:: Panel *pParent = g_pClientMode->GetViewport ();
+	SetParent (pParent);
+
+	SetHiddenBits (HIDEHUD_HEALTH | HIDEHUD_PLAYERDEAD | HIDEHUD_NEEDSUIT | HIDEHUD_WEAPONSELECTION );
+}
+
+void CHudAmmoBar::Init()
+{
+	Reset();
+}
+
+void CHudAmmoBar::Reset()
+{
+	m_iBar = AMMO1_INIT;
+	m_nBarLow = -1;
+	SetBgColor (Color (0,0,0,128));
+}
+
+void CHudAmmoBar::OnThink()
+{
+	
+	float newBar = 0;
+	C_BaseCombatWeapon *wpn = GetActiveWeapon();
+	
+	if(!wpn) return;
+	
+	newBar = max(wpn->Clip1(), 0);
+	
+	if(newBar == m_iBar) return;
+	
+	m_iBar = newBar;
+	
+}
+
+void CHudAmmoBar::Paint()
+{
+	// Get bar chunks
+
+	int chunkCount = m_flBarWidth / (m_flBarChunkWidth + m_flBarChunkGap);
+	int enabledChunks = (int)((float)chunkCount * (m_iBar / 100.0f) + 0.5f );
+
+	// Draw the suit power bar
+	surface()->DrawSetColor (m_AmmoBarColor);
+
+	int xpos = m_flBarInsetX, ypos = m_flBarInsetY;
+
+	for (int i = 0; i < enabledChunks; i++)
+	{
+		surface()->DrawFilledRect(xpos, ypos, xpos + m_flBarChunkWidth, ypos + m_flBarHeight);
+		xpos += (m_flBarChunkWidth + m_flBarChunkGap);
+	}
+
+	// Draw the exhausted portion of the bar.
+	surface()->DrawSetColor(Color(m_AmmoBarColor [0],m_AmmoBarColor [1], m_AmmoBarColor [2], m_iAmmoBarDisabledAlpha));
+
+	for (int i = enabledChunks; i < chunkCount; i++)
+	{
+		surface()->DrawFilledRect(xpos, ypos, xpos + m_flBarChunkWidth, ypos + m_flBarHeight);
+		xpos += (m_flBarChunkWidth + m_flBarChunkGap);
+	}
+}
+
 class CHudAmmo : public CHudNumericDisplay, public CHudElement
 {
 	DECLARE_CLASS_SIMPLE( CHudAmmo, CHudNumericDisplay );
@@ -37,6 +132,7 @@ public:
 	void SetAmmo(int ammo, bool playAnimation);
 	void SetAmmo2(int ammo2, bool playAnimation);
 	virtual void Paint( void );
+	//bool			ShouldDraw( void );
 
 protected:
 	virtual void OnThink();
@@ -62,7 +158,7 @@ CHudAmmo::CHudAmmo( const char *pElementName ) : BaseClass(NULL, "HudAmmo"), CHu
 {
 	SetHiddenBits( HIDEHUD_HEALTH | HIDEHUD_PLAYERDEAD | HIDEHUD_NEEDSUIT | HIDEHUD_WEAPONSELECTION );
 
-	hudlcd->SetGlobalStat( "(ammo_primary)", "0" );
+	//hudlcd->SetGlobalStat( "(ammo_primary)", "0" );
 	hudlcd->SetGlobalStat( "(ammo_secondary)", "0" );
 	hudlcd->SetGlobalStat( "(weapon_print_name)", "" );
 	hudlcd->SetGlobalStat( "(weapon_name)", "" );

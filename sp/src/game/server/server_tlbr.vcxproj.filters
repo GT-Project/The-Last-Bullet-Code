@@ -19,6 +19,9 @@
     <Filter Include="Source Files\HL2 DLL\unused">
       <UniqueIdentifier>{A52C827A-EB95-73A5-F031-C0395B5E2677}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Navigation Mesh">
+      <UniqueIdentifier>{B09D60FE-50B0-FE99-73C2-303E809808E2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Precompiled Header">
       <UniqueIdentifier>{A7D26A13-21F4-C6B5-5922-8A4FB05AF07D}</UniqueIdentifier>
     </Filter>
@@ -1763,6 +1766,30 @@
     <ClInclude Include="hl2\weapon_flaregun.h">
       <Filter>Source Files\HL2 DLL\unused</Filter>
     </ClInclude>
+    <ClInclude Include="nav.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_area.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_colors.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_entities.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_ladder.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_mesh.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_node.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_pathfind.h">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClInclude>
     <ClInclude Include="plasma.h">
       <Filter>Source Files\temporary entities</Filter>
     </ClInclude>
@@ -3343,6 +3370,42 @@
     <ClCompile Include="hl2\weapon_flaregun.cpp">
       <Filter>Source Files\HL2 DLL\unused</Filter>
     </ClCompile>
+    <ClCompile Include="nav_area.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_colors.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_edit.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_entities.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_file.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_generate.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_ladder.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_merge.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_mesh.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_mesh_factory.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_node.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_simplify.cpp">
+      <Filter>Source Files\Navigation Mesh</Filter>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files\Precompiled Header</Filter>
     </ClCompile>
@@ -3563,6 +3626,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\vpc_scripts\loadaddress.vpc">
+      <Filter>VPC Scripts</Filter>
+    </None>
+    <None Include="..\..\game\server\nav_mesh.vpc">
       <Filter>VPC Scripts</Filter>
     </None>
     <None Include="..\..\vpc_scripts\platform_dirs.vpc">

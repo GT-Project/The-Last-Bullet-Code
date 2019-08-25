@@ -114,7 +114,7 @@ void CHudWeaponIcon::Paint()
 		x = 3;
 		y = 3;
 		//if (!m_pWeaponIcon) return;
-		if (pWeapon->GetSpriteWeaponIcon()){
+		if (pWeapon && pWeapon->GetSpriteWeaponIcon()){
 			m_pWeaponIcon = pWeapon->GetWpnData().iconWeaponIcon;
 			Color clr = m_clrWeaponIcon;
 			m_pWeaponIcon->DrawSelf(x, y, clr);
