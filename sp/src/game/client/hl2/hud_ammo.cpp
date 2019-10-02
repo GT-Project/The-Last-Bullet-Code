@@ -47,7 +47,8 @@ private:
 	CPanelAnimationVarAliasType( float, m_flBarHeight, "BarHeight", "10", "proportional_float" );
 	CPanelAnimationVarAliasType( float, m_flBarChunkWidth, "BarChunkWidth", "10", "proportional_float" );
 	CPanelAnimationVarAliasType( float, m_flBarChunkGap, "BarChunkGap", "1", "proportional_float" );
-	//float m_flBarChunkWidth;
+    //float m_flBarChunkWidth;
+    //float m_flBarChunkGap;
 	int m_iBar;
 	int m_nBarLow;
 };
@@ -80,11 +81,33 @@ void CHudAmmoBar::OnThink()
 	
 	float newBar = 0;
 	C_BaseCombatWeapon *wpn = GetActiveWeapon();
-	
 	if(!wpn) return;
 	
 	newBar = max(wpn->Clip1(), 0);
+	//m_flBarChunkWidth = m_flBarWidth / (wpn->GetMaxClip1() + 1.5f);
+	//m_flBarChunkGap = 1.0f;
 	
+
+	if (!strcmp(wpn->GetName(), "weapon_walter"))
+	{
+		m_flBarChunkWidth = 17.0f; 
+		m_flBarChunkGap = 2.0f;
+	}
+	else if (!strcmp(wpn->GetName(), "weapon_mp40") || !strcmp(wpn->GetName(), "weapon_mp44"))
+	{
+		m_flBarChunkWidth = 4.0f; 
+		m_flBarChunkGap = 1.0f;
+	}
+	else if (!strcmp(wpn->GetName(), "weapon_r870"))
+	{
+		m_flBarChunkWidth = 23.0f; 
+		m_flBarChunkGap = 2.0f;
+	}
+	else if (!strcmp(wpn->GetName(), "weapon_frag") || !strcmp(wpn->GetName(), "weapon_k98"))
+	{
+		m_flBarChunkWidth = 27.0f; 
+		m_flBarChunkGap = 3.0f;
+	};
 	if(newBar == m_iBar) return;
 	
 	m_iBar = newBar;
@@ -109,8 +132,8 @@ bool CHudAmmoBar::ShouldDraw()
 void CHudAmmoBar::Paint()
 {
 	// Get bar chunks
-
-	int chunkCount = m_flBarWidth / (m_flBarChunkWidth + m_flBarChunkGap);
+	C_BaseCombatWeapon *wpn = GetActiveWeapon();
+	int chunkCount = wpn->GetMaxClip1();
 	int enabledChunks = m_iBar;
 
 	// Draw the suit power bar

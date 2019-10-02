@@ -230,7 +230,18 @@ bool CWeaponFrag::Reload( void )
 		//Mark this as done
 		m_bRedraw = false;
 	}
-	
+	//bool fRet = DefaultReload(GetMaxClip1(), GetMaxClip2(), ACT_VM_DRAW);
+	//	if (fRet)
+	//	{
+	//			m_flNextPrimaryAttack	= gpGlobals->curtime + SequenceDuration();
+	//			m_flNextSecondaryAttack	= gpGlobals->curtime + SequenceDuration();
+	//			m_flTimeWeaponIdle = gpGlobals->curtime + SequenceDuration();
+
+	//			//Mark this as done
+	//			m_bRedraw = false;
+	//	}
+
+	//return fRet;
 	return true;
 }
 
