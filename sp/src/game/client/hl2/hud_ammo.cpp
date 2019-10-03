@@ -21,7 +21,7 @@
 #include "tier0/memdbgon.h"
 
 using namespace vgui;
-
+ConVar hud_showammobar("hud_showammobar", "0", FCVAR_REPLICATED, "Turn on and off Ammo Bar");
 //-----------------------------------------------------------------------------
 // Purpose: Displays current ammunition level
 //-----------------------------------------------------------------------------
@@ -90,23 +90,23 @@ void CHudAmmoBar::OnThink()
 
 	if (!strcmp(wpn->GetName(), "weapon_walter"))
 	{
-		m_flBarChunkWidth = 17.0f; 
-		m_flBarChunkGap = 2.0f;
+		m_flBarChunkWidth = XRES( 17.0f); 
+		m_flBarChunkGap = XRES(2.0f);
 	}
 	else if (!strcmp(wpn->GetName(), "weapon_mp40") || !strcmp(wpn->GetName(), "weapon_mp44"))
 	{
-		m_flBarChunkWidth = 4.0f; 
-		m_flBarChunkGap = 1.0f;
+		m_flBarChunkWidth = XRES(4.0f); 
+		m_flBarChunkGap = XRES(1.0f);
 	}
 	else if (!strcmp(wpn->GetName(), "weapon_r870"))
 	{
-		m_flBarChunkWidth = 23.0f; 
-		m_flBarChunkGap = 2.0f;
+		m_flBarChunkWidth = XRES(23.0f); 
+		m_flBarChunkGap = XRES(2.0f);
 	}
 	else if (!strcmp(wpn->GetName(), "weapon_frag") || !strcmp(wpn->GetName(), "weapon_k98"))
 	{
-		m_flBarChunkWidth = 27.0f; 
-		m_flBarChunkGap = 3.0f;
+		m_flBarChunkWidth = XRES(27.0f); 
+		m_flBarChunkGap = XRES(3.0f);
 	};
 	if(newBar == m_iBar) return;
 	
@@ -124,7 +124,7 @@ bool CHudAmmoBar::ShouldDraw()
 
 	CBaseCombatWeapon *wpn = pPlayer->GetActiveWeapon();
 	if (!wpn) return false;
-	bNeedsDraw = (!wpn->IsMeleeWeapon());
+	bNeedsDraw = (hud_showammobar.GetBool() && !wpn->IsMeleeWeapon());
 
 	return (bNeedsDraw && CHudElement::ShouldDraw());
 }
