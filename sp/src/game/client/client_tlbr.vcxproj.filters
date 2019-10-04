@@ -7,6 +7,27 @@
     <Filter Include="game_controls Header Files">
       <UniqueIdentifier>{27E89F3D-D002-DEDF-D147-1A64C9C083D1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameUI">
+      <UniqueIdentifier>{E7FC7768-B26D-AB7D-AD75-783C66D7B629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\ GameUI">
+      <UniqueIdentifier>{20614102-2FF0-B94B-C461-EA6444CA8159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\ GameUI\Headers">
+      <UniqueIdentifier>{D3E01B00-A699-49B7-88E7-2305EF6902A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\ GameUI\Win32">
+      <UniqueIdentifier>{60B58968-A1F5-7C59-96BB-0EC2C6B4F21C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\Base GameUI">
+      <UniqueIdentifier>{6EA12127-D3A4-AD1C-C51A-63F3161A3D08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\Base GameUI\Headers">
+      <UniqueIdentifier>{506ED622-5B22-EA52-782F-F25BACF5DB8B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameUI\External Stuff">
+      <UniqueIdentifier>{368E76B6-4CFF-0A25-09C5-D42B25076DE5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{1680C80B-FF1E-EA4D-9817-CC12254F2E40}</UniqueIdentifier>
     </Filter>
@@ -490,6 +511,312 @@
     </ClInclude>
     <ClInclude Include="game_controls\vguitextwindow.h">
       <Filter>game_controls Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\basemodframe.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\basemodpanel.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\basemodui.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\gamemodes.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\uiavatarimage.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\uigamedata.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vachievements.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vaddonassociation.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vaddons.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vattractscreen.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vaudio.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vaudiovideo.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vcloud.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vcontrolleroptions.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vcontrolleroptionsbuttons.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vcontrolleroptionssticks.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vcustomcampaigns.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vdownloadcampaign.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vdownloads.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vdropdownmenu.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vflyoutmenu.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vfooterpanel.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vfoundgames.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vfoundgroupgames.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vfoundpublicgames.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgamelobby.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgamelobbychat.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgameoptions.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgamesettings.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgenericconfirmation.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgenericpanellist.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgenericwaitscreen.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vgetlegacydata.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vhybridbutton.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vingamechapterselect.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vingamedifficultyselect.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vingamekickplayerlist.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vingamemainmenu.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vjukebox.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vkeyboard.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vkeyboardmouse.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vleaderboard.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vloadingprogress.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vmainmenu.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vmultiplayer.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\voptions.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vpasswordentry.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vquickjoin.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vquickjoingroups.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vsignindialog.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vslidercontrol.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vspinnercontrol.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vsteamcloudconfirmation.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vtransitionscreen.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vvideo.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\tlbr\vvoteoptions.h">
+      <Filter>GameUI\ GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\backgroundmenubutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\basepanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\basesavegamedialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\bitmapimagepanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\commandcheckbutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\contentcontroldialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\createmultiplayergamebotpage.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\createmultiplayergamedialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\createmultiplayergamegameplaypage.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\createmultiplayergameserverpage.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\customtabexplanationdialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\cvarnegatecheckbutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\cvarslider.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\cvartextentry.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\cvartogglecheckbutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\engineinterface.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\gameconsole.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\gameconsoledialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\gameui_interface.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\gameui_util.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\keytogglecheckbutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\labeledcommandcombobox.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\loadingdialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\loadingtippanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\modinfo.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\mousemessageforwardingpanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\multiplayeradvanceddialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionsdialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubaudio.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubdifficulty.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubgame.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubkeyboard.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubmouse.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubmultiplayer.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubportal.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubvideo.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\optionssubvoice.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\panellistpanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\playerlistdialog.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\rungameengine.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\scriptobject.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\sys_utils.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\textentrybox.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\urlbutton.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\vcontrolslistpanel.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameui\vguisystemmoduleloader.h">
+      <Filter>GameUI\Base GameUI\Headers</Filter>
     </ClInclude>
     <ClInclude Include="animationlayer.h">
       <Filter>Header Files</Filter>
@@ -1924,6 +2251,315 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gameui\tlbr\basemodframe.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\basemodpanel.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\gamemodes.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\uigamedata.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\uigamedata_invite.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\uigamedata_storage.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vachievements.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vattractscreen.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vaudio.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vaudiovideo.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vcontrolleroptions.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vcontrolleroptionsbuttons.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vcontrolleroptionssticks.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vdropdownmenu.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vflyoutmenu.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vfooterpanel.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vfoundgames.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vfoundgroupgames.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vfoundpublicgames.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgamelobby.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgamelobbychat.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgameoptions.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgamesettings.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgenericconfirmation.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgenericpanellist.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgenericwaitscreen.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vhybridbutton.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vingamechapterselect.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vingamedifficultyselect.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vingamekickplayerlist.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vingamemainmenu.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vleaderboard.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vloadingprogress.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vmainmenu.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vmenubackground.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vmultiplayer.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\voptions.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vpasswordentry.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vquickjoin.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vquickjoingroups.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vsignindialog.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vslidercontrol.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vspinnercontrol.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vtransitionscreen.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vvideo.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vvoteoptions.cpp">
+      <Filter>GameUI\ GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\uiavatarimage.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vaddonassociation.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vaddons.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vcloud.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vcustomcampaigns.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vdownloadcampaign.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vdownloads.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vgetlegacydata.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vjukebox.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vkeyboard.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vkeyboardmouse.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\tlbr\vsteamcloudconfirmation.cpp">
+      <Filter>GameUI\ GameUI\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\backgroundmenubutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\basesavegamedialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\bitmapimagepanel.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\commandcheckbutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\contentcontroldialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\createmultiplayergamebotpage.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\createmultiplayergamedialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\createmultiplayergamegameplaypage.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\createmultiplayergameserverpage.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\customtabexplanationdialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\cvarnegatecheckbutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\cvarslider.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\cvartextentry.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\cvartogglecheckbutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\gameconsole.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\gameconsoledialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\gameui_interface.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\gameui_util.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\keytogglecheckbutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\labeledcommandcombobox.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\loadingdialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\loadingtippanel.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\logofile.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\modinfo.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\mousemessageforwardingpanel.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\multiplayeradvanceddialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionsdialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubaudio.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubdifficulty.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubgame.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubkeyboard.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubmouse.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubmultiplayer.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubportal.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubvideo.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\optionssubvoice.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\panellistpanel.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\playerlistdialog.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\rungameengine.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\scriptobject.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\sys_utils.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\textentrybox.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\urlbutton.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\vcontrolslistpanel.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gameui\vguisystemmoduleloader.cpp">
+      <Filter>GameUI\Base GameUI</Filter>
+    </ClCompile>
     <ClCompile Include="mp3player.cpp">
       <Filter>MP3</Filter>
     </ClCompile>
@@ -3479,6 +4115,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\game\client\client_base.vpc">
+      <Filter>VPC Scripts</Filter>
+    </None>
+    <None Include="..\..\game\client\GameUI.vpc">
       <Filter>VPC Scripts</Filter>
     </None>
     <None Include="..\..\vpc_scripts\loadaddress.vpc">

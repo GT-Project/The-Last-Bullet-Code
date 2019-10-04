@@ -1,7 +1,7 @@
 [vpc crc file version 2]
 8209bbc3 C:\Games\source2013-sdk-source\sp\src\devtools\bin\vpc.exe
 _Nc_VS2013/vpcgame:tlbr_
-b3750b5f client_tlbr.vpc
+f80d2a54 client_tlbr.vpc
 c7ae28fd ..\..\game\client\client_base.vpc
 4832e67a ..\..\vpc_scripts\source_dll_base.vpc
 d752cf80 ..\..\vpc_scripts\platform_dirs.vpc
@@ -15,4 +15,5 @@ d752cf80 ..\..\vpc_scripts\platform_dirs.vpc
 346bda4a ..\..\vpc_scripts\source_video_base.vpc
 c209a88e ..\..\vpc_scripts\protobuf_builder.vpc
 d1c158fe ..\..\game\protobuf_include.vpc
+05fa1917 ..\..\game\client\GameUI.vpc
 30bf2216 ..\..\vpc_scripts\definitions\win32_2010.def
