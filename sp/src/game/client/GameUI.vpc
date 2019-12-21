@@ -141,7 +141,7 @@ $Project
 					}
 				}
 
-				$Folder " GameUI"
+				$Folder "GameUI"
 				{
 					$Folder "Headers"
 					{

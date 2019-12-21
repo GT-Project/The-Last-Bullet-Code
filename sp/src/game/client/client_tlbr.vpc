@@ -9,7 +9,7 @@ $Macro GAMENAME 	"TLBR" [!$SOURCESDK]
 $Macro GAMENAME 	"TLBR" [$SOURCESDK]
 
 $Include "$SRCDIR\game\client\client_base.vpc"
-$Include "$SRCDIR\game\client\GameUI.vpc"
+//$Include "$SRCDIR\game\client\GameUI.vpc"
 
 $Configuration
 {
