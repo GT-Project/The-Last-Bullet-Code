@@ -8,8 +8,8 @@
 //		"enabled"		"1"
 //		"font"			"Crosshairs"
 //		"labelText"		"Q"
-//		"textAlignment"	"center"		
-//		"xpos"			"c-19"
+//	"textAlignment"	"center"		
+//	"xpos"			"c-19"
 //		"ypos"			"c-5"
 //		"wide"          "38" // 37
 //		"fgcolor_override" 	"255 255 255 255" // CROSSHAIR COLOR
@@ -24,11 +24,11 @@ HudAmmoBar
 	"enabled" "1"
 	"xpos" "r176"
 	"ypos" "400"
-	"wide" "154"
+	"wide" "159"
 	"tall" "16"
 	"PaintBackgroundType" "0"
-	//"BarChunkWidth" "27"
-	//"BarChunkGap" "3"
+	"BarChunkWidth" "1"
+	"BarChunkGap" "1"
 	"BarInsetX" "2"
     "BarInsetY" "2"
     "BarWidth" "157"
@@ -228,16 +228,16 @@ HudSavingData
 		"TextYPos" "64"
 	}
 
-	// HudCrosshair
-	// {
-		// "fieldName" "HudCrosshair"
-		// "visible" "1"
-		// "enabled" "1"
-		// "wide"	 "640"
-		// "tall"	 "480"
-		// "xpos"	 "c-140"
-		// "ypos"	 "c-50"
-	// }
+	 HudCrosshair
+	 {
+		 "fieldName" "HudCrosshair"
+		 "visible" "1"
+		 "enabled" "1"
+		 "wide"	 "640"
+		 "tall"	 "480"
+		 "xpos"	 "0"
+		 "ypos"	 "0"
+	 }
    HudWeaponIcon
 	{
 		"fieldName" "HudWeaponIcon"

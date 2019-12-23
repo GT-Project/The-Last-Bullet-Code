@@ -71,7 +71,7 @@ WeaponData
 		"crosshair"
 		{
 				"font"		"WeaponIcons"
-				"character"	"b"
+				"character"	"Q"
 		}
 		"autoaim"
 		{

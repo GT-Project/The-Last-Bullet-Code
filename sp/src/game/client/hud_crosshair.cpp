@@ -90,7 +90,7 @@ bool CHudCrosshair::ShouldDraw( void )
 		return false;
 
 	C_BaseCombatWeapon *pWeapon = pPlayer->GetActiveWeapon();
-	if ( pWeapon && !pWeapon->ShouldDrawCrosshair() )
+	if ( (pWeapon && !pWeapon->ShouldDrawCrosshair()))
 		return false;
 
 #ifdef PORTAL
@@ -120,7 +120,7 @@ bool CHudCrosshair::ShouldDraw( void )
 	else
 	{
 		bNeedsDraw = m_pCrosshair && 
-			crosshair.GetInt() &&
+			crosshair.GetInt() &&  pWeapon && !pWeapon->IsIronsighted() &&
 			!engine->IsDrawingLoadingImage() &&
 			!engine->IsPaused() && 
 			g_pClientMode->ShouldDrawCrosshair() &&

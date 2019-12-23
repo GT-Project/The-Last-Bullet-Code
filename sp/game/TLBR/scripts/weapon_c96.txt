@@ -72,7 +72,7 @@
 		"crosshair"
 		{
 				"font"		"WeaponIcons"
-				"character"	"l"
+				"character"	"Q"
 		}
 		"autoaim"
 		{

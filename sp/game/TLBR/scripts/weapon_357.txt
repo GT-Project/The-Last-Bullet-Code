@@ -65,7 +65,7 @@ IronSight
 		"crosshair"
 		{
 				"font"		"WeaponIcons"
-				"character"	"e"
+				"character"	"Q"
 		}
 		"autoaim"
 		{
