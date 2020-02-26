@@ -166,7 +166,6 @@ CWeaponWalter::CWeaponWalter(void)
 //-----------------------------------------------------------------------------
 void CWeaponWalter::Precache(void)
 {
-	PrecacheParticleSystem("weapon_muzzle_flash_pistol");
 	PrecacheParticleSystem("weapon_muzzle_smoke");
 	BaseClass::Precache();
 
@@ -196,7 +195,7 @@ void CWeaponWalter::Operator_HandleAnimEvent(animevent_t *pEvent, CBaseCombatCha
 
 		WeaponSound(SINGLE_NPC);
 		pOperator->FireBullets(1, vecShootOrigin, vecShootDir, VECTOR_CONE_PRECALCULATED, MAX_TRACE_LENGTH, m_iPrimaryAmmoType, 2);
-		//pOperator->DoMuzzleFlash();
+		pOperator->DoMuzzleFlash();
 		m_iClip1 = m_iClip1 - 1;
 	}
 	break;
@@ -293,11 +292,10 @@ void CWeaponWalter::PrimaryAttack(void)
 	// do the traceline
 	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
 	
-	DispatchParticleEffect("weapon_muzzle_flash_pistol",PATTACH_POINT_FOLLOW,pPlayer->GetViewModel(),"muzzle",true);
 	if (m_nNumShotsFired >= 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
 	}
-	//pPlayer->DoMuzzleFlash();
+	pPlayer->DoMuzzleFlash();
 	// check to see if we hit a Player
 	// check to see if we hit an NPC
 	if (tr.m_pEnt)

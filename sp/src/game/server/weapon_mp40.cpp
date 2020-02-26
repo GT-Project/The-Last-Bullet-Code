@@ -150,7 +150,7 @@ CWeaponMP40::CWeaponMP40()
 //-----------------------------------------------------------------------------
 void CWeaponMP40::Precache(void)
 {
-	PrecacheParticleSystem("weapon_muzzle_flash_assaultrifle");
+	PrecacheParticleSystem("muzzle_smgs");
 	UTIL_PrecacheOther("grenade_ar2");
 
 	BaseClass::Precache();
@@ -238,9 +238,8 @@ void CWeaponMP40::PrimaryAttack(void)
 	// do the traceline
 	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
 
-	//pPlayer->DoMuzzleFlash();
-	DispatchParticleEffect("weapon_muzzle_flash_assaultrifle", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
-	if (m_iPrimaryAttacks == 5){
+	pPlayer->DoMuzzleFlash();
+	if (m_iPrimaryAttacks >= 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
 	};
 	// check to see if we hit an NPC

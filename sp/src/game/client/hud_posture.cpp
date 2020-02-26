@@ -38,7 +38,7 @@ public:
 	CHudPosture( const char *pElementName );
 	bool			ShouldDraw( void );
 
-#ifdef _X360 	// if not xbox 360, don't waste code space on this
+//#ifdef _X360 	// if not xbox 360, don't waste code space on this
 	virtual void	Init( void );
 	virtual void	Reset( void );
 	virtual void	OnTick( void );
@@ -58,7 +58,7 @@ private:
 		   FADING_UP, 
 		   FADING_DOWN
 	} m_kIsFading;
-#endif
+//#endif
 };	
 
 
@@ -98,15 +98,15 @@ CHudPosture::CHudPosture( const char *pElementName ) : CHudElement( pElementName
 //-----------------------------------------------------------------------------
 bool CHudPosture::ShouldDraw()
 {
-#ifdef _X360
+//#ifdef _X360
 	return ( m_duckTimeout >= gpGlobals->curtime &&
 		CHudElement::ShouldDraw() );
-#else
-	return false;
-#endif
+#//else
+//	return false;
+//#endif
 }
 
-#ifdef _X360
+//#ifdef _X360
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -191,5 +191,5 @@ void CHudPosture::Paint()
 	surface()->DrawUnicodeChar( duck_char );
 }
 
-#endif
+//#endif
 

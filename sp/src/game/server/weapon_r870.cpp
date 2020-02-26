@@ -492,7 +492,7 @@ void CWeaponRemington::PrimaryAttack(void)
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
 
-	//pPlayer->DoMuzzleFlash();
+	pPlayer->DoMuzzleFlash();
 	DispatchParticleEffect("weapon_muzzle_flash_assaultrifle", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
 	if (m_iPrimaryAttacks == 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
