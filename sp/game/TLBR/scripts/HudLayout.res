@@ -15,6 +15,20 @@
 //		"fgcolor_override" 	"255 255 255 255" // CROSSHAIR COLOR
 //	}
 
+HudPosture
+	{
+		"fieldName" 		"HudPosture"
+		"visible" 		"1"
+		"enabled"       "1"
+		"PaintBackgroundType"	"2"
+		"xpos"	"48"
+		"ypos"	"316"
+		"tall"  "36"
+		"wide"	"36"
+		"font"	"WeaponIconsSmall"
+		"icon_xpos"	"10"
+		"icon_ypos" 	"2"
+	}
 
 HudAmmoBar
 {
@@ -233,9 +247,10 @@ HudSavingData
 		 "fieldName" "HudCrosshair"
 		 "visible" "1"
 		 "enabled" "1"
-		 "wide"	 "640"
-		 "tall"	 "480"
+		 "wide"	 "1024"
+		 "tall"	 "768"
 		 "xpos"	 "0"
+		 
 		 "ypos"	 "0"
 	 }
    HudWeaponIcon
