@@ -50,10 +50,25 @@ public:
 
 	virtual const Vector& GetBulletSpread(void)
 	{
+		if (m_bIsIronsighted)
+		{
+			static const Vector cone = VECTOR_CONE_2DEGREES;
+			return cone;
+		}
+		else
+		{
+			static const Vector cone = VECTOR_CONE_5DEGREES;
+			return cone;
+		}
+	}
+
+	/*
+	virtual const Vector& GetBulletSpread(void)
+	{
 		static const Vector cone = VECTOR_CONE_2DEGREES;
 		return cone;
 	}
-
+*/
 	const WeaponProficiencyInfo_t *GetProficiencyValues();
 
 	void FireNPCPrimaryAttack(CBaseCombatCharacter *pOperator, Vector &vecShootOrigin, Vector &vecShootDir);

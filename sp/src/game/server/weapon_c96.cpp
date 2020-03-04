@@ -50,10 +50,33 @@ public:
 
 	virtual const Vector& GetBulletSpread(void)
 	{
-		static const Vector cone = VECTOR_CONE_3DEGREES;
+		static Vector npcCone = VECTOR_CONE_5DEGREES;
+		if (GetOwner() && GetOwner()->IsNPC())
+			return npcCone;
+
+		static Vector cone;
+		{
+			if (m_bIsIronsighted)
+			{
+				static const Vector cone = VECTOR_CONE_3DEGREES;
+				return cone;
+			}
+			else
+			{
+				static const Vector cone = VECTOR_CONE_5DEGREES;
+				return cone;
+			}
+		}
 		return cone;
 	}
 
+	/*
+	virtual const Vector& GetBulletSpread(void)
+	{
+		static const Vector cone = VECTOR_CONE_3DEGREES;
+		return cone;
+	}
+   */
 	const WeaponProficiencyInfo_t *GetProficiencyValues();
 
 	void FireNPCPrimaryAttack(CBaseCombatCharacter *pOperator, Vector &vecShootOrigin, Vector &vecShootDir);

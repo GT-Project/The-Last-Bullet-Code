@@ -48,13 +48,26 @@ public:
 	int		CapabilitiesGet(void) { return bits_CAP_WEAPON_RANGE_ATTACK1; }
 	//	int		WeaponRangeAttack2Condition( float flDot, float flDist );
 	Activity	GetPrimaryAttackActivity(void);
-
+	virtual const Vector& GetBulletSpread(void)
+	{
+		if (m_bIsIronsighted)
+		{
+			static const Vector cone = VECTOR_CONE_3DEGREES;
+			return cone;
+		}
+		else
+		{
+			static const Vector cone = VECTOR_CONE_7DEGREES;
+			return cone;
+		}
+	}
+	/*
 	virtual const Vector& GetBulletSpread(void)
 	{
 		static const Vector cone = VECTOR_CONE_2DEGREES;
 		return cone;
 	}
-
+*/
 	const WeaponProficiencyInfo_t *GetProficiencyValues();
 
 	void FireNPCPrimaryAttack(CBaseCombatCharacter *pOperator, Vector &vecShootOrigin, Vector &vecShootDir);

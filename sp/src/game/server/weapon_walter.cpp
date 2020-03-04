@@ -63,6 +63,30 @@ public:
 
 	virtual const Vector& GetBulletSpread(void)
 	{
+		static Vector npcCone = VECTOR_CONE_5DEGREES;
+		if (GetOwner() && GetOwner()->IsNPC())
+			return npcCone;
+
+		static Vector cone;
+		{
+
+			if (m_bIsIronsighted)
+			{
+				static const Vector cone = VECTOR_CONE_3DEGREES;
+				return cone;
+			}
+			else
+			{
+				static const Vector cone = VECTOR_CONE_7DEGREES;
+				return cone;
+			}
+		}
+		return cone;
+	}
+
+	/*
+	virtual const Vector& GetBulletSpread(void)
+	{
 		// Handle NPCs first
 		static Vector npcCone = VECTOR_CONE_5DEGREES;
 		if (GetOwner() && GetOwner()->IsNPC())
@@ -79,10 +103,12 @@ public:
 
 			// We lerp from very accurate to inaccurate over time
 			VectorLerp(VECTOR_CONE_1DEGREES, VECTOR_CONE_2DEGREES, ramp, cone);
+
 		}
 
 		return cone;
 	}
+*/
 
 	virtual int	GetMinBurst()
 	{

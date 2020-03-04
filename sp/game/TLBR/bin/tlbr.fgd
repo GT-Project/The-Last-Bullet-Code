@@ -68,7 +68,7 @@
 @PointClass base(Weapon, Targetname, Parentname) studioprop("models/Z-O-M-B-I-E/STALKER/dev_items/dev_kolbasa.mdl") = item_sausage: "sausage" []
 @PointClass base(Weapon, Targetname, Parentname) studioprop("models/props_tlb/oleg_kakao.mdl") = item_kakao: "kakao" []
 @PointClass base(Weapon, Targetname, Parentname) studioprop("models/newfood/hotlunch/hotlunch.mdl") = item_hotlunch: "hotlunch" []
-@PointClass base(Weapon, Targetname, Parentname) studioprop("models/props_tlb/oleg_wiskey.mdl") = item_whiskey: "whiskey" []
+@PointClass base(Weapon, Targetname, Parentname) studioprop("models/props_tlb/oleg_whiskey.mdl") = item_whiskey: "whiskey" []
 @PointClass base(Weapon, Targetname, Parentname) studioprop("models/items/helmet.mdl") = item_helmet: "helmet" []
 @PointClass base(Item) studio("models/items/BoxMRounds.mdl")= item_ammo_762 : "Box of 7.62 ammo" []
 @PointClass base(Item) studio("models/items/BoxMRounds.mdl")= item_ammo_smg1_large : "Box of smg ammo" []
@@ -151,26 +151,4 @@
 	input TurnOn(void)		: "Turn on the texture"
 	input TurnOff(void)		: "Turn off the texture"
 	input SetFOV(float)		: "Set FOV"
-]
-
-@PointClass base(Targetname, Parentname, Angles) studio("models/props/cs_office/coffee_mug.mdl") = sdk_glowingentity : "Glow Effect Test"
-[
-    GlowEnable(Choices) : "Start Enabled" : 0 : "If set Yes, it will start glowing on spawn" =
-	[  
-	   0 : "No"
-	   1 : "Yes"
-	]
-	
-	GlowColor(color1) : "Glow Color" : "1.0 1.0 1.0" : "Set the Glow Color"
-]
-
-@PointClass base(Targetname) = sdk_logicandgate : "First Written By Hand"
-[
-  //Inputs
-  input SetFirstVal(void) : "Set First Value"
-  input SetSecondVal(void) : "Set Second Value"
-  
-  //Outputs
-  
-  output OnAllTrue(void) : "On All Values true"
 ]
