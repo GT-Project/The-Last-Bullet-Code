@@ -11,7 +11,7 @@ icon		"resource/icon"
 
 FileSystem 
 { 
-SteamAppId 243730 // This sets the app ID in Steam 
+SteamAppId  420 //243730 // This sets the app ID in Steam 
 
 
 SearchPaths 

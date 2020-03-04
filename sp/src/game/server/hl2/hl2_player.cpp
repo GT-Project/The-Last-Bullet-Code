@@ -561,6 +561,28 @@ void CHL2_Player::HandleSpeedChanges(void)
 	}
 }
 
+void CHL2_Player::HandleIronsights(void)
+{
+	int buttonsChanged = m_afButtonPressed | m_afButtonReleased;
+	CBaseCombatWeapon *pWeapon = dynamic_cast<CBaseCombatWeapon *>(GetActiveWeapon());
+	if (!pWeapon) return;
+
+	bool bWantIronsight = (pWeapon->GetUsingIronsights() && (m_nButtons & IN_IRONSIGHT));
+	
+	if (pWeapon->IsIronsighted() != bWantIronsight && (buttonsChanged & IN_IRONSIGHT)) 
+	{
+		if (bWantIronsight)
+		{
+			pWeapon->EnableIronsights();
+	    }
+		else
+		{
+			pWeapon->DisableIronsights();
+		}
+
+	}
+}
+
 //-----------------------------------------------------------------------------
 // This happens when we powerdown from the mega physcannon to the regular one
 //-----------------------------------------------------------------------------
@@ -681,6 +703,7 @@ void CHL2_Player::PreThink(void)
 	HandleSpeedChanges();
 #ifdef HL2_EPISODIC
 	HandleArmorReduction();
+	HandleIronsights();
 #endif
 
 	if (sv_stickysprint.GetBool() && m_bIsAutoSprinting)

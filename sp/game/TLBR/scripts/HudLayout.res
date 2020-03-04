@@ -191,6 +191,8 @@ HudSavingData
 		"ypos"	"370"
 		"wide"	"102"
 		"tall"	"20"
+		"icon_xpos" "1"
+		"icon_ypos" "110"
 		
 		"text_xpos" "8"
 		"text_ypos" "6"

@@ -265,6 +265,8 @@ public:
 	
 	void  HandleSpeedChanges( void );
 
+	void HandleIronsights(void);
+
 	void SetControlClass( Class_T controlClass ) { m_nControlClass = controlClass; }
 	
 	void StartWaterDeathSounds( void );
