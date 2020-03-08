@@ -18,8 +18,12 @@
 
 using namespace vgui;
 
+
+
 // memdbgon must be the last include file in a .cpp file!
 #include "tier0/memdbgon.h"
+#define HITMARKER_ANIM_TIMEOUT 0.4f
+ConVar hud_showhitmarker("hud_showhitmarker", "1", FCVAR_REPLICATED, "Turn on or turn off Hitmarker");
 
 DECLARE_HUDELEMENT(CHudHitmarker);
 DECLARE_HUD_MESSAGE(CHudHitmarker, ShowHitmarker);
@@ -77,7 +81,8 @@ void CHudHitmarker::ApplySchemeSettings(vgui::IScheme *scheme)
 //-----------------------------------------------------------------------------
 bool CHudHitmarker::ShouldDraw(void)
 {
-	return (m_bHitmarkerShow && CHudElement::ShouldDraw());
+	if (gpGlobals->curtime >= m_fAnimTimeout) m_bHitmarkerShow = false;
+	return (hud_showhitmarker.GetBool() && m_bHitmarkerShow && CHudElement::ShouldDraw());
 }
 
 //-----------------------------------------------------------------------------
@@ -115,4 +120,7 @@ void CHudHitmarker::MsgFunc_ShowHitmarker(bf_read &msg)
 	m_bHitmarkerShow = msg.ReadByte();
 
 	g_pClientMode->GetViewportAnimationController()->StartAnimationSequence("HitMarkerShow");
+
+	m_fAnimTimeout = gpGlobals->curtime + HITMARKER_ANIM_TIMEOUT;
+	
 }

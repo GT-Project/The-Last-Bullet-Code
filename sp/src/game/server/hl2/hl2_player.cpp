@@ -561,6 +561,20 @@ void CHL2_Player::HandleSpeedChanges(void)
 	}
 }
 
+void CHL2_Player::HandleSprintSound(void) {
+	
+	if (IsSprinting())
+	{
+		Vector m_vecSprint;
+		m_vecSprint = UTIL_GetLocalPlayer()->GetAbsVelocity();
+
+		if (m_vecSprint.Length() == 0 && m_vecSprint.Length() < 10.0f)
+			(CSoundEnvelopeController::GetController()).Shutdown(m_sndSprint);
+		else if (m_vecSprint.Length() >= 10.0f)
+			(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100);
+	}
+}
+
 void CHL2_Player::HandleIronsights(void)
 {
 	int buttonsChanged = m_afButtonPressed | m_afButtonReleased;
@@ -616,16 +630,9 @@ void CHL2_Player::PreThink(void)
 		NDebugOverlay::Line(GetAbsOrigin(), predPos, 0, 255, 0, 0, 0.01f);
 	}
 
-	if (IsSprinting())
-	{
-		Vector m_vecSprint;
-		m_vecSprint = UTIL_GetLocalPlayer()->GetAbsVelocity();
-		
-		if (m_vecSprint.Length() == 0 && m_vecSprint.Length() < 10.0f)
-			(CSoundEnvelopeController::GetController()).Shutdown(m_sndSprint);
-		else if (m_vecSprint.Length() >= 10.0f)
-			(CSoundEnvelopeController::GetController()).Play(m_sndSprint, 1.0f, 100);
-	}
+
+	HandleSprintSound();
+	
 
 #ifdef HL2_EPISODIC
 	if (m_hLocatorTargetEntity != NULL)

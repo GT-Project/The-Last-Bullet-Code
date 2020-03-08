@@ -264,7 +264,7 @@ public:
 	void  StartAdmireGlovesAnimation( void );
 	
 	void  HandleSpeedChanges( void );
-
+	void HandleSprintSound(void);
 	void HandleIronsights(void);
 
 	void SetControlClass( Class_T controlClass ) { m_nControlClass = controlClass; }

@@ -110,7 +110,7 @@ event HitMarkerShow
 
 event HitMarkerHide
 {
-	Animate HudHitmarker Alpha 0 Linear 0.0 0.4
+	Animate HudHitmarker Alpha 0 Linear 0.0 0.2
 }
 
 event ShowSavingData

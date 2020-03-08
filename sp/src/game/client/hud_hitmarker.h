@@ -27,6 +27,7 @@ protected:
 
 private:
 	bool m_bHitmarkerShow;
+	float m_fAnimTimeout;
 
 	CPanelAnimationVar(Color, m_HitmarkerColor, "HitMarkerColor", "255 255 255 255");
 };
