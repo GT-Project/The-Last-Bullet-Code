@@ -78,7 +78,7 @@ public:
 	void ItemPostFrame(void);
 	void PrimaryAttack(void);
 	void DryFire(void);
-	void DrawHitmarker(void);
+	
 
 	void FireNPCPrimaryAttack(CBaseCombatCharacter *pOperator, bool bUseWeaponAngles);
 	void Operator_ForceNPCFire(CBaseCombatCharacter  *pOperator, bool bSecondary);
@@ -160,23 +160,7 @@ void CWeaponRemington::Precache(void)
 	CBaseCombatWeapon::Precache();
 }
 
-//Purpose: Draws Hitmarker When Hit
-void CWeaponRemington::DrawHitmarker(void)
-{
-	CBasePlayer *pPlayer = ToBasePlayer(GetOwner());
 
-	if (pPlayer == NULL)
-	{
-		return;
-	}
-
-#ifndef CLIENT_DLL
-	CSingleUserRecipientFilter filter(pPlayer);
-	UserMessageBegin(filter, "ShowHitmarker");
-	WRITE_BYTE(1);
-	MessageEnd();
-#endif
-}
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -473,30 +457,16 @@ void CWeaponRemington::PrimaryAttack(void)
 	}
 
 	
-	trace_t tr;
-	Vector	vecStart, vecStop, vecDir;
-
 	
-	
-
-	// get the angles
-	AngleVectors(pPlayer->EyeAngles(), &vecDir);
-
-	// get the vectors
-	vecStart = pPlayer->Weapon_ShootPosition();
-	vecStop = vecStart + vecDir * MAX_TRACE_LENGTH;
-
-	// do the traceline
-	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
 
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
 
 	pPlayer->DoMuzzleFlash();
-	DispatchParticleEffect("weapon_muzzle_flash_assaultrifle", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
+	/*DispatchParticleEffect("weapon_muzzle_flash_assaultrifle", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
 	if (m_iPrimaryAttacks == 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
-	};
+	};*/
 	SendWeaponAnim(ACT_VM_PRIMARYATTACK);
 
 	// player "shoot" animation
@@ -510,7 +480,7 @@ void CWeaponRemington::PrimaryAttack(void)
 	Vector	vecAiming = pPlayer->GetAutoaimVector(AUTOAIM_SCALE_DEFAULT);
 
 	pPlayer->SetMuzzleFlashTime(gpGlobals->curtime + 1.0);
-
+	DrawHitmarker();
 	// Fire the bullets, and force the first shot to be perfectly accuracy
 	pPlayer->FireBullets(sk_plr_num_r870_pellets.GetInt(), vecSrc, vecAiming, GetBulletSpread(), MAX_TRACE_LENGTH, m_iPrimaryAmmoType, 0, -1, -1, 0, NULL, true, true);
 
@@ -519,20 +489,7 @@ void CWeaponRemington::PrimaryAttack(void)
 	CSoundEnt::InsertSound(SOUND_COMBAT, GetAbsOrigin(), SOUNDENT_VOLUME_SHOTGUN, 0.2, GetOwner());
 
 	// check to see if we hit an NPC
-	if (tr.m_pEnt)
-	{
-		if (tr.m_pEnt->IsNPC())
-		{
-#ifndef CLIENT_DLL		// Light Kill : Draw ONLY if we hit enemy
-			if (pPlayer->GetDefaultRelationshipDisposition(tr.m_pEnt->Classify()) != D_HT)
-			{
-				//DevMsg("Neitral npc ! \n");
-			}
-			else
-				DrawHitmarker();
-#endif
-		}
-	}
+	
 
 
 	if (m_iClip1)

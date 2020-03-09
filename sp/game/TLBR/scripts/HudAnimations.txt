@@ -104,7 +104,14 @@ event SuitAuxPowerIncreasedAbove25
 event HitMarkerShow
 {
 	Animate HudHitmarker Alpha 255 Linear 0.0 0.2
-	
+	Animate HudHitmarker HitMarkerColor "255 255 255 255"  Linear 0.0 0.2
+	RunEvent HitMarkerHide 0.2
+}
+
+event HitMarkerShowRed
+{
+	Animate HudHitmarker Alpha 255 Linear 0.0 0.2
+	Animate HudHitmarker HitMarkerColor "255 0 0 255" Linear 0.0 0.2
 	RunEvent HitMarkerHide 0.2
 }
 

@@ -34,7 +34,7 @@ public:
 
 	void	Precache(void);
 	void	AddViewKick(void);
-	void	DrawHitmarker(void);
+	
 	void	PrimaryAttack(void);
 	//	void	SecondaryAttack( void );
 
@@ -202,26 +202,8 @@ void CWeaponMP40::FireNPCPrimaryAttack(CBaseCombatCharacter *pOperator, Vector &
 	m_iClip1 = m_iClip1 - 1;
 }
 
-//-----------------------------------------------------------------------------
-// Purpose: 
-//-----------------------------------------------------------------------------
 
-void CWeaponMP40::DrawHitmarker(void)
-{
-	CBasePlayer *pPlayer = ToBasePlayer(GetOwner());
 
-	if (pPlayer == NULL)
-	{
-		return;
-	}
-
-#ifndef CLIENT_DLL
-	CSingleUserRecipientFilter filter(pPlayer);
-	UserMessageBegin(filter, "ShowHitmarker");
-	WRITE_BYTE(1);
-	MessageEnd();
-#endif
-}
 
 //-----------------------------------------------------------------------------
 // Purpose: 
@@ -234,42 +216,17 @@ void CWeaponMP40::PrimaryAttack(void)
 	{
 		return;
 	}
-
+	DrawHitmarker();
 	BaseClass::PrimaryAttack();
 
 	m_iPrimaryAttacks++;
-	// set up the vectors and traceline
-	trace_t tr;
-	Vector	vecStart, vecStop, vecDir;
 
-	// get the angles
-	AngleVectors(pPlayer->EyeAngles(), &vecDir);
-	// get the vectors
-	vecStart = pPlayer->Weapon_ShootPosition();
-	vecStop = vecStart + vecDir * MAX_TRACE_LENGTH;
-
-	// do the traceline
-	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
 
 	pPlayer->DoMuzzleFlash();
-	if (m_iPrimaryAttacks >= 5){
+	/*if (m_iPrimaryAttacks >= 5){
 		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
-	};
-	// check to see if we hit an NPC
-	if (tr.m_pEnt)
-	{
-		if (tr.m_pEnt->IsNPC())
-		{
-#ifndef CLIENT_DLL		// Light Kill : Draw ONLY if we hit enemy
-			if (pPlayer->GetDefaultRelationshipDisposition(tr.m_pEnt->Classify()) != D_HT)
-			{
-				//DevMsg("Neitral npc ! \n");
-			}
-			else
-				DrawHitmarker();
-#endif
-		}
-	}
+	};*/
+	
 }
 
 //-----------------------------------------------------------------------------

@@ -218,6 +218,8 @@ public:
 	void					EnableIronsights(void);
 	void					DisableIronsights(void);
 	void					SetIronsightTime(void);
+
+	void DrawHitmarker(void);
 	
 	
 

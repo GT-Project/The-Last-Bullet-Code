@@ -51,7 +51,7 @@ CHudHitmarker::CHudHitmarker(const char *pElementName) : CHudElement(pElementNam
 void CHudHitmarker::Init()
 {
 	HOOK_HUD_MESSAGE(CHudHitmarker, ShowHitmarker);
-
+	
 	SetAlpha(0);
 	m_bHitmarkerShow = false;
 }
@@ -117,9 +117,20 @@ void CHudHitmarker::Paint(void)
 //-----------------------------------------------------------------------------
 void CHudHitmarker::MsgFunc_ShowHitmarker(bf_read &msg)
 {
-	m_bHitmarkerShow = msg.ReadByte();
-
-	g_pClientMode->GetViewportAnimationController()->StartAnimationSequence("HitMarkerShow");
+	
+	m_iHitmarkerType = msg.ReadByte();
+	switch (m_iHitmarkerType) {
+	case 1: {
+		m_bHitmarkerShow = true;
+		g_pClientMode->GetViewportAnimationController()->StartAnimationSequence("HitMarkerShowRed");
+		break; 
+		}
+	case 2: {
+		m_bHitmarkerShow = true;
+		g_pClientMode->GetViewportAnimationController()->StartAnimationSequence("HitMarkerShow");
+		break;
+		}
+	}
 
 	m_fAnimTimeout = gpGlobals->curtime + HITMARKER_ANIM_TIMEOUT;
 	

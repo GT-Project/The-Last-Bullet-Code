@@ -395,6 +395,63 @@ void CBaseCombatWeapon::SetIronsightTime(void)
 	m_flIronsightedTime = gpGlobals->curtime;
 }
 
+void CBaseCombatWeapon::DrawHitmarker(void)
+{
+	CBasePlayer *pPlayer = ToBasePlayer(GetOwner());
+
+	if (pPlayer == NULL)
+	{
+		return;
+	}
+
+	// set up the vectors and traceline
+	trace_t tr;
+	Vector	vecStart, vecStop, vecDir;
+
+	// get the angles
+	AngleVectors(pPlayer->EyeAngles(), &vecDir);
+
+	// get the vectors
+	vecStart = pPlayer->Weapon_ShootPosition();
+	vecStop = vecStart + vecDir * MAX_TRACE_LENGTH;
+
+	// do the traceline
+	UTIL_TraceLine(vecStart, vecStop, MASK_ALL, pPlayer, COLLISION_GROUP_NONE, &tr);
+
+	/*if (m_nNumShotsFired >= 5){
+		DispatchParticleEffect("weapon_muzzle_smoke", PATTACH_POINT_FOLLOW, pPlayer->GetViewModel(), "muzzle", true);
+	}*/
+	pPlayer->DoMuzzleFlash();
+	// check to see if we hit a Player
+	// check to see if we hit an NPC
+	if (tr.m_pEnt)
+	{
+		if (tr.m_pEnt->IsNPC())
+		{
+#ifndef CLIENT_DLL		// Light Kill : Draw ONLY if we hit enemy
+			if (pPlayer->GetDefaultRelationshipDisposition(tr.m_pEnt->Classify()) != D_HT)
+			{
+				//DevMsg("Neutral npc ! \n");
+			}
+			else {
+				CSingleUserRecipientFilter filter(pPlayer);
+				UserMessageBegin(filter, "ShowHitmarker");
+
+				if (tr.hitgroup == HITGROUP_HEAD) {
+					WRITE_BYTE(1);
+				}
+				else {
+					WRITE_BYTE(2);
+				}
+				MessageEnd();
+			}
+
+#endif
+		}
+	}
+
+}
+
 //-----------------------------------------------------------------------------
 // Purpose:
 //-----------------------------------------------------------------------------
