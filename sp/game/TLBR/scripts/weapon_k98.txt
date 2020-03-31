@@ -77,10 +77,10 @@
 				"width"		"24"
 				"height"	"24"
 		}
-        "weapon_icon"
-        {
-                "font"		"WeaponIcons"
+                "weapon_icon"
+                {
+                      "font"		"WeaponIcons"
 				"character"	"g"
-        }
+                }
 	}
 }

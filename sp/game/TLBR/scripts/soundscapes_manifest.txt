@@ -4,6 +4,6 @@ soundscapes_manifest
 
 	// List additional soundscape files here
 	
-	"file"		"scripts/soundscapes_castle.txt"
+	"file"		"scripts/soundscapes_prologue.txt"
 
 }

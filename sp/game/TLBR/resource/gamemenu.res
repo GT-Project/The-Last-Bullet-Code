@@ -36,7 +36,12 @@
 	  // "InGameOrder" "30"
 	  // "notmulti" "1"
 	// }
-	
+	// "6"
+	// {
+	    // "label" "#GameUI_GameMenu_Achievements"
+		// "command" "OpenAchievementsDialog"
+		// "InGameOrder" "30"
+	// }
 	"5"
 	{
 	  "label" "#GameUI_LoadCommentary"
@@ -55,12 +60,6 @@
 		"label" "#GameUI_GameMenu_Quit"
 		"command" "Quit"
 		"InGameOrder" "80"
-	}
-	"9"
-	{
-	    "label" "#GameUI_GameMenu_Achievements"
-		"command" "OpenAchievementsDialog"
-		"InGameOrder" "30"
 	}
 }
 

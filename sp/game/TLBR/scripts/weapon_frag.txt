@@ -5,7 +5,7 @@ WeaponData
 	"viewmodel"				"models/weapons/v_stick.mdl"
 	"playermodel"			"models/weapons/w_stick.mdl"
 	"anim_prefix"			"Grenade"
-	"bucket"				"4"
+	"bucket"				"4s"
 	"bucket_position"		"0"
 	"bucket_360"			"4"
 	"bucket_position_360"		"0"

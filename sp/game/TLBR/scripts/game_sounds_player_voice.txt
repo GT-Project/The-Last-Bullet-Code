@@ -18,6 +18,15 @@
 "wave" "@player\voice\Intro_1.wav"
 }
 
+"Player.Bucket" 
+{
+"channel" "CHAN_VOICE" 
+"volume" "1" 
+"soundlevel" "SNDLVL_75dB" 
+
+"wave" "@player\voice\Intro_1.wav"
+}
+
 "Player.Intro_2" 
 {
 "channel" "CHAN_VOICE" 

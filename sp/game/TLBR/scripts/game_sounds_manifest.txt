@@ -10,6 +10,8 @@ game_sounds_manifest
 "precache_file" "scripts/game_sounds_weapons.txt"
 "precache_file" "scripts/game_sounds_weapons_bullet.txt" 
 
+"precache_file" "scripts/level_sounds_prologue.txt" 
+
 // HL2 World, Ambient Generic, Items, Physics, Vehicles 
 "precache_file" "scripts/game_sounds_world.txt" 
 "precache_file" "scripts/game_sounds_ambient_generic.txt" 
@@ -19,26 +21,7 @@ game_sounds_manifest
 "precache_file" "scripts/game_sounds_vehicles.txt" 
 "precache_file" "scripts/game_sounds_objects.txt" 
 
-// E3 level sounds 
-"precache_file" "scripts/level_sounds_e3_c17.txt" 
-"precache_file" "scripts/level_sounds_e3_town.txt" 
-"precache_file" "scripts/level_sounds_e3_bugbait.txt" 
 
-// Game level sounds 
-"precache_file" "scripts/level_sounds_eli_lab.txt" 
-"precache_file" "scripts/level_sounds_trainyard.txt" 
-"precache_file" "scripts/level_sounds_k_lab.txt" 
-"precache_file" "scripts/level_sounds_k_lab2.txt" 
-"precache_file" "scripts/level_sounds_coast.txt" 
-"precache_file" "scripts/level_sounds_novaprospekt.txt" 
-"precache_file" "scripts/level_sounds_streetwar.txt" 
-"precache_file" "scripts/level_sounds_streetwar2.txt" 
-"precache_file" "scripts/level_sounds_breencast.txt" 
-"precache_file" "scripts/level_sounds_citadel.txt" 
-"precache_file" "scripts/level_sounds_canals.txt" 
-"precache_file" "scripts/level_sounds_ravenholm.txt" 
-"precache_file" "scripts/level_sounds_ravenholm2.txt" 
-"precache_file" "scripts/level_sounds_canals2.txt" 
 //Music Tracks 
 "precache_file" "scripts/level_sounds_music.txt" 
 

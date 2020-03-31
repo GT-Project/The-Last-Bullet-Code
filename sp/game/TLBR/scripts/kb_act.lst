@@ -13,7 +13,7 @@
 "blank"			"#Valve_Combat_Title"
 "blank"			"=========================="
 "+attack"				"#Valve_Primary_Attack"
-"toggle_ironsight"		"#TLBR_Toggle_Ironsight" 
+"toggle_ironsight"				"#TLBR_Toggle_Ironsights"
 "+reload"				"#Valve_Reload_Weapon"
 "+use"					"#Valve_Use_Items"
 "invnext"				"#Valve_Next_Weapon"

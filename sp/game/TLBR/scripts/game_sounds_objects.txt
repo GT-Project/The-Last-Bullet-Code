@@ -1,5 +1,5 @@
 
-"Piano.Random" 
+"piano.random" 
 {
 "channel" "CHAN_STATIC" 
 "volume" "0.6"
@@ -15,4 +15,14 @@ rndwave
 	"wave"	"obj\piano\Chord 4.wav"
 	"wave"	"obj\piano\Chord 5.wav"
 }
+}
+
+"toilet.flush" 
+{
+"channel" "CHAN_STATIC" 
+"volume" "0.6"
+"soundlevel" "SNDLVL_STATIC" 
+
+"wave"	"ambient/machines/usetoilet_flush1.wav"
+
 }

@@ -118,6 +118,15 @@ $fadein 0.05
 $holdtime 3.5
 $position -1 -0.5
 
+TLBR_CHAPTER0_TITLE
+{
+#TLBR_Chapter0_Title
+}
+
+TLBR_CHAPTER0_TITLE_INGAME
+{
+#TLBR_Chapter0_Title_Ingame
+}
 
 TLBR_CHAPTER1_TITLE
 {

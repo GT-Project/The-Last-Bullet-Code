@@ -47,7 +47,7 @@ Scheme
 	BaseSettings
 	{
 		"FgColor"			"255 255 255 196" // 255 220 0 100
-		"BgColor"			"0 0 0 0" // 0 0 0 76
+		"BgColor"			"0 0 0 76" // 0 0 0 76
 
 		"Panel.FgColor"			"255 255 255 255" // 255 220 0 100
 		"Panel.BgColor"			"0 0 0 0" // 0 0 0 76
@@ -735,7 +735,7 @@ Scheme
 			{
 				"name"		"Enchanted Land cyr-lat" [!$OSX]
 
-				"tall"		"24" // 16
+				"tall"		"20" // 16
 				"weight"	"1000" // 1000
 				"additive"	"0" // 1
 				"antialias" "1" // 1

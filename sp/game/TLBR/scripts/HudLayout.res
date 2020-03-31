@@ -99,40 +99,39 @@ HudSavingData
 	{
 		"fieldName"		"HudSuit"
 		"xpos"	"c-10"
-		"ypos"	"427"
+		"ypos"	"435"
 		"wide"	"90"
-		"tall"  "50"
+		"tall"  "35"
 		"visible" "1"
 		"enabled" "1"
 
 		"PaintBackgroundType"	"2"
 
 		"text_xpos" "15"
-		"text_ypos" "4" //4
+		"text_ypos" "-5" //4
 		"TextFont" "HUDIcons"
-		"digit_xpos" "38"
-		"digit_ypos" "7"
+		"digit_xpos" "42"
+		"digit_ypos" "-2"
 	}
 
 	HudAmmo
 	{
 		"fieldName" "HudAmmo"
-		"xpos"	"r80" // r176
-		"ypos"	"415" // 440
-		"wide"	"68" // 136
-		"tall"  "36" // 36 
+		"xpos"	"r150"
+		"ypos"	"432"
+		"wide"	"136"
+		"tall"  "36"
 		"visible" "1"
 		"enabled" "1"
 
-		"PaintBackgroundType"	"0"
+		"PaintBackgroundType"	"2"
 
-		"text_xpos" "43" // 8
-		"text_ypos" "16" // 20
-		
-		"digit_xpos" "5" // 44
-		"digit_ypos" "0" // 2
-		"digit2_xpos" "40" // 98
-		"digit2_ypos" "1" // 16
+		"text_xpos" "8"
+		"text_ypos" "20"
+		"digit_xpos" "44"
+		"digit_ypos" "2"
+		"digit2_xpos" "98"
+		"digit2_ypos" "16"
 		
 	}
 
@@ -186,19 +185,16 @@ HudSavingData
 	{
 		"fieldName" "HudFlashlight"
 		"visible" "0"
-		"enabled" "1"
+		"enabled" "0"
 		"xpos"	"16"
 		"ypos"	"370"
 		"wide"	"102"
 		"tall"	"20"
-		"icon_xpos" "1"
-		"icon_ypos" "110"
 		
 		"text_xpos" "8"
 		"text_ypos" "6"
-		"TextColor"	"255 170 0 220"
+		"TextColor"	"255 170 0 0"
 
-		"PaintBackgroundType"	"2"
 	}
 	
 	HudDamageIndicator
@@ -249,11 +245,11 @@ HudSavingData
 		 "fieldName" "HudCrosshair"
 		 "visible" "1"
 		 "enabled" "1"
-		 "wide"	 "1024"
-		 "tall"	 "768"
+		 "wide"	 "1280"
+		 "tall"	 "720"
 		 "xpos"	 "0"
 		 
-		 "ypos"	 "0"
+		 "ypos"	 "1"
 	 }
    HudWeaponIcon
 	{
