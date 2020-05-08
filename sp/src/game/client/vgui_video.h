@@ -78,6 +78,7 @@ protected:
 extern bool VideoPanel_Create( unsigned int nXPos, unsigned int nYPos, 
 							   unsigned int nWidth, unsigned int nHeight, 
 							   const char *pVideoFilename, 
-							   const char *pExitCommand = NULL );
+							   const char *pExitCommand = NULL,
+							   bool bAllowInterruption = true);
 
 #endif // VGUI_VIDEO_H

@@ -25,7 +25,7 @@ VideoPanel::VideoPanel( unsigned int nXPos, unsigned int nYPos, unsigned int nHe
 	m_bAllowAlternateMedia( allowAlternateMedia ),
 	m_bAllowInterruption(true)
 {
-	vgui::VPANEL pParent = enginevgui->GetPanel( PANEL_GAMEUIDLL );
+	vgui::VPANEL pParent = enginevgui->GetPanel( PANEL_ROOT );
 	SetParent( pParent );
 	SetVisible( false );
 	
@@ -46,6 +46,8 @@ VideoPanel::VideoPanel( unsigned int nXPos, unsigned int nYPos, unsigned int nHe
 	SetTall( nHeight );
 	SetWide( nWidth );
 	SetPos( nXPos, nYPos );
+
+	SetCursor(NULL);
 
 	SetScheme(vgui::scheme()->LoadSchemeFromFile( "resource/VideoPanelScheme.res", "VideoPanelScheme"));
 	LoadControlSettings("resource/UI/VideoPanel.res");
@@ -167,6 +169,10 @@ void VideoPanel::OnKeyCodeTyped( vgui::KeyCode code )
 	bool bInterruptKeyPressed = ( code == KEY_ESCAPE );
 	if ( m_bAllowInterruption && bInterruptKeyPressed )
 	{
+		if (engine->IsPaused())
+		{
+			engine->ClientCmd("cancelselect");
+		}
 		OnClose();
 	}
 	else
